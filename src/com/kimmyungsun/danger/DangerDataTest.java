@@ -2,13 +2,10 @@ package com.kimmyungsun.danger;
 
 import java.util.List;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.res.Resources;
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 
@@ -16,32 +13,24 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
 import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
 import com.google.android.gms.location.LocationClient;
+import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
-import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.kimmyungsun.geocode.GeoCodeCalc;
 
 
-public class DangerDataTest extends FragmentActivity 
+public class DangerDataTest extends Activity 
 	implements
-	ConnectionCallbacks, OnConnectionFailedListener, LocationListener, com.google.android.gms.location.LocationListener, OnMyLocationButtonClickListener
-	,LocationSource, LocationSource.OnLocationChangedListener
-	, OnMapLongClickListener
+	ConnectionCallbacks, OnConnectionFailedListener, LocationListener, OnMyLocationButtonClickListener
 {
 	
 	private GoogleMap mMap;
 	private DangersDataSource ds;
     private LocationClient mLocationClient;
-    private LocationManager locationManager;
-    private final static long MIN_TIME = 400;
-    private final static float MIN_DISTANCE = 1000;
    
 	// These settings are the same as the settings for the map. They will in fact give you updates
 	// at the maximal rates currently possible.
@@ -78,14 +67,10 @@ public class DangerDataTest extends FragmentActivity
     			setUpMap();
     		}
     	}
-    	locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-    	locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
 	}
 
 
 	private void setUpMap() {
-		mMap.setOnMapLongClickListener(this);
-		mMap.setLocationSource(this);
         mMap.setMyLocationEnabled(true);
         mMap.setOnMyLocationButtonClickListener(this);
 	}
@@ -138,7 +123,6 @@ public class DangerDataTest extends FragmentActivity
 	                this,  // ConnectionCallbacks
 	                this); // OnConnectionFailedListener
 	    }
-	    mLocationClient.getLastLocation();
 	}
 
 
@@ -164,11 +148,6 @@ public class DangerDataTest extends FragmentActivity
         double lat1 = location.getLatitude();
         double lng1 = location.getLongitude();
        
-        LatLng latLng = new LatLng(lat1, lng1);
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, 15);
-        mMap.animateCamera(cameraUpdate);
-        locationManager.removeUpdates(this);
-        
         for ( DangerItem di : dis ) {
         	double lat2 = di.getLatitude();
         	double lng2 = di.getLongitude();
@@ -200,48 +179,7 @@ public class DangerDataTest extends FragmentActivity
 	}
 
 
-	@Override
-	public void onMapLongClick(LatLng point) {
-		System.out.println("onMapLongClick");
-        Location location = new Location("LongPressLocationProvider");
-        location.setLatitude(point.latitude);
-        location.setLongitude(point.longitude);
-        location.setAccuracy(100);
-        onLocationChanged(location);
-	}
 
-
-//	@Override
-	public void activate(OnLocationChangedListener listener) {
-		System.out.println("activate");
-	}
-
-
-//	@Override
-	public void deactivate() {
-		System.out.println("deactivate");
-	}
-
-
-@Override
-public void onStatusChanged(String provider, int status, Bundle extras) {
-	// TODO Auto-generated method stub
-	
-}
-
-
-@Override
-public void onProviderEnabled(String provider) {
-	// TODO Auto-generated method stub
-	
-}
-
-
-@Override
-public void onProviderDisabled(String provider) {
-	// TODO Auto-generated method stub
-	
-}
 
 
     
