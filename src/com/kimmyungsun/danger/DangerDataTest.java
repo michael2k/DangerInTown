@@ -15,6 +15,7 @@ import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailed
 import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.MapFragment;
@@ -147,6 +148,8 @@ public class DangerDataTest extends Activity
         
         double lat1 = location.getLatitude();
         double lng1 = location.getLongitude();
+        
+        mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat1, lng1),15));
        
         for ( DangerItem di : dis ) {
         	double lat2 = di.getLatitude();
