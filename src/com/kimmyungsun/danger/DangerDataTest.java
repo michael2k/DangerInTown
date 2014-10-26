@@ -174,7 +174,7 @@ public class DangerDataTest extends Activity
 		this.buttonStatus = buttonStatus;
 		
 		if ( buttonStatus == OnMyLocationButtonClickHandler.BUTTON_ENABLED ) {
-			locationClient.req
+//			locationClient.req
 		}
 	}
 
