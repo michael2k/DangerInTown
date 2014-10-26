@@ -172,6 +172,10 @@ public class DangerDataTest extends Activity
 	@Override
 	public void setButtonStatus(int buttonStatus) {
 		this.buttonStatus = buttonStatus;
+		
+		if ( buttonStatus == OnMyLocationButtonClickHandler.BUTTON_ENABLED ) {
+			locationClient.req
+		}
 	}
 
 

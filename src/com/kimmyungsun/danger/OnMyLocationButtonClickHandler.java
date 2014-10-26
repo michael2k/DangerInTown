@@ -28,5 +28,9 @@ public class OnMyLocationButtonClickHandler implements
 		return false;
 	}
 
+	public int getButtonStatus() {
+		return buttonStatus;
+	}
+
 
 }
