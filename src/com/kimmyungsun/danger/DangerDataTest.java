@@ -4,31 +4,46 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.res.Resources;
+import android.graphics.Color;
+import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.Window;
+import android.view.WindowManager;
 
 import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
-import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
-import com.google.android.gms.location.LocationClient;
+//import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
+//import com.google.android.gms.common.GooglePlayServicesClient.OnConnectionFailedListener;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.GoogleApiClient.ConnectionCallbacks;
+import com.google.android.gms.common.api.GoogleApiClient.OnConnectionFailedListener;
+import com.google.android.gms.location.LocationListener;
+//import com.google.android.gms.location.LocationClient;
 import com.google.android.gms.location.LocationRequest;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.MapFragment;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.kimmyungsun.geocode.GeoCodeCalc;
 
-public class DangerDataTest extends Activity implements DangerMap,
-		ConnectionCallbacks, OnConnectionFailedListener,
+public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCallback, LocationListener,
+		ConnectionCallbacks, OnConnectionFailedListener, 
 		OnMyLocationButtonClickListener, OnMapClickListener,
 		OnMapLongClickListener {
+	
+	private final static String TAG = DangerDataTest.class.getName();
 
 	private GoogleMap googleMap;
 	private DangersDataSource dangerDataSource;
-	private GoogleLocationHandler googleLocationHandler;
-	private LocationClient locationClient;
+	private GoogleApiClient googleApiClient;
 	public static final int BUTTON_DISABLED = 0;
 	public static final int BUTTON_ENABLED = 1;
 	private int buttonStatus = BUTTON_ENABLED;
@@ -43,39 +58,29 @@ public class DangerDataTest extends Activity implements DangerMap,
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		Log.i(DangerDataTest.class.getName(), "onCreate");
+		Log.i(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
+		
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN, WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+		
+		
 		setContentView(R.layout.activity_main);
+
+		((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
 
 		dangerDataSource = new DangersDataSource(this);
 		dangerDataSource.open();
 
 		List<DangerItem> dis = dangerDataSource.getAllDangerItems();
 		if (dis.size() > 0) {
-			Log.i(DangerDataTest.class.getName(), "dis.size() : " + dis.size());
+			Log.i(TAG, "dis.size() : " + dis.size());
 		} else {
 			readData();
 		}
 
-		// onMyLocationButtonClickHandler = new
-		// OnMyLocationButtonClickHandler(this);
-
-		setUpMapIfNeeded();
-		setUpLocationClientIfNeeded();
-
-		googleLocationHandler = new GoogleLocationHandler(this);
-	}
-
-	private void setUpMapIfNeeded() {
-		// Do a null check to confirm that we have not already instatiated the
-		// map
-		if (googleMap == null) {
-			googleMap = ((MapFragment) getFragmentManager().findFragmentById(
-					R.id.map)).getMap();
-			if (googleMap != null) {
-				setUpMap();
-			}
-		}
+		setUpGoogleApiClient();
+		
 	}
 
 	private void setUpMap() {
@@ -93,50 +98,51 @@ public class DangerDataTest extends Activity implements DangerMap,
 		for (String danger : dangers) {
 			// DangerItem di = DangerItem.newInstance(danger);
 			DangerItem di = dangerDataSource.createDangerItem(danger);
-			System.out.println(di);
+			Log.i(TAG,di.toString());
 		}
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		Log.i(DangerDataTest.class.getName(), "onCreateOptionsMenu");
+		Log.i(TAG, "onCreateOptionsMenu");
 		getMenuInflater().inflate(R.menu.danger_data_test, menu);
 		return true;
 	}
 
 	@Override
 	protected void onPause() {
-		Log.i(DangerDataTest.class.getName(), "onPause");
+		Log.i(TAG, "onPause");
 		dangerDataSource.close();
-		if (locationClient != null) {
-			locationClient.disconnect();
+		if (googleApiClient != null) {
+			googleApiClient.disconnect();
 		}
 		super.onPause();
 	}
 
 	@Override
 	protected void onResume() {
-		Log.i(DangerDataTest.class.getName(), "onResume");
+		Log.i(TAG, "onResume");
 		super.onResume();
 		dangerDataSource.open();
-		// setUpMapIfNeeded();
-		// setUpLocationClientIfNeeded();
-		locationClient.connect();
+		googleApiClient.connect();
 	}
 
-	private void setUpLocationClientIfNeeded() {
-		Log.i(DangerDataTest.class.getName(), "setUpLocationClientIfNeeded");
-		if (locationClient == null) {
-			locationClient = new LocationClient(getApplicationContext(), this,
-					this); // ConnectionCallbacks, OnConnectionFailedListener
+	private synchronized void setUpGoogleApiClient() {
+		Log.i(TAG, "setUpGoogleApiClient");
+	
+		if ( googleApiClient == null ) {
+			googleApiClient = new GoogleApiClient.Builder(this)
+				.addConnectionCallbacks(this)
+				.addOnConnectionFailedListener(this)
+				.addApi(LocationServices.API)
+				.build();
 		}
-		// locationClient.connect();
 	}
 
 	@Override
 	public void onConnected(Bundle connectionHint) {
-		Log.i(DangerDataTest.class.getName(), "onConnected");
+		Log.i(TAG, "onConnected");
 
 		locationClientUpdates();
 
@@ -145,24 +151,19 @@ public class DangerDataTest extends Activity implements DangerMap,
 	private void locationClientUpdates() {
 
 		if (buttonStatus == BUTTON_ENABLED) {
-			locationClient.requestLocationUpdates(REQUEST,
-					getGoogleLocationHandler()); // LocationListener
-		}
+			LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, REQUEST,this); // LocationListener
+		} 
 
-	}
-
-	private GoogleLocationHandler getGoogleLocationHandler() {
-		return googleLocationHandler;
 	}
 
 	@Override
 	public void onConnectionFailed(ConnectionResult connectionResult) {
-		Log.i(DangerDataTest.class.getName(), "onConnectionFailed");
+		Log.i(TAG, "onConnectionFailed");
 	}
 
-	@Override
+//	@Override
 	public void onDisconnected() {
-		Log.i(DangerDataTest.class.getName(), "onDisconnected");
+		Log.i(TAG, "onDisconnected");
 	}
 
 	@Override
@@ -184,27 +185,27 @@ public class DangerDataTest extends Activity implements DangerMap,
 	public void setButtonStatus(int buttonStatus) {
 		this.buttonStatus = buttonStatus;
 
-		Log.i(DangerDataTest.class.getName(), "buttonStatus : " + buttonStatus);
+		Log.i(TAG, "buttonStatus : " + buttonStatus);
 
 		if (buttonStatus == BUTTON_ENABLED) {
-			Log.i(DangerDataTest.class.getName(),
+			Log.i(TAG,
 					"buttonStatus : BUTTON_ENABLED");
-			if (locationClient != null && locationClient.isConnected()) {
+			if (googleApiClient != null && googleApiClient.isConnected()) {
 				locationClientUpdates();
 			}
 		} else {
-			Log.i(DangerDataTest.class.getName(),
+			Log.i(TAG,
 					"buttonStatus : BUTTON_DISABLED");
-			if (locationClient != null && locationClient.isConnected()) {
-				locationClient
-						.removeLocationUpdates(getGoogleLocationHandler());
+			if (googleApiClient != null && googleApiClient.isConnected()) {
+				LocationServices.FusedLocationApi
+						.removeLocationUpdates(googleApiClient, this);
 			}
 		}
 	}
 
 	@Override
 	public boolean onMyLocationButtonClick() {
-		Log.i(DangerDataTest.class.getName(), "onMyLocationButtonClick");
+		Log.i(TAG, "onMyLocationButtonClick");
 
 		buttonStatus = (buttonStatus + 1) % 2;
 
@@ -215,7 +216,7 @@ public class DangerDataTest extends Activity implements DangerMap,
 
 	@Override
 	public void onMapClick(LatLng point) {
-		Log.i(DangerDataTest.class.getName(), "onMapClick");
+		Log.i(TAG, "onMapClick");
 
 		setButtonStatus(BUTTON_DISABLED);
 
@@ -223,13 +224,99 @@ public class DangerDataTest extends Activity implements DangerMap,
 
 	@Override
 	public void onMapLongClick(LatLng point) {
-		Log.i(DangerDataTest.class.getName(), "onMapLongClick");
+		Log.i(TAG, "onMapLongClick");
 
 		setButtonStatus(BUTTON_DISABLED);
 
-		getGoogleLocationHandler().processLocationChanged(point.latitude,
-				point.longitude);
+		processLocationChanged(point.latitude, point.longitude);
 
 	}
+	
+	
+
+//	@Override
+	protected boolean isRouteDisplayed() {
+		return false;
+	}
+
+	@Override
+	public void onMapReady(GoogleMap googleMap) {
+		Log.i(TAG, "onMapReady");
+		
+		this.googleMap = googleMap;
+		setUpMap();
+		
+	}
+
+	@Override
+	public void onConnectionSuspended(int cause) {
+		Log.i(TAG, "onMapReady");
+		
+	}
+
+	@Override
+		public void onLocationChanged(Location location) {
+			Log.i(TAG, "onLocationChanded:" + location);
+			
+	        double lat = location.getLatitude();
+	        double lng = location.getLongitude();
+	        
+	        Log.i(TAG, "lat:" + lat + ", lng:" + lng);
+	        
+	        processLocationChanged(lat, lng);
+	        
+		}
+
+	public void processLocationChanged(double lat, double lng) {
+			Log.i(TAG, "processLocationChanged");
+			
+			googleMap.clear();
+			
+	        List<DangerItem> dis = dangerDataSource.getAllDangerItems();
+	        
+	        
+	        if ( buttonStatus == BUTTON_ENABLED ) {
+	        	googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng),12));
+	        }
+	        
+	        CircleOptions co = new CircleOptions();
+	        co.center(new LatLng(lat, lng));
+	        co.strokeWidth(1.0f);
+	        co.radius(5000);
+	        co.fillColor(Color.argb(30, 50, 0, 0));
+	        
+	        googleMap.addCircle(co);
+	        
+	        co.radius(3000);
+	        co.fillColor(Color.argb(40, 100, 0, 0));
+	        
+	        googleMap.addCircle(co);
+	        
+	        co.radius(1000);
+	        co.fillColor(Color.argb(50, 200, 0, 0));
+	        
+	        googleMap.addCircle(co);
+	        
+	        co.radius(500);
+	        
+	        googleMap.addCircle(co);
+	        
+	       
+	        for ( DangerItem di : dis ) {
+	        	double lat2 = di.getLatitude();
+	        	double lng2 = di.getLongitude();
+	        	double distance = GeoCodeCalc.CalcDistance(lat, lng, lat2, lng2);
+	        	
+	//        	System.out.println("distance : " + distance);
+	        	
+	        	if ( distance < 5.0 ) {
+	        		googleMap.addMarker(new MarkerOptions()
+	        			.position(new LatLng(lat2, lng2))
+	        			.title(di.getAddress())
+	        		);
+	        		
+	        	}
+	        }
+		}
 
 }
