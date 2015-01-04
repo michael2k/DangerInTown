@@ -2,11 +2,15 @@ package com.kimmyungsun.danger;
 
 import java.util.List;
 
+import android.graphics.Color;
 import android.location.Location;
+import android.util.Log;
 
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.CircleOptions;
+import com.google.android.gms.maps.model.CircleOptionsCreator;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.kimmyungsun.geocode.GeoCodeCalc;
@@ -27,20 +31,55 @@ public class GoogleLocationHandler implements LocationListener {
 
 	@Override
 	public void onLocationChanged(Location location) {
-		System.out.println("onLocationChanded:" + location);
+		Log.i(GoogleLocationHandler.class.getName(), "onLocationChanded:" + location);
+		
+        double lat = location.getLatitude();
+        double lng = location.getLongitude();
+        
+        processLocationChanged(lat, lng);
+        
+	}
+
+
+	public void processLocationChanged(double lat, double lng) {
+		Log.i(GoogleLocationHandler.class.getName(), "processLocationChanged");
+		
+		googleMap.clear();
+		
         List<DangerItem> dis = ds.getAllDangerItems();
         
-        double lat1 = location.getLatitude();
-        double lng1 = location.getLongitude();
         
-        if ( dangerMap.getButtonStatus() == OnMyLocationButtonClickHandler.BUTTON_ENABLED ) {
-        	googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat1, lng1),15));
+        if ( dangerMap.getButtonStatus() == DangerDataTest.BUTTON_ENABLED ) {
+        	googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng),12));
         }
+        
+        CircleOptions co = new CircleOptions();
+        co.center(new LatLng(lat, lng));
+        co.strokeWidth(1.0f);
+        co.radius(5000);
+        co.fillColor(Color.argb(30, 50, 0, 0));
+        
+        googleMap.addCircle(co);
+        
+        co.radius(3000);
+        co.fillColor(Color.argb(40, 100, 0, 0));
+        
+        googleMap.addCircle(co);
+        
+        co.radius(1000);
+        co.fillColor(Color.argb(50, 200, 0, 0));
+        
+        googleMap.addCircle(co);
+        
+        co.radius(500);
+        
+        googleMap.addCircle(co);
+        
        
         for ( DangerItem di : dis ) {
         	double lat2 = di.getLatitude();
         	double lng2 = di.getLongitude();
-        	double distance = GeoCodeCalc.CalcDistance(lat1, lng1, lat2, lng2);
+        	double distance = GeoCodeCalc.CalcDistance(lat, lng, lat2, lng2);
         	
 //        	System.out.println("distance : " + distance);
         	
