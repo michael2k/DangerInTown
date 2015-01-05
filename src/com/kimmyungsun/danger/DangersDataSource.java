@@ -89,4 +89,22 @@ public class DangersDataSource {
 		di.setStatus(cursor.getInt(6));
 		return di;
 	}
+
+	public List<DangerItem> searchDangerItems(String searchString) {
+		List<DangerItem> dis = new ArrayList<DangerItem>();
+		
+		Cursor cursor = database.query(MySQLiteHelper.TABLE_DANGER, allColumns, 
+				MySQLiteHelper.COLUMN_ADDRESS + " like '%" + searchString + "%'", 
+				null, null, null, null);
+		
+		cursor.moveToFirst();
+		while( !cursor.isAfterLast()) {
+			DangerItem di = cursorToDangerItem(cursor);
+			dis.add(di);
+			cursor.moveToNext();
+		}
+		// make sure to close the cursor
+		cursor.close();
+		return dis;
+	}
 }

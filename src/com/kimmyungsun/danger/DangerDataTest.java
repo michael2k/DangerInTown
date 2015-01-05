@@ -9,8 +9,11 @@ import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.gms.common.ConnectionResult;
 //import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
@@ -46,7 +49,10 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 	public static final int BUTTON_DISABLED = 0;
 	public static final int BUTTON_ENABLED = 1;
 	private int buttonStatus = BUTTON_ENABLED;
-
+	
+	private EditText txtSearch;
+	private Button btnSearch;
+	
 	// These settings are the same as the settings for the map. They will in
 	// fact give you updates
 	// at the maximal rates currently possible.
@@ -67,6 +73,9 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 		setContentView(R.layout.activity_main);
 
 		((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
+		
+		txtSearch = ((EditText) findViewById(R.id.txtSearch));
+		btnSearch = ((Button) findViewById(R.id.btnSearch));
 
 		dangerDataSource = new DangersDataSource(this);
 		dangerDataSource.open();
@@ -112,10 +121,12 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 	@Override
 	protected void onPause() {
 		Log.i(TAG, "onPause");
-		dangerDataSource.close();
-		if (googleApiClient != null) {
+		if (googleApiClient != null && googleApiClient.isConnected()) {
+			LocationServices.FusedLocationApi
+					.removeLocationUpdates(googleApiClient, this);
 			googleApiClient.disconnect();
 		}
+		dangerDataSource.close();
 		super.onPause();
 	}
 
@@ -227,6 +238,12 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 
 		setButtonStatus(BUTTON_DISABLED);
 
+		googleMap.clear();
+		
+		googleMap.addMarker(new MarkerOptions()
+		.position(point)
+		.title("현재위치"));
+
 		processLocationChanged(point.latitude, point.longitude);
 
 	}
@@ -254,68 +271,86 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 	}
 
 	@Override
-		public void onLocationChanged(Location location) {
-			Log.i(TAG, "onLocationChanded:" + location);
-			
-	        double lat = location.getLatitude();
-	        double lng = location.getLongitude();
-	        
-	        Log.i(TAG, "lat:" + lat + ", lng:" + lng);
-	        
-	        processLocationChanged(lat, lng);
-	        
-		}
+	public void onLocationChanged(Location location) {
+		Log.i(TAG, "onLocationChanded:" + location);
+		
+        double lat = location.getLatitude();
+        double lng = location.getLongitude();
+        
+        Log.i(TAG, "lat:" + lat + ", lng:" + lng);
+        
+		googleMap.clear();
+		
+        processLocationChanged(lat, lng);
+        
+	}
 
 	public void processLocationChanged(double lat, double lng) {
-			Log.i(TAG, "processLocationChanged");
+		Log.i(TAG, "processLocationChanged");
+		
+        List<DangerItem> dis = dangerDataSource.getAllDangerItems();
+        
+        
+        if ( buttonStatus == BUTTON_ENABLED ) {
+        	googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng),12));
+        }
+        
+        CircleOptions co = new CircleOptions();
+        co.center(new LatLng(lat, lng));
+        co.strokeWidth(1.0f);
+        co.radius(5000);
+        co.fillColor(Color.argb(30, 50, 0, 0));
+        
+        googleMap.addCircle(co);
+        
+        co.radius(3000);
+        co.fillColor(Color.argb(40, 100, 0, 0));
+        
+        googleMap.addCircle(co);
+        
+        co.radius(1000);
+        co.fillColor(Color.argb(50, 200, 0, 0));
+        
+        googleMap.addCircle(co);
+        
+        co.radius(500);
+        
+        googleMap.addCircle(co);
+        
+       
+        for ( DangerItem di : dis ) {
+        	double lat2 = di.getLatitude();
+        	double lng2 = di.getLongitude();
+        	double distance = GeoCodeCalc.CalcDistance(lat, lng, lat2, lng2);
+        	
+//        	System.out.println("distance : " + distance);
+        	
+        	if ( distance < 5.0 ) {
+        		googleMap.addMarker(new MarkerOptions()
+        			.position(new LatLng(lat2, lng2))
+        			.title(di.getAddress())
+        		);
+        		
+        	}
+        }
+	}
+	
+	
+	/*
+	 * called when the user clicks the btnSearch button
+	 */
+	public void searchLocation(View view) {
+		Log.i(TAG, "searchLocation");
+		String searchString = txtSearch.getText().toString();
+		Log.i(TAG, "searchString:" + searchString);
+		
+		List<DangerItem> list = dangerDataSource.searchDangerItems(searchString);
+		Log.i(TAG, "search result list size:" + list.size());
+		for ( DangerItem di : list) {
+			Log.i(TAG, "di:" + di.toString());
 			
-			googleMap.clear();
-			
-	        List<DangerItem> dis = dangerDataSource.getAllDangerItems();
-	        
-	        
-	        if ( buttonStatus == BUTTON_ENABLED ) {
-	        	googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng),12));
-	        }
-	        
-	        CircleOptions co = new CircleOptions();
-	        co.center(new LatLng(lat, lng));
-	        co.strokeWidth(1.0f);
-	        co.radius(5000);
-	        co.fillColor(Color.argb(30, 50, 0, 0));
-	        
-	        googleMap.addCircle(co);
-	        
-	        co.radius(3000);
-	        co.fillColor(Color.argb(40, 100, 0, 0));
-	        
-	        googleMap.addCircle(co);
-	        
-	        co.radius(1000);
-	        co.fillColor(Color.argb(50, 200, 0, 0));
-	        
-	        googleMap.addCircle(co);
-	        
-	        co.radius(500);
-	        
-	        googleMap.addCircle(co);
-	        
-	       
-	        for ( DangerItem di : dis ) {
-	        	double lat2 = di.getLatitude();
-	        	double lng2 = di.getLongitude();
-	        	double distance = GeoCodeCalc.CalcDistance(lat, lng, lat2, lng2);
-	        	
-	//        	System.out.println("distance : " + distance);
-	        	
-	        	if ( distance < 5.0 ) {
-	        		googleMap.addMarker(new MarkerOptions()
-	        			.position(new LatLng(lat2, lng2))
-	        			.title(di.getAddress())
-	        		);
-	        		
-	        	}
-	        }
 		}
+		
+	}
 
 }
