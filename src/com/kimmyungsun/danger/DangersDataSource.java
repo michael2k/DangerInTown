@@ -13,6 +13,7 @@ public class DangersDataSource {
 	private SQLiteDatabase database;
 	private MySQLiteHelper dbHelper;
 	private String[] allColumns = { MySQLiteHelper.COLUMN_ID
+			, MySQLiteHelper.COLUMN_COMPANY_NAME
 			, MySQLiteHelper.COLUMN_ADDRESS
 			, MySQLiteHelper.COLUMN_GADDRESS
 			, MySQLiteHelper.COLUMN_LATITUDE
@@ -38,6 +39,8 @@ public class DangersDataSource {
 		DangerItem di = DangerItem.newInstance(dangerData);
 		
 		ContentValues values = new ContentValues();
+		values.put(MySQLiteHelper.COLUMN_ID, di.getId());
+		values.put(MySQLiteHelper.COLUMN_COMPANY_NAME, di.getCompanyName());
 		values.put(MySQLiteHelper.COLUMN_ADDRESS, di.getAddress());
 		values.put(MySQLiteHelper.COLUMN_GADDRESS, di.getgAddress());
 		values.put(MySQLiteHelper.COLUMN_LATITUDE, di.getLatitude());
@@ -81,12 +84,13 @@ public class DangersDataSource {
 	public DangerItem cursorToDangerItem(Cursor cursor) {
 		DangerItem di = new DangerItem();
 		di.setId(cursor.getLong(0));
-		di.setAddress(cursor.getString(1));
-		di.setgAddress(cursor.getString(2));
-		di.setLatitude(cursor.getFloat(3));
-		di.setLongitude(cursor.getFloat(4));
-		di.setAccuracy(cursor.getInt(5));
-		di.setStatus(cursor.getInt(6));
+		di.setCompanyName(cursor.getString(1));
+		di.setAddress(cursor.getString(2));
+		di.setgAddress(cursor.getString(3));
+		di.setLatitude(cursor.getFloat(4));
+		di.setLongitude(cursor.getFloat(5));
+		di.setAccuracy(cursor.getInt(6));
+		di.setStatus(cursor.getInt(7));
 		return di;
 	}
 

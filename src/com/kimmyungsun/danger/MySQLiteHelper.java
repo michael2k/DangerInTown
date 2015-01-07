@@ -9,6 +9,7 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	
 	public static final String TABLE_DANGER = "tbldanger";
 	public static final String COLUMN_ID = "_id";
+	public static final String COLUMN_COMPANY_NAME = "companyname";
 	public static final String COLUMN_ADDRESS = "address";
 	public static final String COLUMN_GADDRESS = "gaddress";
 	public static final String COLUMN_LATITUDE = "latitude";
@@ -21,14 +22,15 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 	
 	// Database creation sql statement
 	private static final String DATABASE_CREATE = "create table "
-			+ TABLE_DANGER + "(" + COLUMN_ID
-			+ " integer primary key autoincrement, " 
+			+ TABLE_DANGER + "(" 
+			+ COLUMN_ID + " integer not null, " 
+			+ COLUMN_COMPANY_NAME + " text not null, "
 			+ COLUMN_ADDRESS + " text not null, "
-			+ COLUMN_GADDRESS + " text not null, "
+			+ COLUMN_GADDRESS + " text, "
 			+ COLUMN_LATITUDE + " float not null, "
 			+ COLUMN_LONGITUDE + " float not null, "
-			+ COLUMN_ACCURACY + " integer, "
-			+ COLUMN_STATUS + " integer "
+			+ COLUMN_ACCURACY + " integer not null, "
+			+ COLUMN_STATUS + " integer not null"
 			+ ");";
 
 	public MySQLiteHelper(Context context) {

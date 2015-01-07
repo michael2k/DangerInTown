@@ -2,11 +2,12 @@ package com.kimmyungsun.danger;
 
 public class DangerItem {
 	private long id;
+	private String companyName;
 	private String address;
 	private String gAddress;
-	private float latitude;
-	private float longitude;
-	private int accuracy;
+	private float latitude = 0f;
+	private float longitude = 0f;
+	private int accuracy = -1;
 	private int status;
 	
 	public static DangerItem newInstance(String s) {
@@ -15,12 +16,14 @@ public class DangerItem {
 		if ( s != null && !s.isEmpty() ) {
 			di = new DangerItem();
 			String[] atts = s.split(",");
-			di.setAddress(atts[0]);
-			di.setgAddress(atts[1]);
-			di.setLatitude(Float.valueOf(atts[2]));
-			di.setLongitude(Float.valueOf(atts[3]));
-			di.setAccuracy(Integer.valueOf(atts[4]));
-			di.setStatus(Integer.valueOf(atts[5]));
+			di.setId(Long.valueOf(atts[0]));
+			di.setCompanyName(atts[1]);
+			di.setAddress(atts[2]);
+			di.setgAddress(atts[3]);
+			di.setLatitude(atts[4].isEmpty() ? 0 : Float.valueOf(atts[4]));
+			di.setLongitude(atts[5].isEmpty() ? 0 : Float.valueOf(atts[5]));
+			di.setAccuracy(atts[6].isEmpty() ? -1 : Integer.valueOf(atts[6]));
+			di.setStatus(Integer.valueOf(atts[7]));
 		}
 		return di;
 	}
@@ -74,6 +77,7 @@ public class DangerItem {
 		StringBuilder sb = new StringBuilder();
 		if ( id > 0 ) sb.append(id).append(",");
 		sb
+			.append(companyName).append(",")
 			.append(address).append(",")
 			.append(gAddress).append(",")
 			.append(latitude).append(",")
@@ -82,6 +86,14 @@ public class DangerItem {
 			.append(status)
 		;
 		return sb.toString();
+	}
+
+	public String getCompanyName() {
+		return companyName;
+	}
+
+	public void setCompanyName(String companyName) {
+		this.companyName = companyName;
 	}
 
 }

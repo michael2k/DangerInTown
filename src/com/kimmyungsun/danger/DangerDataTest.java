@@ -33,6 +33,7 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.kimmyungsun.geocode.GeoCodeCalc;
 
@@ -105,6 +106,7 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 		String[] dangers = res.getStringArray(R.array.dangers);
 		for (String danger : dangers) {
 			// DangerItem di = DangerItem.newInstance(danger);
+			Log.i(TAG,danger);
 			DangerItem di = dangerDataSource.createDangerItem(danger);
 			Log.i(TAG,di.toString());
 		}
@@ -326,10 +328,12 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 //        	System.out.println("distance : " + distance);
         	
         	if ( distance < 5.0 ) {
-        		googleMap.addMarker(new MarkerOptions()
-        			.position(new LatLng(lat2, lng2))
-        			.title(di.getAddress())
-        		);
+        		Marker m = googleMap.addMarker(new MarkerOptions()
+		        			.position(new LatLng(lat2, lng2))
+		        			.snippet(di.getAddress())
+		        			.title(di.getCompanyName())
+        					);
+        		m.showInfoWindow();
         		
         	}
         }
