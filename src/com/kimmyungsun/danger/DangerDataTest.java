@@ -1,5 +1,6 @@
 package com.kimmyungsun.danger;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -37,7 +38,7 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.kimmyungsun.geocode.GeoCodeCalc;
 
-public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCallback, LocationListener,
+public class DangerDataTest extends Activity implements OnMapReadyCallback, LocationListener,
 		ConnectionCallbacks, OnConnectionFailedListener, 
 		OnMyLocationButtonClickListener, OnMapClickListener,
 		OnMapLongClickListener {
@@ -53,6 +54,8 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 	
 	private EditText txtSearch;
 	private Button btnSearch;
+	
+	private List<Company> nearCompanys = new ArrayList<Company>();
 	
 	// These settings are the same as the settings for the map. They will in
 	// fact give you updates
@@ -79,14 +82,6 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 		btnSearch = ((Button) findViewById(R.id.btnSearch));
 
 		dangerDataSource = new DangersDataSource(this);
-		dangerDataSource.open();
-
-		List<DangerItem> dis = dangerDataSource.getAllDangerItems();
-		if (dis.size() > 0) {
-			Log.i(TAG, "dis.size() : " + dis.size());
-		} else {
-			readData();
-		}
 
 		setUpGoogleApiClient();
 		
@@ -98,18 +93,6 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 		googleMap.setOnMapClickListener(this);
 		googleMap.setOnMapLongClickListener(this);
 
-	}
-
-	private void readData() {
-		System.out.println("read!!");
-		Resources res = getResources();
-		String[] dangers = res.getStringArray(R.array.dangers);
-		for (String danger : dangers) {
-			// DangerItem di = DangerItem.newInstance(danger);
-			Log.i(TAG,danger);
-			DangerItem di = dangerDataSource.createDangerItem(danger);
-			Log.i(TAG,di.toString());
-		}
 	}
 
 	@Override
@@ -178,22 +161,6 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 		Log.i(TAG, "onDisconnected");
 	}
 
-	@Override
-	public GoogleMap getGoogleMap() {
-		return googleMap;
-	}
-
-	@Override
-	public DangersDataSource getDangerDataSource() {
-		return dangerDataSource;
-	}
-
-	@Override
-	public int getButtonStatus() {
-		return buttonStatus;
-	}
-
-	@Override
 	public void setButtonStatus(int buttonStatus) {
 		this.buttonStatus = buttonStatus;
 
@@ -202,15 +169,15 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 		if (buttonStatus == BUTTON_ENABLED) {
 			Log.i(TAG,
 					"buttonStatus : BUTTON_ENABLED");
-			if (googleApiClient != null && googleApiClient.isConnected()) {
-				locationClientUpdates();
+			if (googleApiClient != null ) {
+				googleApiClient.connect();
 			}
 		} else {
 			Log.i(TAG,
 					"buttonStatus : BUTTON_DISABLED");
 			if (googleApiClient != null && googleApiClient.isConnected()) {
-				LocationServices.FusedLocationApi
-						.removeLocationUpdates(googleApiClient, this);
+				LocationServices.FusedLocationApi.removeLocationUpdates(googleApiClient, this);
+				googleApiClient.disconnect();
 			}
 		}
 	}
@@ -242,11 +209,12 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 
 		googleMap.clear();
 		
+		processLocationChanged(point.latitude, point.longitude);
+
 		googleMap.addMarker(new MarkerOptions()
 		.position(point)
-		.title("현재위치"));
-
-		processLocationChanged(point.latitude, point.longitude);
+		.title("현재위치")).showInfoWindow();;
+		
 
 	}
 	
@@ -290,7 +258,7 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 	public void processLocationChanged(double lat, double lng) {
 		Log.i(TAG, "processLocationChanged");
 		
-        List<DangerItem> dis = dangerDataSource.getAllDangerItems();
+        List<Company> companys = dangerDataSource.getAllCompanys();
         
         
         if ( buttonStatus == BUTTON_ENABLED ) {
@@ -320,9 +288,11 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
         googleMap.addCircle(co);
         
        
-        for ( DangerItem di : dis ) {
-        	double lat2 = di.getLatitude();
-        	double lng2 = di.getLongitude();
+        nearCompanys.clear();
+        
+        for ( Company company : companys ) {
+        	double lat2 = company.getLatitude();
+        	double lng2 = company.getLongitude();
         	double distance = GeoCodeCalc.CalcDistance(lat, lng, lat2, lng2);
         	
 //        	System.out.println("distance : " + distance);
@@ -330,10 +300,18 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
         	if ( distance < 5.0 ) {
         		Marker m = googleMap.addMarker(new MarkerOptions()
 		        			.position(new LatLng(lat2, lng2))
-		        			.snippet(di.getAddress())
-		        			.title(di.getCompanyName())
+		        			.snippet(company.getAddress())
+		        			.title(company.getCompanyName())
         					);
         		m.showInfoWindow();
+        		
+        		List<Matter> matters = dangerDataSource.searchMatters(company);
+        		for( Matter matter : matters ) {
+        			company.addMatter(matter);
+        		}
+        		nearCompanys.add(company);
+        		
+        		Log.i(TAG, nearCompanys.toString());
         		
         	}
         }
@@ -348,10 +326,10 @@ public class DangerDataTest extends Activity implements DangerMap, OnMapReadyCal
 		String searchString = txtSearch.getText().toString();
 		Log.i(TAG, "searchString:" + searchString);
 		
-		List<DangerItem> list = dangerDataSource.searchDangerItems(searchString);
-		Log.i(TAG, "search result list size:" + list.size());
-		for ( DangerItem di : list) {
-			Log.i(TAG, "di:" + di.toString());
+		List<Company> companys = dangerDataSource.searchCompanys(searchString);
+		Log.i(TAG, "search result list size:" + companys.size());
+		for ( Company company : companys) {
+			Log.i(TAG, "company:" + company.toString());
 			
 		}
 		

@@ -1,6 +1,9 @@
 package com.kimmyungsun.danger;
 
-public class DangerItem {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Company {
 	private long id;
 	private String companyName;
 	private String address;
@@ -10,12 +13,14 @@ public class DangerItem {
 	private int accuracy = -1;
 	private int status;
 	
-	public static DangerItem newInstance(String s) {
-		DangerItem di = null;
+	private List<Matter> matters = new ArrayList<Matter>();
+	
+	public static Company newInstance(String s) {
+		Company di = null;
 		
 		if ( s != null && !s.isEmpty() ) {
-			di = new DangerItem();
-			String[] atts = s.split(",");
+			di = new Company();
+			String[] atts = s.split(",", -1);
 			di.setId(Long.valueOf(atts[0]));
 			di.setCompanyName(atts[1]);
 			di.setAddress(atts[2]);
@@ -85,6 +90,9 @@ public class DangerItem {
 			.append(accuracy).append(",")
 			.append(status)
 		;
+		if ( matters.size() > 0 ) {
+			sb.append(matters.toString());
+		}
 		return sb.toString();
 	}
 
@@ -94,6 +102,10 @@ public class DangerItem {
 
 	public void setCompanyName(String companyName) {
 		this.companyName = companyName;
+	}
+	
+	public void addMatter(Matter matter) {
+		matters.add(matter);
 	}
 
 }
