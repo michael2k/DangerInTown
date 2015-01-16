@@ -233,7 +233,8 @@ public class MySQLiteHelper extends SQLiteOpenHelper {
 		List<Company> companys = new ArrayList<Company>();
 		
 		Cursor cursor = getReadableDatabase().query(MySQLiteHelper.TABLE_COMPANY, companyAllColumns, 
-				MySQLiteHelper.COLUMN_ADDRESS + " like '%" + searchString + "%'", 
+				MySQLiteHelper.COLUMN_ADDRESS + " like '%" + searchString + "%' "
+				+ " OR " + MySQLiteHelper.COLUMN_COMPANY_NAME + " like '%" + searchString + "%' ", 
 				null, null, null, null);
 		
 		cursor.moveToFirst();

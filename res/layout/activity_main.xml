@@ -6,32 +6,12 @@
     android:orientation="vertical"
     tools:context="com.kimmyungsun.danger.DangerDataTest" >
 
-    <RelativeLayout
+    <SearchView
+        android:id="@+id/searchView1"
         android:layout_width="match_parent"
-        android:layout_height="40dp" >
+        android:layout_height="wrap_content" >
 
-        <EditText
-            android:id="@+id/txtSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_toLeftOf="@+id/btnSearch"
-            android:ems="10" >
-
-            <requestFocus />
-        </EditText>
-
-        <Button
-            android:id="@+id/btnSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
-            android:onClick="searchLocation"
-            android:text="찾기" />
-
-    </RelativeLayout>
+    </SearchView>
 
     <fragment
         android:id="@+id/map"
