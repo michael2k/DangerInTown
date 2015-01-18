@@ -3,17 +3,17 @@ package com.kimmyungsun.danger;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.content.DialogInterface;
+import android.app.SearchManager;
+import android.app.SearchableInfo;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.location.Location;
-import android.opengl.Visibility;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.ContactsContract;
+import android.provider.SearchRecentSuggestions;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -22,6 +22,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SearchView;
+import android.widget.SearchView.OnQueryTextListener;
 
 import com.google.android.gms.common.ConnectionResult;
 //import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
@@ -43,12 +44,16 @@ import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.kimmyungsun.datamng.YPYNetUtils;
-import com.kimmyungsun.geocode.GeoCodeCalc;
-import com.kimmyungsun.object.PlaceObject;
-import com.kimmyungsun.object.ResponsePlaceResult;
+import com.kimmyungsun.danger.constanst.IDangerConstants;
+import com.kimmyungsun.danger.datamng.YPYNetUtils;
+import com.kimmyungsun.danger.geocode.GeoCodeCalc;
+import com.kimmyungsun.danger.object.PlaceObject;
+import com.kimmyungsun.danger.object.ResponsePlaceResult;
+import com.kimmyungsun.danger.provider.DangerSuggestionProvider;
+import com.kimmyungsun.danger.provider.DangersDataSource;
+import com.kimmyungsun.danger.provider.MySuggestionProvider;
 
-public class DangerDataTest extends Activity implements OnMapReadyCallback, LocationListener,
+public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCallback, LocationListener, IDangerConstants,
 		ConnectionCallbacks, OnConnectionFailedListener, 
 		OnMyLocationButtonClickListener, OnMapClickListener,
 		OnMapLongClickListener {
@@ -89,10 +94,21 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 		
 		
 		setContentView(R.layout.activity_main);
+		
+		
+	    Intent intent  = getIntent();
+
+	    if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+	        String query = intent.getStringExtra(SearchManager.QUERY);
+	        SearchRecentSuggestions suggestions = new SearchRecentSuggestions(this,
+	                DangerSuggestionProvider.AUTHORITY, DangerSuggestionProvider.MODE);
+	        suggestions.saveRecentQuery(query, null);
+	    }
+
 
 		((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
 		
-//		SearchView searchView = (SearchView) findViewById(R.id.searchView1);
+//		SearchView searchView = (SearchView) findViewById(R.id.searchView);
 //		searchView.setSubmitButtonEnabled(true);
 //		searchView.setBackgroundColor(Color.WHITE);
 		
@@ -103,12 +119,9 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 
 		setUpGoogleApiClient();
 		
-		alertShow();
+//		alertShow();
 		
-	}
-
-	private void showDaialog() {
-		
+		setupSearchView();
 	}
 
 	private void setUpMap() {
@@ -135,7 +148,7 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 					.removeLocationUpdates(googleApiClient, this);
 			googleApiClient.disconnect();
 		}
-		dangerDataSource.close();
+//		dangerDataSource.close();
 		super.onPause();
 	}
 
@@ -143,7 +156,7 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	protected void onResume() {
 		Log.i(TAG, "onResume");
 		super.onResume();
-		dangerDataSource.open();
+//		dangerDataSource.open();
 //		googleApiClient.connect();
 		setUpGoogleApiClient();
 	}
@@ -239,10 +252,10 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	public void onMapClick(LatLng point) {
 		Log.i(TAG, "onMapClick");
 
-		SearchView searchView = (SearchView) findViewById(R.id.searchView1);
-		searchView.setIconified(true);
-		searchView.setBackgroundColor(Color.WHITE);
-		searchView.setVisibility(View.VISIBLE);
+//		SearchView searchView = (SearchView) findViewById(R.id.searchView);
+//		searchView.setIconified(true);
+//		searchView.setBackgroundColor(Color.WHITE);
+//		searchView.setVisibility(View.VISIBLE);
 
 		setButtonStatus(BUTTON_DISABLED);
 
@@ -310,6 +323,7 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 		Log.i(TAG, "processLocationChanged");
 		
         List<Company> companys = dangerDataSource.getAllCompanys();
+//        List<Company> companys = getContentResolver().
         
         
         if ( buttonStatus == BUTTON_ENABLED ) {
@@ -362,7 +376,7 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
         		}
         		nearCompanys.add(company);
         		
-        		Log.i(TAG, nearCompanys.toString());
+//        		Log.i(TAG, nearCompanys.toString());
         		
         	}
         }
@@ -403,51 +417,48 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	}
 
 
-	public void alertShow(){
-	
-	   MyDialogFragment frag = MyDialogFragment.newInstance();
-	   frag.show( getFragmentManager() , "TAG" );
-	}//end alertShow
-
-
-	public static class MyDialogFragment  extends DialogFragment {
-	
-	
-	   public static MyDialogFragment  newInstance(){
-	
-	       return new MyDialogFragment();
-	   }
-	
-	   @Override
-	   public Dialog  onCreateDialog(Bundle savedInstanceState){
-	
-	
-	      AlertDialog.Builder  builder = new AlertDialog.Builder(getActivity());
-	      builder.setTitle( "타이틀" );
-	      builder.setMessage( "메시지" );
-	      builder.setPositiveButton( "확인", new DialogInterface.OnClickListener() {
-	
-	
-	            @Override
-	           public void onClick( DialogInterface dialog , int which ){
-	
-	
-	                Log.i("MyTag" , "확인 클릭" );
-	
-	          }
-	      });//
-	      builder.setNegativeButton( "취소", null );
-	      return builder.create();
-	
-	  }//
-	
-	}//end MyDialogFragment
-
-
 	@Override
 	public boolean onSearchRequested() {
 		// TODO Auto-generated method stub
 		return super.onSearchRequested();
 	}
+
+	@Override
+	protected void onNewIntent(Intent intent) {
+		Log.i(TAG, "onNewIntent");
+		if (ContactsContract.Intents.SEARCH_SUGGESTION_CLICKED.equals(intent.getAction())) {
+			//handles suggestion clicked query
+//			String displayName = getDisplayNameForContact(intent);
+//			resultText.setText(displayName);
+		} else if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+			// handles a search query
+			String query = intent.getStringExtra(SearchManager.QUERY);
+//			resultText.setText("should search for query: '" + query + "'...");
+		}
+	}
+
+	private void setupSearchView() {
+		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+		SearchView searchView = (SearchView) findViewById(R.id.searchView);
+		SearchableInfo searchableInfo = searchManager.getSearchableInfo(getComponentName());
+		searchView.setSearchableInfo(searchableInfo);
+		searchView.setOnQueryTextListener(onQueryTextHandler);
+		
+	}
+	
+	public static OnQueryTextListener onQueryTextHandler = new OnQueryTextListener() {
+		
+		@Override
+		public boolean onQueryTextSubmit(String query) {
+			Log.i(TAG, "onQueryTextSubmit( " + query + " )");
+			return false;
+		}
+		
+		@Override
+		public boolean onQueryTextChange(String newText) {
+			Log.i(TAG, "onQueryTextChange( " + newText + " )");
+			return false;
+		}
+	};
 
 }

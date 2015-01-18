@@ -3,6 +3,8 @@ package com.kimmyungsun.danger;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.database.Cursor;
+
 public class Company {
 	private long id;
 	private String companyName;
@@ -106,6 +108,19 @@ public class Company {
 	
 	public void addMatter(Matter matter) {
 		matters.add(matter);
+	}
+
+	public static Company cursorToCompany(Cursor cursor) {
+		Company company = new Company();
+		company.setId(cursor.getLong(0));
+		company.setCompanyName(cursor.getString(1));
+		company.setAddress(cursor.getString(2));
+		company.setgAddress(cursor.getString(3));
+		company.setLatitude(cursor.getFloat(4));
+		company.setLongitude(cursor.getFloat(5));
+		company.setAccuracy(cursor.getInt(6));
+		company.setStatus(cursor.getInt(7));
+		return company;
 	}
 
 }

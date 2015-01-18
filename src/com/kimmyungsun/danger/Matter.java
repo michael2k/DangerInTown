@@ -1,5 +1,7 @@
 package com.kimmyungsun.danger;
 
+import android.database.Cursor;
+
 public class Matter {
 	
 	private int id;
@@ -82,6 +84,19 @@ public class Matter {
 			.append(resultPart)
 		;
 		return sb.toString();
+	}
+	
+	public static Matter cursorToMatter(Cursor cursor) {
+		Matter matter = new Matter();
+		matter.setId(cursor.getInt(0));
+		matter.setCompanyCode(cursor.getInt(1));
+		matter.setMatterName(cursor.getString(2));
+		matter.setCasNo(cursor.getString(3));
+		matter.setOutQty(cursor.getFloat(4));
+		matter.setMoveQty(cursor.getFloat(5));
+		matter.setRiskInfo(cursor.getString(6));
+		matter.setResultPart(cursor.getString(7));
+		return matter;
 	}
 	
 	public static Matter newInstance(String s) {
