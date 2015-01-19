@@ -147,5 +147,6 @@
         <item>Settings</item>
         <item>About Us</item>
     </string-array>
+    <string name="action_search">찾기</string>
     
 </resources>

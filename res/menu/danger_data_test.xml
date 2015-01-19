@@ -2,6 +2,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.kimmyungsun.danger.DangerDataTest" >
+    
+    <item android:id="@+id/action_search"
+          android:title="@string/action_search"
+          android:icon="@android:drawable/ic_menu_search"
+          android:showAsAction="ifRoom"
+          android:actionViewClass="android.widget.SearchView" />
+    <!-- Settings, should always be in the overflow -->
+    <item android:id="@+id/action_settings"
+          android:title="@string/action_settings"
+          android:showAsAction="ifRoom" />
 
 
 </menu>

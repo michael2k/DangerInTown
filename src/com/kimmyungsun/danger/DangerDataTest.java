@@ -51,7 +51,6 @@ import com.kimmyungsun.danger.object.PlaceObject;
 import com.kimmyungsun.danger.object.ResponsePlaceResult;
 import com.kimmyungsun.danger.provider.DangerSuggestionProvider;
 import com.kimmyungsun.danger.provider.DangersDataSource;
-import com.kimmyungsun.danger.provider.MySuggestionProvider;
 
 public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCallback, LocationListener, IDangerConstants,
 		ConnectionCallbacks, OnConnectionFailedListener, 
@@ -89,8 +88,8 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		Log.i(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
 		
-		requestWindowFeature(Window.FEATURE_NO_TITLE);
-		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN, WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
+//		requestWindowFeature(Window.FEATURE_NO_TITLE);
+//		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN, WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
 		
 		
 		setContentView(R.layout.activity_main);
@@ -100,6 +99,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 	    if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
 	        String query = intent.getStringExtra(SearchManager.QUERY);
+	        Log.i(TAG, "query[ " + query + " ]");
 	        SearchRecentSuggestions suggestions = new SearchRecentSuggestions(this,
 	                DangerSuggestionProvider.AUTHORITY, DangerSuggestionProvider.MODE);
 	        suggestions.saveRecentQuery(query, null);
@@ -137,6 +137,18 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		// Inflate the menu; this adds items to the action bar if it is present.
 		Log.i(TAG, "onCreateOptionsMenu");
 		getMenuInflater().inflate(R.menu.danger_data_test, menu);
+		
+	    // Get the SearchView and set the searchable configuration
+	    SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+	    SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+	    // Assumes current activity is the searchable activity
+	    searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+	    searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+	    
+		SearchableInfo searchableInfo = searchManager.getSearchableInfo(getComponentName());
+		searchView.setSearchableInfo(searchableInfo);
+		searchView.setOnQueryTextListener(onQueryTextHandler);
+
 		return true;
 	}
 
@@ -428,22 +440,23 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		Log.i(TAG, "onNewIntent");
 		if (ContactsContract.Intents.SEARCH_SUGGESTION_CLICKED.equals(intent.getAction())) {
 			//handles suggestion clicked query
+			Log.i(TAG, "onNewIntent intent[ " + intent.toString() + " ]");
 //			String displayName = getDisplayNameForContact(intent);
 //			resultText.setText(displayName);
 		} else if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
 			// handles a search query
 			String query = intent.getStringExtra(SearchManager.QUERY);
+			Log.i(TAG, "onNewIntent query[ " + query + " ]");
 //			resultText.setText("should search for query: '" + query + "'...");
 		}
 	}
 
 	private void setupSearchView() {
-		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-		SearchView searchView = (SearchView) findViewById(R.id.searchView);
-		SearchableInfo searchableInfo = searchManager.getSearchableInfo(getComponentName());
-		searchView.setSearchableInfo(searchableInfo);
-		searchView.setOnQueryTextListener(onQueryTextHandler);
-		
+//		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+//		SearchView searchView = (SearchView) findViewById(R.id.searchView);
+//		SearchableInfo searchableInfo = searchManager.getSearchableInfo(getComponentName());
+//		searchView.setSearchableInfo(searchableInfo);
+//		searchView.setOnQueryTextListener(onQueryTextHandler);
 	}
 	
 	public static OnQueryTextListener onQueryTextHandler = new OnQueryTextListener() {

@@ -90,7 +90,7 @@ public class DangerContentProvider extends ContentProvider implements IDangerCon
 
 	@Override
 	public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-		Log.i(TAG, "query");
+		Log.i(TAG, "query: uri[" + uri.toString() + "]");
 		Cursor c=null;
 		switch (uriMatcher.match(uri)) {
         case SEARCH_COMPANY_KEYWORD:
