@@ -1,21 +1,24 @@
 package com.kimmyungsun.danger.provider;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 
+import android.app.SearchManager;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
+import android.provider.BaseColumns;
 import android.util.Log;
 
 import com.kimmyungsun.danger.Company;
 import com.kimmyungsun.danger.Matter;
 import com.kimmyungsun.danger.R;
+import com.kimmyungsun.danger.constanst.IDangerConstants;
 
-public class DangerDBHelper extends SQLiteOpenHelper {
+public class DangerDBHelper extends SQLiteOpenHelper implements IDangerConstants {
 	
 	private static final String TAG = DangerDBHelper.class.getName();
 	
@@ -204,23 +207,13 @@ public class DangerDBHelper extends SQLiteOpenHelper {
 		
 	}
 
-	public List<Company> searchCompanys(String searchString) {
-		List<Company> companys = new ArrayList<Company>();
+	public Cursor searchCompanys(String searchString) {
 		
-		Cursor cursor = getReadableDatabase().query(DangerDBHelper.TABLE_COMPANY, COMPANY_ALL_COLUMNS, 
+		return getReadableDatabase().query(DangerDBHelper.TABLE_COMPANY, COMPANY_ALL_COLUMNS, 
 				DangerDBHelper.COLUMN_ADDRESS + " like '%" + searchString + "%' "
 				+ " OR " + DangerDBHelper.COLUMN_COMPANY_NAME + " like '%" + searchString + "%' ", 
 				null, null, null, null);
 		
-		cursor.moveToFirst();
-		while( !cursor.isAfterLast()) {
-			Company company = Company.cursorToCompany(cursor);
-			companys.add(company);
-			cursor.moveToNext();
-		}
-		// make sure to close the cursor
-		cursor.close();
-		return companys;
 	}
 
 	public Cursor searchMatters(long companyId) {
@@ -236,5 +229,35 @@ public class DangerDBHelper extends SQLiteOpenHelper {
 		System.out.println("DangerItem deleted with id: " + id);
 		getWritableDatabase().delete(DangerDBHelper.TABLE_COMPANY, DangerDBHelper.COLUMN_ID + " = " + id, null);
 	}
+
+	private static HashMap<String, String> buildColumnMap() {
+		HashMap<String, String> map = new HashMap<String, String>();
+		map.put(BaseColumns._ID, KEY_ID+" as " + KEY_ID);
+		map.put(SearchManager.SUGGEST_COLUMN_TEXT_1,COLUMN_COMPANY_NAME+ " AS " + SearchManager.SUGGEST_COLUMN_TEXT_1);
+		map.put(SearchManager.SUGGEST_COLUMN_INTENT_EXTRA_DATA, COLUMN_ADDRESS + " AS " +SearchManager.SUGGEST_COLUMN_INTENT_EXTRA_DATA);
+		map.put(SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID, KEY_ID + " as " + SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID );
+		return map;
+	}
+	
+	public Cursor query(String selection, String[] selectionArgs,String[] columns) {
+		SQLiteQueryBuilder builder = new SQLiteQueryBuilder();
+		builder.setTables(TABLE_COMPANY);
+		builder.setProjectionMap(buildColumnMap());
+
+		Cursor cursor = builder.query(getReadableDatabase(), new String[] {
+				BaseColumns._ID, SearchManager.SUGGEST_COLUMN_TEXT_1,
+				SearchManager.SUGGEST_COLUMN_INTENT_EXTRA_DATA,
+				SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID }, DangerDBHelper.COLUMN_ADDRESS + " like '%" + selectionArgs[0] + "%' "
+						+ " OR " + DangerDBHelper.COLUMN_COMPANY_NAME + " like '%" + selectionArgs[0] + "%' ",
+				null, null, null, COLUMN_COMPANY_NAME + " asc ", "20");
+		return cursor;
+	}
+
+	public Cursor getCompany(long id) {
+		
+		return getReadableDatabase().query(DangerDBHelper.TABLE_COMPANY, COMPANY_ALL_COLUMNS, 
+				DangerDBHelper.COLUMN_ID + " = " + id , null, null, null, null);
+		
+	}	
 
 }

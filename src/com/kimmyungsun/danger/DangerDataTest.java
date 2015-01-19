@@ -4,21 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.SearchManager;
-import android.app.SearchableInfo;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.location.Location;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.ContactsContract;
-import android.provider.SearchRecentSuggestions;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SearchView;
@@ -42,6 +40,7 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.kimmyungsun.danger.constanst.IDangerConstants;
@@ -49,7 +48,6 @@ import com.kimmyungsun.danger.datamng.YPYNetUtils;
 import com.kimmyungsun.danger.geocode.GeoCodeCalc;
 import com.kimmyungsun.danger.object.PlaceObject;
 import com.kimmyungsun.danger.object.ResponsePlaceResult;
-import com.kimmyungsun.danger.provider.DangerSuggestionProvider;
 import com.kimmyungsun.danger.provider.DangersDataSource;
 
 public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCallback, LocationListener, IDangerConstants,
@@ -65,6 +63,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 	public static final int BUTTON_DISABLED = 0;
 	public static final int BUTTON_ENABLED = 1;
 	private int buttonStatus = BUTTON_ENABLED;
+//	private int buttonStatus = BUTTON_DISABLED;
 	
 	private Handler handler = new Handler();
 	
@@ -85,7 +84,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		Log.i(TAG, "onCreate");
+		Log.d(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
 		
 //		requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -95,17 +94,6 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		setContentView(R.layout.activity_main);
 		
 		
-	    Intent intent  = getIntent();
-
-	    if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-	        String query = intent.getStringExtra(SearchManager.QUERY);
-	        Log.i(TAG, "query[ " + query + " ]");
-	        SearchRecentSuggestions suggestions = new SearchRecentSuggestions(this,
-	                DangerSuggestionProvider.AUTHORITY, DangerSuggestionProvider.MODE);
-	        suggestions.saveRecentQuery(query, null);
-	    }
-
-
 		((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
 		
 //		SearchView searchView = (SearchView) findViewById(R.id.searchView);
@@ -135,7 +123,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		Log.i(TAG, "onCreateOptionsMenu");
+		Log.d(TAG, "onCreateOptionsMenu");
 		getMenuInflater().inflate(R.menu.danger_data_test, menu);
 		
 	    // Get the SearchView and set the searchable configuration
@@ -145,8 +133,8 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 	    searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 	    searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
 	    
-		SearchableInfo searchableInfo = searchManager.getSearchableInfo(getComponentName());
-		searchView.setSearchableInfo(searchableInfo);
+//		SearchableInfo searchableInfo = searchManager.getSearchableInfo(getComponentName());
+//		searchView.setSearchableInfo(searchableInfo);
 		searchView.setOnQueryTextListener(onQueryTextHandler);
 
 		return true;
@@ -154,7 +142,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 	@Override
 	protected void onPause() {
-		Log.i(TAG, "onPause");
+		Log.d(TAG, "onPause");
 		if (googleApiClient != null && googleApiClient.isConnected()) {
 			LocationServices.FusedLocationApi
 					.removeLocationUpdates(googleApiClient, this);
@@ -166,7 +154,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 	@Override
 	protected void onResume() {
-		Log.i(TAG, "onResume");
+		Log.d(TAG, "onResume");
 		super.onResume();
 //		dangerDataSource.open();
 //		googleApiClient.connect();
@@ -176,7 +164,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 	
 
 	private synchronized void setUpGoogleApiClient() {
-		Log.i(TAG, "setUpGoogleApiClient");
+		Log.d(TAG, "setUpGoogleApiClient");
 		handler.post(new Runnable() {
 			
 			@Override
@@ -197,7 +185,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 	@Override
 	public void onConnected(Bundle connectionHint) {
-		Log.i(TAG, "onConnected");
+		Log.d(TAG, "onConnected");
 
 		locationClientUpdates();
 
@@ -220,27 +208,27 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 	@Override
 	public void onConnectionFailed(ConnectionResult connectionResult) {
-		Log.i(TAG, "onConnectionFailed");
+		Log.d(TAG, "onConnectionFailed");
 	}
 
 //	@Override
 	public void onDisconnected() {
-		Log.i(TAG, "onDisconnected");
+		Log.d(TAG, "onDisconnected");
 	}
 
 	public void setButtonStatus(int buttonStatus) {
 		this.buttonStatus = buttonStatus;
 
-		Log.i(TAG, "buttonStatus : " + buttonStatus);
+		Log.d(TAG, "buttonStatus : " + buttonStatus);
 
 		if (buttonStatus == BUTTON_ENABLED) {
-			Log.i(TAG,
+			Log.d(TAG,
 					"buttonStatus : BUTTON_ENABLED");
 			if (googleApiClient != null ) {
 				googleApiClient.connect();
 			}
 		} else {
-			Log.i(TAG,
+			Log.d(TAG,
 					"buttonStatus : BUTTON_DISABLED");
 			if (googleApiClient != null && googleApiClient.isConnected()) {
 				LocationServices.FusedLocationApi.removeLocationUpdates(googleApiClient, this);
@@ -251,7 +239,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 	@Override
 	public boolean onMyLocationButtonClick() {
-		Log.i(TAG, "onMyLocationButtonClick");
+		Log.d(TAG, "onMyLocationButtonClick");
 
 		buttonStatus = (buttonStatus + 1) % 2;
 
@@ -262,7 +250,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 	@Override
 	public void onMapClick(LatLng point) {
-		Log.i(TAG, "onMapClick");
+		Log.d(TAG, "onMapClick");
 
 //		SearchView searchView = (SearchView) findViewById(R.id.searchView);
 //		searchView.setIconified(true);
@@ -275,7 +263,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 	@Override
 	public void onMapLongClick(LatLng point) {
-		Log.i(TAG, "onMapLongClick");
+		Log.d(TAG, "onMapLongClick");
 
 		setButtonStatus(BUTTON_DISABLED);
 		
@@ -301,7 +289,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 	@Override
 	public void onMapReady(GoogleMap googleMap) {
-		Log.i(TAG, "onMapReady");
+		Log.d(TAG, "onMapReady");
 		
 		this.googleMap = googleMap;
 		setUpMap();
@@ -310,18 +298,18 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 	@Override
 	public void onConnectionSuspended(int cause) {
-		Log.i(TAG, "onConnectionSuspended");
+		Log.d(TAG, "onConnectionSuspended");
 		
 	}
 
 	@Override
 	public void onLocationChanged(Location location) {
-		Log.i(TAG, "onLocationChanged:" + location);
+		Log.d(TAG, "onLocationChanged:" + location);
 		
         double lat = location.getLatitude();
         double lng = location.getLongitude();
         
-        Log.i(TAG, "lat:" + lat + ", lng:" + lng);
+        Log.d(TAG, "lat:" + lat + ", lng:" + lng);
         
         mLatLng = new LatLng(lat, lng);
         
@@ -332,15 +320,15 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 	}
 
 	public void processLocationChanged(double lat, double lng) {
-		Log.i(TAG, "processLocationChanged");
+		Log.d(TAG, "processLocationChanged");
 		
         List<Company> companys = dangerDataSource.getAllCompanys();
 //        List<Company> companys = getContentResolver().
         
         
-        if ( buttonStatus == BUTTON_ENABLED ) {
+//        if ( buttonStatus == BUTTON_ENABLED ) {
         	googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng),12));
-        }
+//        }
         
         CircleOptions co = new CircleOptions();
         co.center(new LatLng(lat, lng));
@@ -364,34 +352,78 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
         
         googleMap.addCircle(co);
         
+        addCompanyMarker(lat, lng, companys);
        
-        nearCompanys.clear();
-        
-        for ( Company company : companys ) {
-        	double lat2 = company.getLatitude();
-        	double lng2 = company.getLongitude();
-        	double distance = GeoCodeCalc.CalcDistance(lat, lng, lat2, lng2);
-        	
+	}
+	
+	private List<Marker> addCompanyMarker(List<Company> companys ) {
+		
+		List<Marker> markers = new ArrayList<Marker>();
+		
+		nearCompanys.clear();
+		
+		for ( Company company : companys ) {
+			
+			markers.add( addCompanyMarer(company) );
+			
+			nearCompanys.add(company);
+			
+		}
+		
+		return markers;
+		
+	}
+	
+	private Marker addCompanyMarer ( Company company ) {
+		
+		Marker m = googleMap.addMarker(new MarkerOptions()
+		.position(new LatLng(company.getLatitude(), company.getLongitude()))
+		.snippet(company.getAddress())
+		.title(company.getCompanyName())
+				);
+		m.showInfoWindow();
+		
+		List<Matter> matters = dangerDataSource.searchMatters(company);
+		for( Matter matter : matters ) {
+			company.addMatter(matter);
+		}
+		
+		return m;
+		
+	}
+	
+	
+	private void addCompanyMarker(double lat, double lng, List<Company> companys ) {
+		
+		nearCompanys.clear();
+		
+		for ( Company company : companys ) {
+			
+			double lat2 = company.getLatitude();
+			double lng2 = company.getLongitude();
+			double distance = GeoCodeCalc.CalcDistance(lat, lng, lat2, lng2);
+			
 //        	System.out.println("distance : " + distance);
-        	
-        	if ( distance < 5.0 ) {
-        		Marker m = googleMap.addMarker(new MarkerOptions()
-		        			.position(new LatLng(lat2, lng2))
-		        			.snippet(company.getAddress())
-		        			.title(company.getCompanyName())
-        					);
-        		m.showInfoWindow();
-        		
-        		List<Matter> matters = dangerDataSource.searchMatters(company);
-        		for( Matter matter : matters ) {
-        			company.addMatter(matter);
-        		}
-        		nearCompanys.add(company);
-        		
+			
+			if ( distance < 5.0 ) {
+				Marker m = googleMap.addMarker(new MarkerOptions()
+				.position(new LatLng(lat2, lng2))
+				.snippet(company.getAddress())
+				.title(company.getCompanyName())
+						);
+				m.showInfoWindow();
+				
+				List<Matter> matters = dangerDataSource.searchMatters(company);
+				for( Matter matter : matters ) {
+					company.addMatter(matter);
+				}
+				nearCompanys.add(company);
+				
 //        		Log.i(TAG, nearCompanys.toString());
-        		
-        	}
-        }
+				
+			}
+		}
+		
 	}
 	
 	
@@ -399,14 +431,14 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 	 * called when the user clicks the btnSearch button
 	 */
 	public void searchLocation(View view) {
-		Log.i(TAG, "searchLocation");
+		Log.d(TAG, "searchLocation");
 		String searchString = txtSearch.getText().toString();
-		Log.i(TAG, "searchString:" + searchString);
+		Log.d(TAG, "searchString:" + searchString);
 		
 		List<Company> companys = dangerDataSource.searchCompanys(searchString);
-		Log.i(TAG, "search result list size:" + companys.size());
+		Log.d(TAG, "search result list size:" + companys.size());
 		for ( Company company : companys) {
-			Log.i(TAG, "company:" + company.toString());
+			Log.d(TAG, "company:" + company.toString());
 			
 		}
 		
@@ -416,11 +448,11 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 			public void run() {
 				ResponsePlaceResult rpr = YPYNetUtils.getListPlacesBaseOnText(DangerDataTest.this, mLatLng.longitude, mLatLng.latitude, txtSearch.getText().toString());
 				
-				Log.i(TAG, rpr.toString());
+				Log.d(TAG, rpr.toString());
 				
 				List<PlaceObject> places = rpr.getListPlaceObjects();
 				for ( PlaceObject po : places ) {
-					Log.i(TAG, po.getName());
+					Log.d(TAG, po.getName());
 				}
 				
 			}
@@ -431,23 +463,52 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 	@Override
 	public boolean onSearchRequested() {
-		// TODO Auto-generated method stub
+		Log.d(TAG, "onSearchRequested");
 		return super.onSearchRequested();
 	}
 
 	@Override
 	protected void onNewIntent(Intent intent) {
-		Log.i(TAG, "onNewIntent");
-		if (ContactsContract.Intents.SEARCH_SUGGESTION_CLICKED.equals(intent.getAction())) {
+		Log.d(TAG, "onNewIntent");
+		if (Intent.ACTION_VIEW.equals(intent.getAction())) {
 			//handles suggestion clicked query
-			Log.i(TAG, "onNewIntent intent[ " + intent.toString() + " ]");
-//			String displayName = getDisplayNameForContact(intent);
-//			resultText.setText(displayName);
+			Log.d(TAG, "onNewIntent ACTION_VIEW intent[ " + intent.toString() + " ]");
+			Cursor cursor = getContentResolver().query(intent.getData(), null, null, new String[] {intent.getData().getLastPathSegment()}, null);
+			cursor.moveToFirst();
+			Company company = Company.cursorToCompany(cursor);
+			Log.d(TAG, "c :" + company.toString());
+			
+        	googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(company.getLatitude(), company.getLongitude()),12));
+        	
+        	addCompanyMarer(company);
+
+			
 		} else if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
 			// handles a search query
+			Log.d(TAG, "onNewIntent ACTION_SEARCH intent[ " + intent.toString() + " ]");
 			String query = intent.getStringExtra(SearchManager.QUERY);
-			Log.i(TAG, "onNewIntent query[ " + query + " ]");
-//			resultText.setText("should search for query: '" + query + "'...");
+			Log.d(TAG, "onNewIntent ACTION_SEARCH query[ " + query + " ]");
+			
+			if ( query != null && !query.trim().isEmpty() ) {
+				
+				List<Company> companys = dangerDataSource.searchCompanys(query);
+				
+				if ( companys != null && companys.size() > 0 ) {
+					
+					Log.d(TAG, "onNewIntent ACTION_SEARCH : " + companys.toString());
+					
+					List<Marker> markers = addCompanyMarker(companys);
+					
+					LatLngBounds.Builder builder = LatLngBounds.builder();
+					for(Marker m : markers){
+						builder.include(m.getPosition());
+					}
+					LatLngBounds bounds = builder.build();
+					googleMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 15));			
+					
+				}
+
+			}
 		}
 	}
 
@@ -463,13 +524,13 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		
 		@Override
 		public boolean onQueryTextSubmit(String query) {
-			Log.i(TAG, "onQueryTextSubmit( " + query + " )");
+			Log.d(TAG, "onQueryTextSubmit( " + query + " )");
 			return false;
 		}
 		
 		@Override
 		public boolean onQueryTextChange(String newText) {
-			Log.i(TAG, "onQueryTextChange( " + newText + " )");
+			Log.d(TAG, "onQueryTextChange( " + newText + " )");
 			return false;
 		}
 	};

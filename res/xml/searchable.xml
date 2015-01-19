@@ -3,6 +3,8 @@
     android:label="@string/app_name" 
     android:hint="@string/findCompany"
     android:voiceSearchMode="showVoiceSearchButton|launchRecognizer"
-    android:searchSuggestAuthority="com.kimmyungsun.danger.provider.DangerSuggestionProvider"
+    android:searchSuggestAuthority="com.kimmyungsun.danger.provider.MySuggestionProvider"
+    android:searchSuggestIntentAction="android.intent.action.VIEW"
+    android:searchSuggestIntentData="content://com.kimmyungsun.danger.provider.MySuggestionProvider/company"
     android:searchSuggestSelection=" ?"
     />

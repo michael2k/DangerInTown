@@ -25,28 +25,22 @@ import com.ypyproductions.utils.DBLog;
 public class MySuggestionProvider extends SearchRecentSuggestionsProvider implements IDangerConstants {
 
 	public static final String TAG = MySuggestionProvider.class.getName();
-
-	private SQLiteDatabase mDB;
-	private DatabaseHelper mDbHelper;
+	
+	private DangerDBHelper mDangerDBHelper;
 	public  UriMatcher uriMatcher = buildUriMatcher();
+
+
+	private SQLiteDatabase mDangerDB;
 	
 	
 	public MySuggestionProvider() {
 		setupSuggestions(AUTHORITY, DATABASE_MODE_QUERIES);
 	}
+	
 
-	@Override
-	public boolean onCreate() {
-		Log.i(TAG, "onCreate");
-		Context context = getContext();
-		mDbHelper = new DatabaseHelper(context);
-		mDB = mDbHelper.getWritableDatabase();
-		return (mDB == null) ? false : true;
-
-	}
 	
    private UriMatcher buildUriMatcher(){
-	   	Log.i(TAG, "buildUriMatcher");
+	   	Log.d(TAG, "buildUriMatcher");
 	   
         UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 	 
@@ -57,86 +51,53 @@ public class MySuggestionProvider extends SearchRecentSuggestionsProvider implem
         // This URI is invoked, when user presses "Go" in the Keyboard of Search Dialog
         // Listview items of SearchableActivity is provided by this uri
         // See android:searchSuggestIntentData="content://in.wptrafficanalyzer.searchdialogdemo.provider/countries" of searchable.xml
-        uriMatcher.addURI(AUTHORITY, "records", SEARCH_KEYWORD);
+//        uriMatcher.addURI(AUTHORITY, "records", SEARCH_KEYWORD);
 	 
         // This URI is invoked, when user selects a suggestion from search dialog or an item from the listview
         // Country details for CountryActivity is provided by this uri
         // See, SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID in CountryDB.java
-        uriMatcher.addURI(AUTHORITY, "records/#", GET_KEYWORD);
-        uriMatcher.addURI(AUTHORITY, "records/@", SAVE_KEYWORD);
+//        uriMatcher.addURI(AUTHORITY, "records/#", GET_KEYWORD);
+//        uriMatcher.addURI(AUTHORITY, "records/@", SAVE_KEYWORD);
 	 
-        return uriMatcher;
+        // find Company
+        uriMatcher.addURI(AUTHORITY, "companys", SEARCH_COMPANY_KEYWORD);
+        uriMatcher.addURI(AUTHORITY, "company/#", GET_COMPANY_KEYWORD);
+        uriMatcher.addURI(AUTHORITY, "matters", SEARCH_MATTER_KEYWORD);
+        
+       return uriMatcher;
     }
 
 	@Override
-	public int delete(Uri uri, String selection, String[] selectionArgs) {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	public String getType(Uri uri) {
-		throw new UnsupportedOperationException();
-	}
-
-	@Override
-	public Uri insert(Uri uri, ContentValues values) {
-		Log.i(TAG, "insert");
-		
-		if(mDB!=null){
-			long rowID=mDB.insert(DATABASE_TABLE, null, values);
-			if (rowID > 0) {
-				Uri mUri = ContentUris.withAppendedId(CONTENT_URI, rowID);
-				getContext().getContentResolver().notifyChange(mUri, null);
-				return mUri;
-
-			}
-		}
-		throw new UnsupportedOperationException();
-	}
-
-
-	private Cursor getSuggestions(String query) {
-		Log.i(TAG, "getSuggestions");
-		
-		query = query.toLowerCase(Locale.US);
-		String[] columns = new String[] { KEY_ID, KEY_NAME, KEY_KEYWORD};
-		return mDbHelper.getRecordMatches(query, columns);
-	}
-	
-	private Cursor getExactlyRecord(String query) {
-		Log.i(TAG, "getExactlyRecord");
-		query = query.toLowerCase(Locale.US);
-		String[] columns = new String[] { KEY_ID, KEY_NAME, KEY_KEYWORD};
-		return mDbHelper.getExactlyRecords(query, columns);
-	}
-
-	private Cursor getRecord(Uri uri) {
-		Log.i(TAG, "getRecord");
-		String rowId = uri.getLastPathSegment();
-		String[] columns = new String[] { KEY_NAME ,KEY_KEYWORD};
-		return mDbHelper.getRecord(rowId, columns);
-	}
-	
-
-	@Override
 	public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-		Log.i(TAG, "query");
+		Log.d(TAG, "query : uri[" + uri.toString() + "], selectionArgs[0] : [" + selectionArgs[0] + "]");
 		Cursor c=null;
 		switch (uriMatcher.match(uri)) {
         case SUGGESTION_KEYWORD:
-        	DBLog.d(TAG, "================>aaaaa="+selectionArgs[0]);
-        	c=getSuggestions(selectionArgs[0]);
+        	DBLog.d(TAG, "================>SUGGESTION_KEYWORD="+selectionArgs[0]);
+    		c = mDangerDBHelper.query(selection, selectionArgs, null);
+    		Log.d(TAG, "result : " + c.getCount());
             break;
-        case SEARCH_KEYWORD:
-        	DBLog.d(TAG, "================>bbb="+selectionArgs[0]);
-        	c=getSuggestions(selectionArgs[0]);
+        case SEARCH_COMPANY_KEYWORD:
+        	DBLog.d(TAG, "================>SEARCH_COMPANY_KEYWORD="+selectionArgs[0]);
+        	if ( selectionArgs != null && selectionArgs.length > 0) {
+        		DBLog.d(TAG, "================>aaaaa="+selectionArgs[0]);
+        		c = getContext().getContentResolver()
+        				.query(Uri.parse("content://" + DANGER_AUTHORITY + "/companys/" + selectionArgs[0]), DangerDBHelper.COMPANY_ALL_COLUMNS, null, selectionArgs, null);
+        	} else {
+        		// getAllCompanys
+//        		c = getContext().getContentResolver()
+//        				.query(Uri.parse("content://" + DANGER_AUTHORITY + "/companys/" + selectionArgs[0]), DangerDBHelper.COMPANY_ALL_COLUMNS, null, selectionArgs, null);
+       	}
+            break;
+        case SEARCH_MATTER_KEYWORD:
+        	DBLog.d(TAG, "================>SEARCH_MATTER_KEYWORD="+selectionArgs[0]);
+    		c = getContext().getContentResolver()
+    				.query(Uri.parse("content://" + DANGER_AUTHORITY + "/matters/" + selectionArgs[0]), DangerDBHelper.MATTER_ALL_COLUMNS, null, selectionArgs, null);
         	break;
-        case GET_KEYWORD:
-             c = getRecord(uri);
-        	break;
-        case SAVE_KEYWORD:
-        	c = getExactlyRecord(selectionArgs[0]);
-        	break;
+        case GET_COMPANY_KEYWORD:
+        	DBLog.d(TAG, "================>GET_COMPANY_KEYWORD="+selectionArgs[0]);
+        	c = getContext().getContentResolver()
+        			.query(Uri.parse("content://" + DANGER_AUTHORITY + "/companys/" + selectionArgs[0]), DangerDBHelper.COMPANY_ALL_COLUMNS, null, selectionArgs, null);
 		}
 		return c;
 	}
@@ -145,62 +106,18 @@ public class MySuggestionProvider extends SearchRecentSuggestionsProvider implem
 	public int update(Uri uri, ContentValues values, String selection, String[] selectionArgs) {
 		throw new UnsupportedOperationException();
 	}
+
+
+
+	@Override
+	public boolean onCreate() {
+		Log.d(TAG, "onCreate");
+		Context context = getContext();
+		mDangerDBHelper = DangerDBHelper.getInstance(context);
+		mDangerDB = mDangerDBHelper.getWritableDatabase();
+		return (mDangerDB == null) ? false : true;
 	
-	private static HashMap<String, String> buildColumnMap() {
-		HashMap<String, String> map = new HashMap<String, String>();
-		map.put(BaseColumns._ID, KEY_ID+" as " + KEY_ID);
-		map.put(SearchManager.SUGGEST_COLUMN_TEXT_1,COLUMN_DISPLAY1+" AS " + SearchManager.SUGGEST_COLUMN_TEXT_1);
-		map.put(SearchManager.SUGGEST_COLUMN_INTENT_EXTRA_DATA, COLUMN_DATE+" AS " +SearchManager.SUGGEST_COLUMN_INTENT_EXTRA_DATA);
-		map.put(SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID, KEY_ID + " as " + SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID );
-		return map;
 	}
 	
-
-	private static class DatabaseHelper extends SQLiteOpenHelper {
-
-		public DatabaseHelper(Context context) {
-			super(context, DATABASE_NAME, null, DATABASE_VERSION);
-		}
-
-		@Override
-		public void onCreate(SQLiteDatabase db) {
-			db.execSQL(DATABASE_CREATE);
-		}
-
-		@Override
-		public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-			db.execSQL("DROP TABLE IF EXISTS " + DATABASE_TABLE);
-			onCreate(db);
-		}
-
-		public Cursor getRecordMatches(String query, String[] columns) {
-			String selection = KEY_NAME + " like ?";
-			String[] selectionArgs = new String[] {"%"+query + "%" };
-			return query(selection, selectionArgs, columns);
-		}
-		public Cursor getExactlyRecords(String query, String[] columns) {
-			String selection = KEY_NAME + " = ?";
-			String[] selectionArgs = new String[] {query};
-			return query(selection, selectionArgs, columns);
-		}
-		
-		public Cursor getRecord(String rowId, String[] columns) {
-			String selection = KEY_ID+" = ?";
-			String[] selectionArgs = new String[] { rowId };
-			return query(selection, selectionArgs, columns);
-		}
-
-		private Cursor query(String selection, String[] selectionArgs, String[] columns) {
-			SQLiteQueryBuilder builder = new SQLiteQueryBuilder();
-			builder.setTables(DATABASE_TABLE);
-			builder.setProjectionMap(buildColumnMap());
-			
-			Cursor cursor = builder.query(getReadableDatabase(), new String[] { BaseColumns._ID, SearchManager.SUGGEST_COLUMN_TEXT_1,
-					SearchManager.SUGGEST_COLUMN_INTENT_EXTRA_DATA,SearchManager.SUGGEST_COLUMN_INTENT_DATA_ID}, 
-					selection, selectionArgs, null, null, 
-					KEY_NAME + " asc ", "20");
-			return cursor;
-		}
-	}
 
 }

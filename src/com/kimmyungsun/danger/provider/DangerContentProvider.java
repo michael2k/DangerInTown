@@ -24,7 +24,7 @@ public class DangerContentProvider extends ContentProvider implements IDangerCon
 
 	@Override
 	public boolean onCreate() {
-		Log.i(TAG, "onCreate");
+		Log.d(TAG, "onCreate");
 		Context context = getContext();
 		mDangerDBHelper = DangerDBHelper.getInstance(context);
 		mDangerDB = mDangerDBHelper.getWritableDatabase();
@@ -33,7 +33,7 @@ public class DangerContentProvider extends ContentProvider implements IDangerCon
 	}
 	
    private UriMatcher buildUriMatcher(){
-	   	Log.i(TAG, "buildUriMatcher");
+	   	Log.d(TAG, "buildUriMatcher");
 	   
         UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 	 
@@ -73,7 +73,7 @@ public class DangerContentProvider extends ContentProvider implements IDangerCon
 
 	@Override
 	public Uri insert(Uri uri, ContentValues values) {
-		Log.i(TAG, "insert");
+		Log.d(TAG, "insert");
 		
 		if(mDangerDB!=null){
 			long rowID=mDangerDB.insert(DATABASE_TABLE, null, values);
@@ -90,13 +90,13 @@ public class DangerContentProvider extends ContentProvider implements IDangerCon
 
 	@Override
 	public Cursor query(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
-		Log.i(TAG, "query: uri[" + uri.toString() + "]");
+		Log.d(TAG, "query: uri[" + uri.toString() + "]");
 		Cursor c=null;
 		switch (uriMatcher.match(uri)) {
         case SEARCH_COMPANY_KEYWORD:
         	if ( selectionArgs != null && selectionArgs.length > 0) {
-        		DBLog.d(TAG, "================>aaaaa="+selectionArgs[0]);
-        		
+        		DBLog.d(TAG, "================>SEARCH_COMPANY_KEYWORD="+selectionArgs[0]);
+        		c = mDangerDBHelper.searchCompanys(selectionArgs[0]);
         	} else {
         		// getAllCompanys
         		c = mDangerDBHelper.getAllCompanys();
@@ -104,11 +104,13 @@ public class DangerContentProvider extends ContentProvider implements IDangerCon
 //        	c=getSuggestions(selectionArgs[0]);
             break;
         case SEARCH_MATTER_KEYWORD:
-        	DBLog.d(TAG, "================>bbb="+selectionArgs[0]);
+        	DBLog.d(TAG, "================>SEARCH_MATTER_KEYWORD="+selectionArgs[0]);
         	c = mDangerDBHelper.searchMatters(Long.valueOf(selectionArgs[0]));
         	break;
         case GET_COMPANY_KEYWORD:
+        	DBLog.d(TAG, "================>GET_COMPANY_KEYWORD="+selectionArgs[0]);
 //             c = getRecord(uri);
+        	c = mDangerDBHelper.getCompany(Long.valueOf(selectionArgs[0]));
         	break;
 		}
 		return c;
