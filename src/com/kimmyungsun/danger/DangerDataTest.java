@@ -3,24 +3,26 @@ package com.kimmyungsun.danger;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.location.Location;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
+import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 //import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
@@ -33,6 +35,7 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
@@ -117,6 +120,51 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		googleMap.setOnMyLocationButtonClickListener(this);
 		googleMap.setOnMapClickListener(this);
 		googleMap.setOnMapLongClickListener(this);
+		
+        // Setting a custom info window adapter for the google map
+        googleMap.setInfoWindowAdapter(new InfoWindowAdapter() {
+			
+			@Override
+			public View getInfoWindow(Marker marker) {
+				return null;
+			}
+			
+			@Override
+			public View getInfoContents(Marker marker) {
+				
+				// Getting view from the layout file info_window_layout
+				View v = getLayoutInflater().inflate(R.layout.info_window, null);
+				
+				TextView txtCompany = (TextView) v.findViewById(R.id.textView1);
+				TextView txtAddress = (TextView) v.findViewById(R.id.textView2);
+				
+				// Getting reference to the TextView to set longitude
+				ListView matters = (ListView) v.findViewById(R.id.listView1);
+				
+				String snippet = marker.getSnippet();
+				if ( snippet != null && !snippet.trim().isEmpty() ) {
+					
+					Company company = dangerDataSource.getCompany(Long.valueOf(marker.getSnippet()));
+					
+					txtCompany.setText(company.getCompanyName());
+					txtAddress.setText(company.getAddress());
+					
+					List<Matter> list = dangerDataSource.searchMatters(company);
+					matters.setAdapter(new ArrayAdapter<Matter>(DangerDataTest.this, R.layout.list_view_row_item, R.id.textViewMatter,list.toArray(new Matter[0])));
+					
+		
+
+				} else {
+					txtCompany.setText("정보없음");
+					txtAddress.setText("");
+				}
+				
+	            
+	            // Returning the view containing InfoWindow contents
+	            return v;
+			}
+		});
+ 
 
 	}
 
@@ -378,7 +426,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		
 		Marker m = googleMap.addMarker(new MarkerOptions()
 		.position(new LatLng(company.getLatitude(), company.getLongitude()))
-		.snippet(company.getAddress())
+		.snippet(String.valueOf(company.getId()))
 		.title(company.getCompanyName())
 				);
 		m.showInfoWindow();
@@ -389,6 +437,50 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		}
 		
 		return m;
+		
+	}
+	
+	public static class CompanyInfoWindow implements InfoWindowAdapter {
+		
+		public static CompanyInfoWindow getInstance(Activity activity, Company company) {
+			return new CompanyInfoWindow(activity, company);
+		}
+		
+		private Company company;
+		private Activity activity;
+		
+		public CompanyInfoWindow(Activity activity, Company company) {
+			this.activity = activity;
+			this.company = company;
+		}
+
+        // Use default InfoWindow frame
+        @Override
+        public View getInfoWindow(Marker marker) {
+            return null;
+        }
+
+        // Defines the contents of the InfoWindow
+        @Override
+        public View getInfoContents(Marker marker) {
+
+            // Getting view from the layout file info_window_layout
+            View v = activity.getLayoutInflater().inflate(R.layout.info_window, null);
+
+            TextView txtCompany = (TextView) v.findViewById(R.id.textView1);
+            TextView txtAddress = (TextView) v.findViewById(R.id.textView2);
+
+            // Getting reference to the TextView to set longitude
+            ListView matters = (ListView) v.findViewById(R.id.listView1);
+
+
+            txtCompany.setText(company.getCompanyName());
+            txtAddress.setText(company.getAddress());
+            
+            // Returning the view containing InfoWindow contents
+            return v;
+
+        }
 		
 	}
 	
@@ -406,17 +498,8 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 //        	System.out.println("distance : " + distance);
 			
 			if ( distance < 5.0 ) {
-				Marker m = googleMap.addMarker(new MarkerOptions()
-				.position(new LatLng(lat2, lng2))
-				.snippet(company.getAddress())
-				.title(company.getCompanyName())
-						);
-				m.showInfoWindow();
 				
-				List<Matter> matters = dangerDataSource.searchMatters(company);
-				for( Matter matter : matters ) {
-					company.addMatter(matter);
-				}
+				addCompanyMarer(company);
 				nearCompanys.add(company);
 				
 //        		Log.i(TAG, nearCompanys.toString());

@@ -36,6 +36,15 @@ public class DangersDataSource implements IDangerConstants {
 		cursor.close();
 		return companys;
 	}
+	
+	public Company getCompany(long id) {
+		Cursor cursor = context.getContentResolver()
+				.query(Uri.parse("content://" + DANGER_AUTHORITY + "/companys/" + id), DangerDBHelper.COMPANY_ALL_COLUMNS, null, new String[] { String.valueOf(id) }, null);
+		cursor.moveToFirst();
+		Company c = Company.cursorToCompany(cursor);
+		cursor.close();
+		return c;
+	}
 
 	public List<Company> searchCompanys(String searchString) {
 		List<Company> companys = new ArrayList<Company>();
