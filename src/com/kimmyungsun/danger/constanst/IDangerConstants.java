@@ -117,9 +117,9 @@ public interface IDangerConstants {
 	public static final String[] LIST_LINK_ABOUTS = { "Email", URL_YOUR_WEBSITE,URL_YOUR_FACE_BOOK, URL_YOUR_GOOGLE_PLUS,
 			URL_RATE_APP,URL_MORE_APP};
 
-	public static final String DATABASE_NAME = "datas";
-	public static final String DATABASE_TABLE = "records";
-	public static final int DATABASE_VERSION = 3;
+//	public static final String DATABASE_NAME = "datas";
+//	public static final String DATABASE_TABLE = "records";
+//	public static final int DATABASE_VERSION = 3;
 
 	public static final int SUGGESTION_KEYWORD = 1;
 	public static final int SEARCH_KEYWORD = 2;
@@ -142,11 +142,12 @@ public interface IDangerConstants {
 //	public static final String DATABASE_CREATE = "create table " + DATABASE_TABLE + " ("+COLUMN_DISPLAY1+" TEXT  NOT NULL, " 
 //	+ COLUMN_DATE+" text not null, "+COLUMN_QUERY+" text not null);";
 	
-	public static final String DANGER_AUTHORITY = "com.kimmyungsun.danger.provider.DangerContentProvider";
-	public static final Uri DANGER_CONTENT_URI = Uri.parse("content://" + DANGER_AUTHORITY);
+//	public static final String DANGER_AUTHORITY = "com.kimmyungsun.danger.provider.DangerContentProvider";
+//	public static final Uri DANGER_CONTENT_URI = Uri.parse("content://" + DANGER_AUTHORITY);
 	
-	public static final String AUTHORITY = "com.kimmyungsun.danger.provider.MySuggestionProvider";
+	public static final String AUTHORITY = "com.kimmyungsun.danger.provider.DangerContentProvider";
 	public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/companys");
+	public static final Uri COMPANY_CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/companys");
 	public static final Uri CONTENT_CHECK = Uri.parse("content://" + AUTHORITY + "/companys/@");
 
 }

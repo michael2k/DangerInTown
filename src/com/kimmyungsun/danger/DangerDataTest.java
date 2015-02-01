@@ -3,7 +3,6 @@ package com.kimmyungsun.danger;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -16,13 +15,12 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
-import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 //import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
@@ -35,12 +33,16 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;
+import com.google.android.gms.maps.GoogleMap.CancelableCallback;
+import com.google.android.gms.maps.GoogleMap.OnCameraChangeListener;
+import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMapClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMapLongClickListener;
+import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -54,8 +56,9 @@ import com.kimmyungsun.danger.object.ResponsePlaceResult;
 import com.kimmyungsun.danger.provider.DangersDataSource;
 
 public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCallback, LocationListener, IDangerConstants,
-		ConnectionCallbacks, OnConnectionFailedListener, 
-		OnMyLocationButtonClickListener, OnMapClickListener,
+		ConnectionCallbacks, OnConnectionFailedListener, CancelableCallback, OnCameraChangeListener,
+		OnMyLocationButtonClickListener, OnMapClickListener, OnInfoWindowClickListener,
+		OnMarkerClickListener,
 		OnMapLongClickListener {
 	
 	private final static String TAG = DangerDataTest.class.getName();
@@ -75,6 +78,8 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 	private EditText txtSearch;
 	private Button btnSearch;
 	
+	private Marker markerClicked;
+	
 	private List<Company> nearCompanys = new ArrayList<Company>();
 	
 	// These settings are the same as the settings for the map. They will in
@@ -90,80 +95,37 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		Log.d(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
 		
-//		requestWindowFeature(Window.FEATURE_NO_TITLE);
-//		getWindow().setFlags(WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN, WindowManager.LayoutParams.FLAG_FORCE_NOT_FULLSCREEN);
-		
-		
 		setContentView(R.layout.activity_main);
 		
 		
-		((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMapAsync(this);
 		
-//		SearchView searchView = (SearchView) findViewById(R.id.searchView);
-//		searchView.setSubmitButtonEnabled(true);
-//		searchView.setBackgroundColor(Color.WHITE);
+//		RelativeLayout rl = (RelativeLayout) findViewById(R.id.RelativeLayout1);
+//		
+//		Fragment fMap = getSupportFragmentManager().findFragmentById(R.id.map);
+//		fMap.getView().getLayoutParams().height = android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+//		Fragment fMatter = getSupportFragmentManager().findFragmentById(R.id.fragment1);
 		
-//		txtSearch = ((EditText) findViewById(R.id.txtSearch));
-//		btnSearch = ((Button) findViewById(R.id.btnSearch));
-
+//		Fragment fragment = 
+		
 		dangerDataSource = new DangersDataSource(this);
 
 		setUpGoogleApiClient();
 		
-//		alertShow();
-		
-		setupSearchView();
 	}
 
 	private void setUpMap() {
+		
+		googleMap.getUiSettings().setMapToolbarEnabled(false);
 		googleMap.setMyLocationEnabled(true);
 		googleMap.setOnMyLocationButtonClickListener(this);
 		googleMap.setOnMapClickListener(this);
 		googleMap.setOnMapLongClickListener(this);
 		
         // Setting a custom info window adapter for the google map
-        googleMap.setInfoWindowAdapter(new InfoWindowAdapter() {
-			
-			@Override
-			public View getInfoWindow(Marker marker) {
-				return null;
-			}
-			
-			@Override
-			public View getInfoContents(Marker marker) {
-				
-				// Getting view from the layout file info_window_layout
-				View v = getLayoutInflater().inflate(R.layout.info_window, null);
-				
-				TextView txtCompany = (TextView) v.findViewById(R.id.textView1);
-				TextView txtAddress = (TextView) v.findViewById(R.id.textView2);
-				
-				// Getting reference to the TextView to set longitude
-				ListView matters = (ListView) v.findViewById(R.id.listView1);
-				
-				String snippet = marker.getSnippet();
-				if ( snippet != null && !snippet.trim().isEmpty() ) {
-					
-					Company company = dangerDataSource.getCompany(Long.valueOf(marker.getSnippet()));
-					
-					txtCompany.setText(company.getCompanyName());
-					txtAddress.setText(company.getAddress());
-					
-					List<Matter> list = dangerDataSource.searchMatters(company);
-					matters.setAdapter(new ArrayAdapter<Matter>(DangerDataTest.this, R.layout.list_view_row_item, R.id.textViewMatter,list.toArray(new Matter[0])));
-					
-		
-
-				} else {
-					txtCompany.setText("정보없음");
-					txtAddress.setText("");
-				}
-				
-	            
-	            // Returning the view containing InfoWindow contents
-	            return v;
-			}
-		});
+        googleMap.setInfoWindowAdapter(new CompanyInfoWindowAdapter(this, dangerDataSource));
+		googleMap.setOnInfoWindowClickListener(this);
+        googleMap.setOnMarkerClickListener(this);
+        googleMap.setOnCameraChangeListener(this);
  
 
 	}
@@ -237,6 +199,9 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 		locationClientUpdates();
 
+		MapFragment mf = ((MapFragment) getFragmentManager().findFragmentById(R.id.map));
+		mf.getMapAsync(this);
+		
 	}
 
 	private void locationClientUpdates() {
@@ -323,7 +288,8 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 
 		googleMap.addMarker(new MarkerOptions()
 		.position(point)
-		.title("현재위치")).showInfoWindow();;
+		.title("현재위치"))
+		.showInfoWindow();
 		
 
 	}
@@ -365,6 +331,13 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		
         processLocationChanged(lat, lng);
         
+        
+//      if ( buttonStatus == BUTTON_ENABLED ) {
+      googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng),12), this);
+//      }
+
+		View v = (View) findViewById(R.id.RelativeLayout1);
+		if ( v.getVisibility() != View.VISIBLE) v.setVisibility(View.VISIBLE);
 	}
 
 	public void processLocationChanged(double lat, double lng) {
@@ -373,10 +346,6 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
         List<Company> companys = dangerDataSource.getAllCompanys();
 //        List<Company> companys = getContentResolver().
         
-        
-//        if ( buttonStatus == BUTTON_ENABLED ) {
-        	googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng),12));
-//        }
         
         CircleOptions co = new CircleOptions();
         co.center(new LatLng(lat, lng));
@@ -412,7 +381,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		
 		for ( Company company : companys ) {
 			
-			markers.add( addCompanyMarer(company) );
+			markers.add( addCompanyMarker(company) );
 			
 			nearCompanys.add(company);
 			
@@ -422,14 +391,15 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		
 	}
 	
-	private Marker addCompanyMarer ( Company company ) {
+	private Marker addCompanyMarker ( Company company ) {
 		
 		Marker m = googleMap.addMarker(new MarkerOptions()
 		.position(new LatLng(company.getLatitude(), company.getLongitude()))
 		.snippet(String.valueOf(company.getId()))
 		.title(company.getCompanyName())
-				);
-		m.showInfoWindow();
+				)
+				;
+//		m.showInfoWindow();
 		
 		List<Matter> matters = dangerDataSource.searchMatters(company);
 		for( Matter matter : matters ) {
@@ -439,51 +409,6 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		return m;
 		
 	}
-	
-	public static class CompanyInfoWindow implements InfoWindowAdapter {
-		
-		public static CompanyInfoWindow getInstance(Activity activity, Company company) {
-			return new CompanyInfoWindow(activity, company);
-		}
-		
-		private Company company;
-		private Activity activity;
-		
-		public CompanyInfoWindow(Activity activity, Company company) {
-			this.activity = activity;
-			this.company = company;
-		}
-
-        // Use default InfoWindow frame
-        @Override
-        public View getInfoWindow(Marker marker) {
-            return null;
-        }
-
-        // Defines the contents of the InfoWindow
-        @Override
-        public View getInfoContents(Marker marker) {
-
-            // Getting view from the layout file info_window_layout
-            View v = activity.getLayoutInflater().inflate(R.layout.info_window, null);
-
-            TextView txtCompany = (TextView) v.findViewById(R.id.textView1);
-            TextView txtAddress = (TextView) v.findViewById(R.id.textView2);
-
-            // Getting reference to the TextView to set longitude
-            ListView matters = (ListView) v.findViewById(R.id.listView1);
-
-
-            txtCompany.setText(company.getCompanyName());
-            txtAddress.setText(company.getAddress());
-            
-            // Returning the view containing InfoWindow contents
-            return v;
-
-        }
-		
-	}
-	
 	
 	private void addCompanyMarker(double lat, double lng, List<Company> companys ) {
 		
@@ -499,7 +424,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 			
 			if ( distance < 5.0 ) {
 				
-				addCompanyMarer(company);
+				addCompanyMarker(company);
 				nearCompanys.add(company);
 				
 //        		Log.i(TAG, nearCompanys.toString());
@@ -563,7 +488,7 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 			
         	googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(company.getLatitude(), company.getLongitude()),12));
         	
-        	addCompanyMarer(company);
+        	addCompanyMarker(company);
 
 			
 		} else if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
@@ -595,14 +520,6 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		}
 	}
 
-	private void setupSearchView() {
-//		SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-//		SearchView searchView = (SearchView) findViewById(R.id.searchView);
-//		SearchableInfo searchableInfo = searchManager.getSearchableInfo(getComponentName());
-//		searchView.setSearchableInfo(searchableInfo);
-//		searchView.setOnQueryTextListener(onQueryTextHandler);
-	}
-	
 	public static OnQueryTextListener onQueryTextHandler = new OnQueryTextListener() {
 		
 		@Override
@@ -617,5 +534,61 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 			return false;
 		}
 	};
+
+	@Override
+	public boolean onMarkerClick(Marker marker) {
+		Log.d(TAG, "onMarkerClick");
+		
+		setButtonStatus(BUTTON_DISABLED);
+		
+//		MapFragment mf = ((MapFragment) getFragmentManager().findFragmentById(R.id.map));
+//		RelativeLayout.LayoutParams rlp = new RelativeLayout.LayoutParams(mf.getView().getLayoutParams());
+//
+//		if ( markerClicked != null && markerClicked.equals(marker) ) {
+//			rlp.removeRule(RelativeLayout.ABOVE);
+//			markerClicked = null;
+//		} else {
+//			if ( markerClicked == null ) {
+//				CompanyInfoFragment fragment = new CompanyInfoFragment();
+//				
+////				rlp.addRule(RelativeLayout.ABOVE, R.id.fragment1);
+//			}
+//			markerClicked = marker;
+//		}
+//		mf.getView().setLayoutParams(rlp);
+		
+		
+		return false;
+	}
+
+	@Override
+	public void onInfoWindowClick(Marker marker) {
+		Log.d(TAG, "onInfoWindowClick");
+	}
+
+	@Override
+	public void onCancel() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void onFinish() {
+		Log.d(TAG, "onFinish");
+		
+		View v = (View) findViewById(R.id.RelativeLayout1);
+		if ( v.getVisibility() != View.VISIBLE) v.setVisibility(View.VISIBLE);
+	      
+		
+	}
+
+	@Override
+	public void onCameraChange(CameraPosition cameraPosition) {
+		Log.d(TAG, "onCameraChange");
+		
+		View v = (View) findViewById(R.id.RelativeLayout1);
+		if ( v.getVisibility() != View.VISIBLE) v.setVisibility(View.VISIBLE);
+		
+	}
 
 }

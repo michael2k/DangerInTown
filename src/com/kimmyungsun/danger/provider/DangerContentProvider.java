@@ -1,9 +1,11 @@
 package com.kimmyungsun.danger.provider;
 
+import android.app.SearchManager;
 import android.content.ContentProvider;
 import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.SearchRecentSuggestionsProvider;
 import android.content.UriMatcher;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,7 +16,7 @@ import com.kimmyungsun.danger.constanst.IDangerConstants;
 import com.ypyproductions.utils.DBLog;
 
 
-public class DangerContentProvider extends ContentProvider implements IDangerConstants {
+public class DangerContentProvider extends SearchRecentSuggestionsProvider implements IDangerConstants {
 
 	public static final String TAG = DangerContentProvider.class.getName();
 
@@ -22,6 +24,13 @@ public class DangerContentProvider extends ContentProvider implements IDangerCon
 	private DangerDBHelper mDangerDBHelper;
 	public  UriMatcher uriMatcher = buildUriMatcher();
 
+	public final static int MODE = DATABASE_MODE_QUERIES;
+
+	
+	public DangerContentProvider() {
+		setupSuggestions(AUTHORITY, MODE);
+	}
+	
 	@Override
 	public boolean onCreate() {
 		Log.d(TAG, "onCreate");
@@ -38,8 +47,8 @@ public class DangerContentProvider extends ContentProvider implements IDangerCon
         UriMatcher uriMatcher = new UriMatcher(UriMatcher.NO_MATCH);
 	 
         // Suggestion items of Search Dialog is provided by this uri
-//        uriMatcher.addURI(CONTENT_URI.getAuthority(), SearchManager.SUGGEST_URI_PATH_QUERY,SUGGESTION_KEYWORD);
-//        uriMatcher.addURI(AUTHORITY, SearchManager.SUGGEST_URI_PATH_QUERY + "/*", SUGGESTION_KEYWORD);
+        uriMatcher.addURI(CONTENT_URI.getAuthority(), SearchManager.SUGGEST_URI_PATH_QUERY,SUGGESTION_KEYWORD);
+        uriMatcher.addURI(AUTHORITY, SearchManager.SUGGEST_URI_PATH_QUERY + "/*", SUGGESTION_KEYWORD);
 	 
         // This URI is invoked, when user presses "Go" in the Keyboard of Search Dialog
         // Listview items of SearchableActivity is provided by this uri
@@ -53,9 +62,9 @@ public class DangerContentProvider extends ContentProvider implements IDangerCon
 //        uriMatcher.addURI(AUTHORITY, "records/@", SAVE_KEYWORD);
         
         // find Company
-        uriMatcher.addURI(DANGER_AUTHORITY, "companys", SEARCH_COMPANY_KEYWORD);
-        uriMatcher.addURI(DANGER_AUTHORITY, "companys/#", GET_COMPANY_KEYWORD);
-        uriMatcher.addURI(DANGER_AUTHORITY, "matters", SEARCH_MATTER_KEYWORD);
+        uriMatcher.addURI(AUTHORITY, "companys", SEARCH_COMPANY_KEYWORD);
+        uriMatcher.addURI(AUTHORITY, "companys/#", GET_COMPANY_KEYWORD);
+        uriMatcher.addURI(AUTHORITY, "matters", SEARCH_MATTER_KEYWORD);
         
 	 
         return uriMatcher;
@@ -73,17 +82,6 @@ public class DangerContentProvider extends ContentProvider implements IDangerCon
 
 	@Override
 	public Uri insert(Uri uri, ContentValues values) {
-		Log.d(TAG, "insert");
-		
-		if(mDangerDB!=null){
-			long rowID=mDangerDB.insert(DATABASE_TABLE, null, values);
-			if (rowID > 0) {
-				Uri mUri = ContentUris.withAppendedId(CONTENT_URI, rowID);
-				getContext().getContentResolver().notifyChange(mUri, null);
-				return mUri;
-
-			}
-		}
 		throw new UnsupportedOperationException();
 	}
 
@@ -93,6 +91,11 @@ public class DangerContentProvider extends ContentProvider implements IDangerCon
 		Log.d(TAG, "query: uri[" + uri.toString() + "]");
 		Cursor c=null;
 		switch (uriMatcher.match(uri)) {
+        case SUGGESTION_KEYWORD:
+        	DBLog.d(TAG, "================>SUGGESTION_KEYWORD="+selectionArgs[0]);
+    		c = mDangerDBHelper.query(selection, selectionArgs, null);
+    		Log.d(TAG, "result : " + c.getCount());
+            break;
         case SEARCH_COMPANY_KEYWORD:
         	if ( selectionArgs != null && selectionArgs.length > 0) {
         		DBLog.d(TAG, "================>SEARCH_COMPANY_KEYWORD="+selectionArgs[0]);

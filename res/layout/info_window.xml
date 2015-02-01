@@ -25,10 +25,12 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/black" />
 
-    <ListView
-        android:id="@+id/listView1"
+    <TableLayout
+        android:id="@+id/tblMatters"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-    </ListView>
+        android:layout_height="wrap_content"
+        android:divider="@color/blue" >
+
+    </TableLayout>
 
 </LinearLayout>

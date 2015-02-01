@@ -2,16 +2,12 @@
 <resources>
 
     <string name="app_name">우리동네 위험 지도</string>
-
     <string name="copyright">© 2015 김명선</string>
-
     <string name="action_settings">Settings</string>
     <string name="findContact">find Contacts</string>
     <string name="findCompany">회사명, 주소</string>
-
     <string name="title_custom_search">CUSTOM</string>
     <string name="info_parse_error">We can not process data.Please try again!</string>
-
     <string name="hello_world">Hello world!</string>
     <string name="loading">Please wait...</string>
     <string name="title_yes">Yes</string>
@@ -31,16 +27,12 @@
     <string name="title_all_place">All places in map</string>
     <string name="title_refresh">Refresh</string>
     <string name="title_settings">Settings</string>
-    
     <string name="title_search">Search the location</string>
     <string name="title_quick_distance">Change radius</string>
-    
     <string name="title_place_info">Place Information</string>
     <string name="title_user_reviews">User Reviews</string>
-    
     <string name="format_reviews">%1$s Reviews</string>
     <string name="format_review">%1$s Review</string>
-    
     <string name="format_radius">Radius: %1$s %2$s</string>
     <string name="format_address">Address: %1$s </string>
     <string name="format_area">Area: %1$s </string>
@@ -50,17 +42,13 @@
     <string name="format_country_code">Country Code: %1$s </string>
     <string name="format_add_favorite">Add %1$s to favorite locations </string>
     <string name="format_remove_favorite">Remove %1$s to favorite locations </string>
-    
     <string name="title_units">Unit Systems</string>
     <string name="title_piority">Piority</string>
     <string name="title_travel_modes">Travel Modes</string>
-    
     <string name="info_loading_more">Finding more locations surrounding you.Please wait...</string>
-    
     <string name="title_improve_location">Improve your location</string>
     <string name="title_location_services_disable">Location services disabled</string>
     <string name="info_location_services_disable">Wheres My Places needs access to your location.Please turn on location access</string>
-    
     <string name="title_enable">Enable</string>
     <string name="info_get_location_error">Get location error!Please try again later</string>
     <string name="info_gps_enable">Turn on the following to improve your location:GPS</string>
@@ -69,12 +57,10 @@
     <string name="info_format_process_detail_location">Start getting information of %1$s </string>
     <string name="info_show_again">Don\'t show again</string>
     <string name="info_no_location">Can\'t not find locations surrounding you!</string>
-    
     <string name="menu_location_terrain">Terrain View</string>
     <string name="menu_location_satellite">Satellite View</string>
     <string name="menu_location_traffic">Traffic View</string>
     <string name="menu_location_details">Location Details</string>
-    
     <string name="tab_infomation">Information</string>
     <string name="tab_map">Map</string>
 
@@ -82,30 +68,24 @@
         <item>Kilometers</item>
         <item>Miles</item>
     </string-array>
-    
     <string-array name="sorting_array">
         <item>Distance</item>
         <item>Rating</item>
     </string-array>
-    
     <string-array name="travel_mode_array">
         <item>Driving</item>
         <item>Walking</item>
     </string-array>
-    
+
     <string name="title_distance">Distance</string>
     <string name="title_rating">Rating</string>
     <string name="format_distance">Distance: ~%1$s</string>
-    
     <string name="title_get_directions">Get Directions</string>
-    
     <string name="title_sort_by_distance">Sort by distance</string>
     <string name="title_sort_by_rating">Sort by rating</string>
-
     <string name="title_contact_us">Contact us</string>
     <string name="info_contact_us">Contact us if you need any help</string>
     <string name="link_contact_us">Email</string>
-    
     <string name="title_website">Website</string>
     <string name="info_website">Visit our website</string>
     <string name="title_google_plus">Google +</string>
@@ -131,14 +111,13 @@
     <string name="info_login_twitter_error">Login twitter error!Try again</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
-    
     <string name="info_version_format">Version %1$s</string>
     <string name="info_distance_km_format">~ %1$s km</string>
     <string name="info_distance_miles_format">~ %1$s mi</string>
-    <string name ="format_start_address"><Data><![CDATA[<font color=\'#999999\'>From&nbsp;</font><font color=\'#000000\'>%1$s</font>]]></Data></string>
-    <string name ="format_end_address"><Data><![CDATA[<font color=\'#999999\'>To&nbsp;</font><font color=\'#000000\'>%1$s</font>]]></Data></string>
-    <string name ="format_duration_distance"><Data><![CDATA[<font color=\'#000000\'>%1$s&nbsp;</font><font color=\'#999999\'>(%2$s)</font>]]></Data></string>
-    <string name ="format_sumary"><Data><![CDATA[<font color=\'#999999\'>Via %1$s</font>]]></Data></string>
+    <string name="format_start_address"><Data><![CDATA[<font color=\'#999999\'>From&nbsp;</font><font color=\'#000000\'>%1$s</font>]]></Data></string>
+    <string name="format_end_address"><Data><![CDATA[<font color=\'#999999\'>To&nbsp;</font><font color=\'#000000\'>%1$s</font>]]></Data></string>
+    <string name="format_duration_distance"><Data><![CDATA[<font color=\'#000000\'>%1$s&nbsp;</font><font color=\'#999999\'>(%2$s)</font>]]></Data></string>
+    <string name="format_sumary"><Data><![CDATA[<font color=\'#999999\'>Via %1$s</font>]]></Data></string>
 
     <string-array name="list_options">
         <item>Home</item>
@@ -147,6 +126,8 @@
         <item>Settings</item>
         <item>About Us</item>
     </string-array>
+
     <string name="action_search">찾기</string>
-    
+    <string name="title_activity_company_info">CompanyInfoActivity</string>
+
 </resources>

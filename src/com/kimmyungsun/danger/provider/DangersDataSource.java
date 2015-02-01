@@ -24,7 +24,7 @@ public class DangersDataSource implements IDangerConstants {
 		List<Company> companys = new ArrayList<Company>();
 		
 		Cursor cursor = context.getContentResolver()
-				.query(Uri.parse("content://" + DANGER_AUTHORITY + "/companys"), DangerDBHelper.COMPANY_ALL_COLUMNS, null, null, null);
+				.query(Uri.parse("content://" + AUTHORITY + "/companys"), DangerDBHelper.COMPANY_ALL_COLUMNS, null, null, null);
 		
 		cursor.moveToFirst();
 		while( !cursor.isAfterLast()) {
@@ -39,7 +39,7 @@ public class DangersDataSource implements IDangerConstants {
 	
 	public Company getCompany(long id) {
 		Cursor cursor = context.getContentResolver()
-				.query(Uri.parse("content://" + DANGER_AUTHORITY + "/companys/" + id), DangerDBHelper.COMPANY_ALL_COLUMNS, null, new String[] { String.valueOf(id) }, null);
+				.query(Uri.parse("content://" + AUTHORITY + "/companys/" + id), DangerDBHelper.COMPANY_ALL_COLUMNS, null, new String[] { String.valueOf(id) }, null);
 		cursor.moveToFirst();
 		Company c = Company.cursorToCompany(cursor);
 		cursor.close();
@@ -50,7 +50,7 @@ public class DangersDataSource implements IDangerConstants {
 		List<Company> companys = new ArrayList<Company>();
 		
 		Cursor cursor = context.getContentResolver()
-				.query(Uri.parse("content://" + DANGER_AUTHORITY + "/companys"), DangerDBHelper.COMPANY_ALL_COLUMNS, null, new String[] { searchString }, null);
+				.query(Uri.parse("content://" + AUTHORITY + "/companys"), DangerDBHelper.COMPANY_ALL_COLUMNS, null, new String[] { searchString }, null);
 		
 		cursor.moveToFirst();
 		while( !cursor.isAfterLast()) {
@@ -67,7 +67,7 @@ public class DangersDataSource implements IDangerConstants {
 		List<Matter> matters = new ArrayList<Matter>();
 		
 		Cursor cursor = context.getContentResolver()
-				.query(Uri.parse("content://" + DANGER_AUTHORITY + "/matters"), DangerDBHelper.MATTER_ALL_COLUMNS, null, new String[] {String.valueOf(company.getId())}, null);
+				.query(Uri.parse("content://" + AUTHORITY + "/matters"), DangerDBHelper.MATTER_ALL_COLUMNS, null, new String[] {String.valueOf(company.getId())}, null);
 		
 		cursor.moveToFirst();
 		while( !cursor.isAfterLast()) {

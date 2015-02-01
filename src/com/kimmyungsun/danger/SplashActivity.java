@@ -1,33 +1,19 @@
 package com.kimmyungsun.danger;
 
 
-import java.io.File;
-import java.util.ArrayList;
-
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.app.FragmentActivity;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.kimmyungsun.danger.constanst.IDangerConstants;
-import com.kimmyungsun.danger.datamng.JsonParsingUtils;
 import com.kimmyungsun.danger.datamng.TotalDataManager;
-import com.kimmyungsun.danger.object.HomeSearchObject;
-import com.kimmyungsun.danger.object.KeywordObject;
-import com.kimmyungsun.danger.object.PlaceObject;
-import com.kimmyungsun.danger.provider.MySuggestionDAO;
-import com.kimmyungsun.danger.settings.SettingManager;
 import com.ypyproductions.net.task.DBTask;
 import com.ypyproductions.net.task.IDBTaskListener;
 import com.ypyproductions.utils.DBLog;
-import com.ypyproductions.utils.DirectionUtils;
-import com.ypyproductions.utils.IOUtils;
 
 /**
  * SplashActivity
