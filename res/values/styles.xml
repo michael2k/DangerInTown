@@ -8,13 +8,17 @@
     <style name="AppTheme" parent="AppBaseTheme">
     </style>
 
-    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light">
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
+        <!-- 
        <item name="android:dropDownItemStyle">@style/myDropDownItemStyle</item>
+         -->
     </style>
-    
+
+    <!-- 
     <style name="myDropDownItemStyle" parent="android:style/Widget.Holo.Light.Spinner">
         <item name="android:textColor">@color/cyan</item>
     </style>
+     -->
 
 
 </resources>

@@ -1,6 +1,7 @@
 package com.kimmyungsun.danger;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -26,7 +27,7 @@ import com.ypyproductions.utils.DBLog;
  * @Package :com.auction.ionauctions
  */
 
-public class SplashActivity extends DBFragmentActivity implements IDBTaskListener, IDangerConstants {
+public class SplashActivity extends Activity implements IDBTaskListener, IDangerConstants {
 	
 	public static final String TAG=SplashActivity.class.getSimpleName();
 	
