@@ -3,6 +3,7 @@ package com.kimmyungsun.danger;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
@@ -12,15 +13,23 @@ import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.SearchView.OnQueryTextListener;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.SearchView;
-import android.widget.SearchView.OnQueryTextListener;
+//import android.widget.SearchView;
+//import android.widget.SearchView.OnQueryTextListener;
+
+
+
 
 import com.google.android.gms.common.ConnectionResult;
 //import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
@@ -55,7 +64,7 @@ import com.kimmyungsun.danger.object.PlaceObject;
 import com.kimmyungsun.danger.object.ResponsePlaceResult;
 import com.kimmyungsun.danger.provider.DangersDataSource;
 
-public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCallback, LocationListener, IDangerConstants,
+public class DangerDataTest extends ActionBarActivity implements OnMapReadyCallback, LocationListener, IDangerConstants,
 		ConnectionCallbacks, OnConnectionFailedListener, CancelableCallback, OnCameraChangeListener,
 		OnMyLocationButtonClickListener, OnMapClickListener, OnInfoWindowClickListener,
 		OnMarkerClickListener,
@@ -138,16 +147,18 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 		
 	    // Get the SearchView and set the searchable configuration
 	    SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-	    SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+	    MenuItem searchItem = menu.findItem(R.id.action_search);
+	    SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+	    
 	    // Assumes current activity is the searchable activity
 	    searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-	    searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+//	    searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
 	    
 //		SearchableInfo searchableInfo = searchManager.getSearchableInfo(getComponentName());
 //		searchView.setSearchableInfo(searchableInfo);
 		searchView.setOnQueryTextListener(onQueryTextHandler);
 
-		return true;
+		return super.onCreateOptionsMenu(menu);
 	}
 
 	@Override
@@ -564,6 +575,9 @@ public class DangerDataTest extends DBFragmentActivity implements OnMapReadyCall
 	@Override
 	public void onInfoWindowClick(Marker marker) {
 		Log.d(TAG, "onInfoWindowClick");
+		
+		Intent intent = new Intent(this, CompanyDetailsActivity.class);
+		startActivity(intent);
 	}
 
 	@Override

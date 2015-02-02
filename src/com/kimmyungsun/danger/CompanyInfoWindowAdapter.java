@@ -72,6 +72,17 @@ public class CompanyInfoWindowAdapter implements InfoWindowAdapter {
 				ri.setTextColor(Color.RED);
 				tr.addView(ri);
 				
+				TextView ic = new TextView(activity);
+				if ( m.getRiskInfo().contains("발암")) {
+					ic.setText("노랑");
+				} else if ( m.getRiskInfo().contains("생식독성")) {
+					ic.setText("주랑");
+				} else if ( m.getRiskInfo().contains("발달독성")) {
+					ic.setText("보라");
+				}
+				tr.addView(ic);
+				
+				
 				tblMatters.addView(tr);
 	//			matters.setAdapter(new ArrayAdapter<Matter>(activity, R.layout.list_view_row_item, R.id.textViewMatter,list.toArray(new Matter[0])));
 			}

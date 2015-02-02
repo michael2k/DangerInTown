@@ -129,5 +129,6 @@
 
     <string name="action_search">찾기</string>
     <string name="title_activity_company_info">CompanyInfoActivity</string>
+    <string name="title_activity_company_details">사업장 상세 정보</string>
 
 </resources>

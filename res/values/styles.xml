@@ -8,7 +8,7 @@
     <style name="AppTheme" parent="AppBaseTheme">
     </style>
 
-    <style name="AppBaseTheme" parent="android:Theme.Holo">
+    <style name="AppBaseTheme" parent="@style/Theme.AppCompat.Light">
        <item name="android:dropDownItemStyle">@style/myDropDownItemStyle</item>
     </style>
     
