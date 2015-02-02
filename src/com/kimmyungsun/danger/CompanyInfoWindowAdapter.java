@@ -38,8 +38,8 @@ public class CompanyInfoWindowAdapter implements InfoWindowAdapter {
 		// Getting view from the layout file info_window_layout
 		View v = activity.getLayoutInflater().inflate(R.layout.info_window, null);
 		
-		TextView txtCompany = (TextView) v.findViewById(R.id.textView1);
-		TextView txtAddress = (TextView) v.findViewById(R.id.textView2);
+		TextView txtCompany = (TextView) v.findViewById(R.id.txtCompanyName);
+		TextView txtAddress = (TextView) v.findViewById(R.id.txtCompanyAddress);
 		
 		// Getting reference to the TextView to set longitude
 //		ListView matters = (ListView) v.findViewById(R.id.listView1);
@@ -55,41 +55,10 @@ public class CompanyInfoWindowAdapter implements InfoWindowAdapter {
 			
 			List<Matter> matters = dangerDataSource.searchMatters(company);
 			
-			TableLayout tblMatters = (TableLayout) v.findViewById(R.id.tblMatters);
+			ListView listMatters = (ListView) v.findViewById(R.id.listMatters);
 			
-			for ( Matter m : matters ) {
-
-				TableRow tr = new TableRow(activity);
-				tr.setBackgroundColor(Color.GREEN);
-				
-				TextView name = new TextView(activity);
-				name.setText(m.getMatterName());
-				name.setTextColor(Color.BLACK);
-				tr.addView(name);
-				
-				TextView ri = new TextView(activity);
-				ri.setText(m.getRiskInfo());
-				ri.setTextColor(Color.RED);
-				tr.addView(ri);
-				
-				TextView ic = new TextView(activity);
-				if ( m.getRiskInfo().contains("발암")) {
-					ic.setText("노랑");
-				} else if ( m.getRiskInfo().contains("생식독성")) {
-					ic.setText("주랑");
-				} else if ( m.getRiskInfo().contains("발달독성")) {
-					ic.setText("보라");
-				}
-				tr.addView(ic);
-				
-				
-				tblMatters.addView(tr);
-	//			matters.setAdapter(new ArrayAdapter<Matter>(activity, R.layout.list_view_row_item, R.id.textViewMatter,list.toArray(new Matter[0])));
-			}
+			listMatters.setAdapter(new MatterArrayAdapter(activity, R.layout.matter_info_row_item, matters));
 			
-			
-			
-	
 	
 		} else {
 			txtCompany.setText("정보없음");

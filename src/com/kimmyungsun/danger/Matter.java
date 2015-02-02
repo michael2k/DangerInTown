@@ -4,6 +4,7 @@ import android.database.Cursor;
 
 public class Matter {
 	
+
 	private int id;
 	private Company company;
 	private int companyCode;
