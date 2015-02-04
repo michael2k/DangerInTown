@@ -56,6 +56,8 @@ import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
@@ -151,14 +153,15 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	    // Get the SearchView and set the searchable configuration
 	    SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
 	    SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+	    searchView.setMaxWidth(400);
 	    
 	    // Assumes current activity is the searchable activity
 	    searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-	    searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+//	    searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
 	    
 		searchView.setOnQueryTextListener(onQueryTextHandler);
 
-		return super.onCreateOptionsMenu(menu);
+		return true;
 	}
 
 	@Override
@@ -407,6 +410,7 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 		Marker m = googleMap.addMarker(new MarkerOptions()
 		.position(new LatLng(company.getLatitude(), company.getLongitude()))
 		.snippet(String.valueOf(company.getId()))
+//		.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_launcher))
 		.title(company.getCompanyName())
 				)
 				;
@@ -577,6 +581,9 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 		Log.d(TAG, "onInfoWindowClick");
 		
 		Intent intent = new Intent(this, CompanyDetailsActivity.class);
+		
+		intent.putExtra(CompanyDetailsActivity.COMPANY_ID, marker.getSnippet());
+		
 		startActivity(intent);
 	}
 
@@ -603,6 +610,30 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 		View v = (View) findViewById(R.id.RelativeLayout1);
 		if ( v.getVisibility() != View.VISIBLE) v.setVisibility(View.VISIBLE);
 		
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle item selected
+		
+		Intent intent = null;
+		switch( item.getItemId() ) {
+		case R.id.action_join:
+			intent = new Intent(this, JoinActivity.class);
+			
+			startActivity(intent);
+			
+			return true;
+		case R.id.action_settings:
+			intent = new Intent(this, SettingsActivity.class);
+			
+			startActivity(intent);
+			return true;
+			
+		default:
+			return super.onOptionsItemSelected(item);
+				
+		}
 	}
 
 }

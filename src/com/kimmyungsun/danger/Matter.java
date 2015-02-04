@@ -5,14 +5,41 @@ import android.database.Cursor;
 public class Matter {
 	
 
+	/*
+	 * 아이
+	 */
 	private int id;
+	/*
+	 * 회사
+	 */
 	private Company company;
+	/*
+	 * 회사코드
+	 */
 	private int companyCode;
+	/*
+	 * 물질명 
+	 */
 	private String matterName;
+	/*
+	 * CAS No.
+	 */
 	private String casNo;
+	/*
+	 * 배출량(kg)
+	 */
 	private float outQty;
+	/*
+	 * 이동량(kg)
+	 */
 	private float moveQty;
+	/*
+	 * 위험정보 
+	 */
 	private String riskInfo;
+	/*
+	 * 종양호발부위 
+	 */
 	private String resultPart;
 	
 	

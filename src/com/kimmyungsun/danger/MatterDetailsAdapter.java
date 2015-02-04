@@ -9,16 +9,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
-public class MatterArrayAdapter extends BaseAdapter {
+public class MatterDetailsAdapter extends BaseAdapter {
 	
 	private Context context;
 	private int layout;
 	private List<Matter> list;
 	private LayoutInflater inf;
 
-	public MatterArrayAdapter(Context context, int layout, List<Matter> list) {
+	public MatterDetailsAdapter(Context context, int layout, List<Matter> list) {
 		this.context = context;
 		this.layout = layout;
 		this.list = list;
@@ -51,11 +52,15 @@ public class MatterArrayAdapter extends BaseAdapter {
 		ImageView imgRiskInfo = (ImageView) convertView.findViewById(R.id.imgRiskInfo);
 		TextView txtMatterName = (TextView) convertView.findViewById(R.id.txtMatterName);
 		TextView txtRiskInfo = (TextView) convertView.findViewById(R.id.txtRiskInfo);
+		TextView txtEtcInfo = (TextView) convertView.findViewById(R.id.txtEtcInfo);
+		TextView txtResultInfo = (TextView) convertView.findViewById(R.id.txtResultInfo);
 		
 		Matter matter = (Matter) list.get(position);
 		
 		txtMatterName.setText(matter.getMatterName());
 		txtRiskInfo.setText(matter.getRiskInfo());
+		txtEtcInfo.setText("CAS No:" + matter.getCasNo() + ", 배출량(kg):" + matter.getOutQty() + ", 이동량(kg):" + matter.getMoveQty());
+		txtResultInfo.setText(matter.getResultPart());
 		
 		int iconType;
 		if ( matter.getRiskInfo().contains("발암")) {

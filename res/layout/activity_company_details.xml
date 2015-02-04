@@ -1,7 +1,9 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -9,40 +11,36 @@
     tools:context="com.kimmyungsun.danger.CompanyDetailsActivity" >
 
     <TextView
-        android:id="@+id/txtCompanyAddress"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtCompanyName"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="업체명" />
 
     <TextView
-        android:id="@+id/txtCompanyName"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtCompanyAddress"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/txtCompanyAddress"
-        android:layout_below="@+id/txtCompanyAddress"
-        android:text="TextView" />
+        android:text="주소" />
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/txtCompanyName" >
+        android:layout_height="fill_parent"
+        android:fillViewport="true" >
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical" >
 
             <ListView
-                android:id="@+id/listView1"
+                android:id="@+id/listMatters"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content" >
-            </ListView>
+                android:layout_height="fill_parent"
+                android:layout_weight="1" >
 
+            </ListView>
         </LinearLayout>
     </ScrollView>
 
-</RelativeLayout>
+</LinearLayout>

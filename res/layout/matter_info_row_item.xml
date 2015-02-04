@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/LinearLayout1"
-    android:layout_width="fill_parent"
+    android:layout_width="200dp"
     android:layout_height="wrap_content"
     android:orientation="horizontal" >
 
-    <TextView
-        android:id="@+id/txtRiskIcon"
-        android:layout_width="30dp"
+    <ImageView
+        android:id="@+id/imgRiskInfo"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textColor="@color/red" />
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:background="@color/green"
+        android:padding="10dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_weight="1"
+        android:gravity="left"
+        android:orientation="vertical"
+        android:showDividers="middle|beginning|end" >
 
         <TextView
             android:id="@+id/txtMatterName"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Medium Text"
-             />
+            android:text="물질명" />
 
         <TextView
             android:id="@+id/txtRiskInfo"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:text="위험정보" />
     </LinearLayout>
 
 </LinearLayout>

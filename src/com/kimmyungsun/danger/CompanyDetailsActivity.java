@@ -1,19 +1,57 @@
 package com.kimmyungsun.danger;
 
+import java.util.List;
+
+import com.kimmyungsun.danger.provider.DangersDataSource;
+
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 //import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ListView;
+import android.widget.TextView;
 
 public class CompanyDetailsActivity extends Activity {
+	
+	private static final String TAG = CompanyDetailsActivity.class.getName();
+	
+	public static final String COMPANY_ID = "company_id";
+	private int companyId;
+	private TextView txtComapnyName;
+	private TextView txtAddress;
+	private ListView listMatters;
+	private Company company;
+	private List<Matter> matters;
+	
+	private DangersDataSource ds;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		Log.d(TAG, "onCreate");
+		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_company_details);
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		txtComapnyName = (TextView) findViewById(R.id.txtCompanyName);
+		txtAddress = (TextView) findViewById(R.id.txtCompanyAddress);
+		listMatters = (ListView) findViewById(R.id.listMatters);
+		
+		ds = new DangersDataSource(this);
+		
+		String companyId = getIntent().getStringExtra(COMPANY_ID);
+		Log.d(TAG, COMPANY_ID + ":" + companyId);
+		
+		if ( companyId != null && !companyId.isEmpty() ) {
+			this.companyId = Integer.parseInt(companyId);
+			
+			company = ds.getCompany(this.companyId);
+			matters = ds.searchMatters(company);
+		}
 		
 	}
 
@@ -35,4 +73,46 @@ public class CompanyDetailsActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onRestoreInstanceState(android.os.Bundle)
+	 */
+	@Override
+	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onRestoreInstanceState(savedInstanceState);
+	}
+
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+		if ( company != null ) {
+			txtComapnyName.setText(company.getCompanyName());
+			txtAddress.setText(company.getAddress());
+			listMatters.setAdapter(new MatterDetailsAdapter(this, R.layout.matter_row_item, matters));
+		}
+		super.onResume();
+	}
+
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onSaveInstanceState(android.os.Bundle)
+	 */
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		// TODO Auto-generated method stub
+		super.onSaveInstanceState(outState);
+	}
+
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onPause()
+	 */
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+	}
+	
+	
 }
