@@ -258,6 +258,13 @@ public class DangerDBHelper extends SQLiteOpenHelper implements IDangerConstants
 		return getReadableDatabase().query(DangerDBHelper.TABLE_COMPANY, COMPANY_ALL_COLUMNS, 
 				DangerDBHelper.COLUMN_ID + " = " + id , null, null, null, null);
 		
+	}
+
+	public Cursor getMatter(long id) {
+		
+		return getReadableDatabase().query(DangerDBHelper.TABLE_MATTER, MATTER_ALL_COLUMNS, 
+				DangerDBHelper.COLUMN_ID + " = " + id , null, null, null, null);
+		
 	}	
 
 }

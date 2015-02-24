@@ -80,4 +80,30 @@ public class DangersDataSource implements IDangerConstants {
 		return matters;
 	}
 
+	public List<Matter> searchMatters(String companyId) {
+		List<Matter> matters = new ArrayList<Matter>();
+		
+		Cursor cursor = context.getContentResolver()
+				.query(Uri.parse("content://" + AUTHORITY + "/matters"), DangerDBHelper.MATTER_ALL_COLUMNS, null, new String[] {companyId}, null);
+		
+		cursor.moveToFirst();
+		while( !cursor.isAfterLast()) {
+			Matter matter = Matter.cursorToMatter(cursor);
+			matters.add(matter);
+			cursor.moveToNext();
+		}
+		// make sure to close the cursor
+		cursor.close();
+		return matters;
+	}
+
+	public Matter getMatter(long id) {
+		Cursor cursor = context.getContentResolver()
+				.query(Uri.parse("content://" + AUTHORITY + "/matters/" + id), DangerDBHelper.MATTER_ALL_COLUMNS, null, new String[] { String.valueOf(id) }, null);
+		cursor.moveToFirst();
+		Matter m = Matter.cursorToMatter(cursor);
+		cursor.close();
+		return m;
+	}
+
 }

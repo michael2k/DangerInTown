@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.database.Cursor;
+import android.graphics.Color;
 
 public class Company {
 	private long id;
@@ -121,6 +122,54 @@ public class Company {
 		company.setAccuracy(cursor.getInt(6));
 		company.setStatus(cursor.getInt(7));
 		return company;
+	}
+	
+	public static int getIconType( List<Matter> matters, int iSize ) {
+		int iconType = 0;
+		int iRed = 0;
+		int iYellow = 0;
+		int iOrange = 0;
+		int iPurple = 0;
+		
+		for (Matter matter : matters) {
+			if (matter.getRiskInfo().contains("발암")) {
+				iYellow++;
+			} else if (matter.getRiskInfo().contains("사고대비")) {
+				iRed++;
+			} else if (matter.getRiskInfo().contains("생식독성")) {
+				iOrange++;
+			} else if (matter.getRiskInfo().contains("발달독성")) {
+				iPurple++;
+			} 
+		}
+		if ( iSize == 0 ) {
+			if ( iRed > 0 ) {
+				iconType = R.drawable.marker_red_s;
+			} else if ( iYellow > 0 ) {
+				iconType = R.drawable.marker_yellow_s;
+			} else if ( iOrange > 0 ) {
+				iconType = R.drawable.marker_orange_s;
+			} else if ( iPurple > 0 ) {
+				iconType = R.drawable.marker_purple_s;
+			} else {
+				iconType = R.drawable.marker_white_s;
+			}
+		} else {
+			if ( iRed > 0 ) {
+				iconType = R.drawable.marker_red_b;
+			} else if ( iYellow > 0 ) {
+				iconType = R.drawable.marker_yellow_b;
+			} else if ( iOrange > 0 ) {
+				iconType = R.drawable.marker_orange_b;
+			} else if ( iPurple > 0 ) {
+				iconType = R.drawable.marker_purple_b;
+			} else {
+				iconType = R.drawable.marker_white_b;
+			}
+			
+		}
+		
+		return iconType;
 	}
 
 }

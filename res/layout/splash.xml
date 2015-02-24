@@ -7,7 +7,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/yellow" />
+        android:background="@color/cyan" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -18,9 +18,9 @@
         android:orientation="vertical" >
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/logo" />
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/ic_launcher" />
 
         <ProgressBar
             android:id="@+id/progressBar1"
@@ -32,16 +32,12 @@
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="10dp"
+            android:padding="30dp"
             android:text="@string/app_description"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/app_description2"
-            android:textColor="@color/red" />
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@color/green"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

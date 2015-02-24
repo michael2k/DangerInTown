@@ -131,9 +131,9 @@
     <string name="title_activity_company_info">CompanyInfoActivity</string>
     <string name="title_activity_company_details">사업장 상세 정보</string>
     <string name="action_about">우리동네 위험지도란?</string>
-    <string name="app_description">본 정보는 전체사업장의 19.7%에 해당하는 3,268개 사업장 총 12,700개 화학물질 위험정보에 불과하다.</string>
-    <string name="app_description2">따라서 대다수 정보의 추가공개가 필요하다.</string>
+    <string name="app_description">본 위험정보는 전체사업장의 19.7%에 불과하다. 따라서 대다수 정보의 추가공개가 필요하다.</string>
     <string name="action_join">이용자 참여방</string>
     <string name="title_activity_join">이용자 참여</string>
+    <string name="title_activity_matter_datail">물질상세정보</string>
 
 </resources>

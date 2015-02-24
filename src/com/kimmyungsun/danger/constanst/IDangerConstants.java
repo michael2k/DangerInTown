@@ -6,8 +6,9 @@ import android.net.Uri;
 
 public interface IDangerConstants {
 	
-//	public static final String MAP_KEY = "AIzaSyBHSu7Gakue-Jgb86x4hOG62aXMWct4X0o"; // 13
-	public static final String MAP_KEY = "AIzaSyAa0VCzUiaKafw-sNERQX_nG2E0dlnK7vw"; // 15
+	public static final String MAP_KEY = "AIzaSyBHSu7Gakue-Jgb86x4hOG62aXMWct4X0o"; // 13
+//	public static final String MAP_KEY = "AIzaSyAa0VCzUiaKafw-sNERQX_nG2E0dlnK7vw"; // 15
+//	public static final String MAP_KEY = "AIzaSyDQeTdWNiUWbJqScErPrlJ5D0y-sY73_K0"; // RELEASE
 	
 	public static final String API_KEY = "AIzaSyDYzJufVULJ1Xl2kbaUbhTh9WxAlvuPZgQ";
 	
@@ -127,6 +128,7 @@ public interface IDangerConstants {
 	public static final int SAVE_KEYWORD = 4;
 	
 	public static final int GET_COMPANY_KEYWORD = 11;
+	public static final int GET_MATTER_KEYWORD = 14;
 	public static final int SEARCH_COMPANY_KEYWORD = 12;
 	public static final int SEARCH_MATTER_KEYWORD = 13;
 

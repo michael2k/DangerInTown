@@ -11,10 +11,15 @@ import android.util.Log;
 //import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class CompanyDetailsActivity extends Activity {
+public class CompanyDetailsActivity extends Activity 
+implements OnItemClickListener
+{
 	
 	private static final String TAG = CompanyDetailsActivity.class.getName();
 	
@@ -40,6 +45,7 @@ public class CompanyDetailsActivity extends Activity {
 		txtComapnyName = (TextView) findViewById(R.id.txtCompanyName);
 		txtAddress = (TextView) findViewById(R.id.txtCompanyAddress);
 		listMatters = (ListView) findViewById(R.id.listMatters);
+		listMatters.setOnItemClickListener(this);
 		
 		ds = new DangersDataSource(this);
 		
@@ -112,6 +118,19 @@ public class CompanyDetailsActivity extends Activity {
 	protected void onPause() {
 		// TODO Auto-generated method stub
 		super.onPause();
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+			long id) {
+		Matter m = matters.get(position);
+		
+		Intent intent = new Intent(this, MatterDetailActivity.class);
+		
+		intent.putExtra(MatterDetailActivity.MATTER_ID, m.getId());
+		
+		startActivity(intent);
+		
 	}
 	
 	

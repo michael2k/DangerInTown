@@ -114,6 +114,24 @@ public class Matter {
 		return sb.toString();
 	}
 	
+	public static int getIconType(Matter matter ) {
+		int iconType = 0;
+		
+		if (matter.getRiskInfo().contains("사고대비")) {
+			iconType = R.drawable.circle_red;
+		} else if (matter.getRiskInfo().contains("발암")) {
+			iconType = R.drawable.circle_yellow;
+		} else if (matter.getRiskInfo().contains("생식독성")) {
+			iconType = R.drawable.circle_orange;
+		} else if (matter.getRiskInfo().contains("발달독성")) {
+			iconType = R.drawable.circle_purple;
+		} else {
+			iconType = R.drawable.circle_white;
+		}
+		
+		return iconType;
+	}
+	
 	public static Matter cursorToMatter(Cursor cursor) {
 		Matter matter = new Matter();
 		matter.setId(cursor.getInt(0));

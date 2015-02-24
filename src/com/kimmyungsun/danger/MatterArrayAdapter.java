@@ -58,23 +58,18 @@ public class MatterArrayAdapter extends BaseAdapter {
 		txtRiskInfo.setText(matter.getRiskInfo());
 		
 		int iconType;
-		if ( matter.getRiskInfo().contains("발암")) {
-//			ic.setText("노랑");
-			iconType = Color.YELLOW;
-		} else if ( matter.getRiskInfo().contains("사고대비")) {
-//			ic.setText("주랑");
-			iconType = Color.RED;
+		 if ( matter.getRiskInfo().contains("사고대비")) {
+			 iconType = R.drawable.circle_red;
+		 } else if ( matter.getRiskInfo().contains("발암")) {
+			iconType = R.drawable.circle_yellow;
 		} else if ( matter.getRiskInfo().contains("생식독성")) {
-//			ic.setText("주랑");
-			iconType = Color.BLUE;
+			iconType = R.drawable.circle_orange;
 		} else if ( matter.getRiskInfo().contains("발달독성")) {
-//			ic.setText("보라");
-			iconType = Color.MAGENTA;
+			iconType = R.drawable.circle_purple;
 		} else {
-			iconType = R.color.bold_grey;
-//			iconType = Color.RED;
+			iconType = R.drawable.circle_white;
 		}
-		imgRiskInfo.setBackgroundColor(iconType);
+		imgRiskInfo.setImageResource(iconType);
 		
 		return convertView;
 	}

@@ -65,6 +65,7 @@ public class DangerContentProvider extends SearchRecentSuggestionsProvider imple
         uriMatcher.addURI(AUTHORITY, "companys", SEARCH_COMPANY_KEYWORD);
         uriMatcher.addURI(AUTHORITY, "companys/#", GET_COMPANY_KEYWORD);
         uriMatcher.addURI(AUTHORITY, "matters", SEARCH_MATTER_KEYWORD);
+        uriMatcher.addURI(AUTHORITY, "matters/#", GET_MATTER_KEYWORD);
         
 	 
         return uriMatcher;
@@ -114,6 +115,11 @@ public class DangerContentProvider extends SearchRecentSuggestionsProvider imple
         	DBLog.d(TAG, "================>GET_COMPANY_KEYWORD="+selectionArgs[0]);
 //             c = getRecord(uri);
         	c = mDangerDBHelper.getCompany(Long.valueOf(selectionArgs[0]));
+        	break;
+        case GET_MATTER_KEYWORD:
+        	DBLog.d(TAG, "================>GET_MATTER_KEYWORD="+selectionArgs[0]);
+//             c = getRecord(uri);
+        	c = mDangerDBHelper.getMatter(Long.valueOf(selectionArgs[0]));
         	break;
 		}
 		return c;

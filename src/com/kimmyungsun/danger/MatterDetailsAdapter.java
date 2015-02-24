@@ -62,24 +62,19 @@ public class MatterDetailsAdapter extends BaseAdapter {
 		txtEtcInfo.setText("CAS No:" + matter.getCasNo() + ", 배출량(kg):" + matter.getOutQty() + ", 이동량(kg):" + matter.getMoveQty());
 		txtResultInfo.setText(matter.getResultPart());
 		
-		int iconType;
-		if ( matter.getRiskInfo().contains("발암")) {
-//			ic.setText("노랑");
-			iconType = Color.YELLOW;
-		} else if ( matter.getRiskInfo().contains("사고대비")) {
-//			ic.setText("주랑");
-			iconType = Color.RED;
-		} else if ( matter.getRiskInfo().contains("생식독성")) {
-//			ic.setText("주랑");
-			iconType = Color.BLUE;
-		} else if ( matter.getRiskInfo().contains("발달독성")) {
-//			ic.setText("보라");
-			iconType = Color.MAGENTA;
-		} else {
-			iconType = R.color.bold_grey;
-//			iconType = Color.RED;
-		}
-		imgRiskInfo.setBackgroundColor(iconType);
+//		int iconType;
+//		 if ( matter.getRiskInfo().contains("사고대비")) {
+//			 iconType = R.drawable.circle_red;
+//		 } else if ( matter.getRiskInfo().contains("발암")) {
+//			iconType = R.drawable.circle_yellow;
+//		} else if ( matter.getRiskInfo().contains("생식독성")) {
+//			iconType = R.drawable.circle_orange;
+//		} else if ( matter.getRiskInfo().contains("발달독성")) {
+//			iconType = R.drawable.circle_purple;
+//		} else {
+//			iconType = R.drawable.circle_white;
+//		}
+		imgRiskInfo.setImageResource(Matter.getIconType(matter));
 		
 		return convertView;
 	}
