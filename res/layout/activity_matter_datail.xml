@@ -66,6 +66,6 @@
         android:layout_below="@+id/linearLayout1"
         android:layout_margin="10dp"
         android:contentDescription="종양발호부위"
-        android:src="@drawable/marker_01" />
+        android:src="@drawable/human_body_all" />
 
 </RelativeLayout>

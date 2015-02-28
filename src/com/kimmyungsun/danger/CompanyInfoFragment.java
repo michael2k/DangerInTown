@@ -138,7 +138,7 @@ implements OnItemClickListener
 		if ( company != null ) {
 			txtCompanyName.setText(company.getCompanyName());
 //			txtAddress.setText(company.getAddress());
-			listMatters.setAdapter(new MatterDetailsAdapter(getActivity(), R.layout.matter_row_item, matters));
+			listMatters.setAdapter(new MatterArrayAdapter(getActivity(), R.layout.matter_info_row_item, matters));
 		}
 		super.onResume();
 	}

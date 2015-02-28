@@ -129,6 +129,11 @@ public class SplashActivity extends Activity implements IDBTaskListener, IDanger
 //			Toast.makeText(this, R.string.info_parse_error, Toast.LENGTH_LONG).show();
 //			return;
 //		}
+		try {
+			Thread.sleep(4000);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		this.mProgressBar.setVisibility(View.INVISIBLE);
 		Intent mIntent = new Intent(SplashActivity.this, DangerDataTest.class);
 		mIntent.putExtra(KEY_START_FROM, START_FROM_SPLASH);

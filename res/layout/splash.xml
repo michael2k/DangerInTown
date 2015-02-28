@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"
             android:padding="30dp"
             android:text="@string/app_description"
+            android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:textColor="@color/green"
             android:textSize="15sp"

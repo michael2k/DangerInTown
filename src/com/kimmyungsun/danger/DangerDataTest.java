@@ -1,5 +1,6 @@
 package com.kimmyungsun.danger;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,8 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Location;
 import android.os.AsyncTask;
@@ -67,6 +70,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -367,7 +371,6 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 		
         processLocationChanged(lat, lng);
         
-        
 //      if ( buttonStatus == BUTTON_ENABLED ) {
       googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng),12), this);
 //      }
@@ -489,29 +492,49 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	/*
 	 * called when the user clicks the btnSearch button
 	 */
-	public void searchLocation(View view) {
-		Log.d(TAG, "searchLocation");
-		String searchString = txtSearch.getText().toString();
-		Log.d(TAG, "searchString:" + searchString);
-		
-		List<Company> companys = dangerDataSource.searchCompanys(searchString);
-		Log.d(TAG, "search result list size:" + companys.size());
-		for ( Company company : companys) {
-			Log.d(TAG, "company:" + company.toString());
-			
-		}
+	public void searchLocation(final LatLng latLng, final String query) {
+		Log.d(TAG, "searchLocation[" + query + "]:" + latLng.toString());
+//		String searchString = txtSearch.getText().toString();
+//		Log.d(TAG, "searchString:" + searchString);
+//		
+//		List<Company> companys = dangerDataSource.searchCompanys(searchString);
+//		Log.d(TAG, "search result list size:" + companys.size());
+//		for ( Company company : companys) {
+//			Log.d(TAG, "company:" + company.toString());
+//			
+//		}
 		
 		AsyncTask.execute(new  Runnable() {
 			
 			@Override
 			public void run() {
-				ResponsePlaceResult rpr = YPYNetUtils.getListPlacesBaseOnText(DangerDataTest.this, mLatLng.longitude, mLatLng.latitude, txtSearch.getText().toString());
+//				ResponsePlaceResult rpr = YPYNetUtils.getListPlacesBaseOnText(DangerDataTest.this, mLatLng.longitude, mLatLng.latitude, txtSearch.getText().toString());
+				ResponsePlaceResult rpr = YPYNetUtils.getListPlacesBaseOnText(DangerDataTest.this, latLng.longitude, latLng.latitude, query);
 				
 				Log.d(TAG, rpr.toString());
 				
 				List<PlaceObject> places = rpr.getListPlaceObjects();
-				for ( PlaceObject po : places ) {
+				for ( final PlaceObject po : places ) {
 					Log.d(TAG, po.getName());
+					AsyncTask.execute(new Runnable() {
+						
+						@Override
+						public void run() {
+							runOnUiThread(new Runnable() {
+								
+								@Override
+								public void run() {
+									googleMap.addMarker(
+											new MarkerOptions()
+											.position(new LatLng(po.getLocation().getLatitude(), po.getLocation().getLongitude()))
+											.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_university))
+											.title(po.getName())
+											);
+									
+								}
+							});
+						}
+					});
 				}
 				
 			}
@@ -645,6 +668,8 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	public boolean onMarkerClick(Marker marker) {
 		Log.d(TAG, "onMarkerClick");
 		
+		if ( marker == null || marker.getSnippet() == null ) return false;
+		
 		setButtonStatus(BUTTON_DISABLED);
 
 		
@@ -722,8 +747,11 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	public void onCameraChange(CameraPosition cameraPosition) {
 		Log.d(TAG, "onCameraChange");
 		
-		View v = (View) findViewById(R.id.dangerMainLayout);
-		if ( v.getVisibility() != View.VISIBLE) v.setVisibility(View.VISIBLE);
+        searchLocation(cameraPosition.target, "어린이집");
+        searchLocation(cameraPosition.target, "학교");
+        
+//		View v = (View) findViewById(R.id.dangerMainLayout);
+//		if ( v.getVisibility() != View.VISIBLE) v.setVisibility(View.VISIBLE);
 		
 	}
 
