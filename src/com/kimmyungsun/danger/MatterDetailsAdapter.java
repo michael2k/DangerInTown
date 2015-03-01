@@ -52,15 +52,15 @@ public class MatterDetailsAdapter extends BaseAdapter {
 		ImageView imgRiskInfo = (ImageView) convertView.findViewById(R.id.imgRiskInfo);
 		TextView txtMatterName = (TextView) convertView.findViewById(R.id.txtMatterName);
 		TextView txtRiskInfo = (TextView) convertView.findViewById(R.id.txtRiskInfo);
-		TextView txtEtcInfo = (TextView) convertView.findViewById(R.id.txtEtcInfo);
-		TextView txtResultInfo = (TextView) convertView.findViewById(R.id.txtResultInfo);
+//		TextView txtEtcInfo = (TextView) convertView.findViewById(R.id.txtEtcInfo);
+//		TextView txtResultInfo = (TextView) convertView.findViewById(R.id.txtResultInfo);
 		
 		Matter matter = (Matter) list.get(position);
 		
 		txtMatterName.setText(matter.getMatterName());
 		txtRiskInfo.setText(matter.getRiskInfo());
-		txtEtcInfo.setText("CAS No:" + matter.getCasNo() + ", 배출량(kg):" + matter.getOutQty() + ", 이동량(kg):" + matter.getMoveQty());
-		txtResultInfo.setText(matter.getResultPart());
+//		txtEtcInfo.setText("CAS No:" + matter.getCasNo() + ", 배출량(kg):" + matter.getOutQty() + ", 이동량(kg):" + matter.getMoveQty());
+//		txtResultInfo.setText(matter.getResultPart());
 		
 //		int iconType;
 //		 if ( matter.getRiskInfo().contains("사고대비")) {

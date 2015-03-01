@@ -5,17 +5,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -76,6 +79,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.maps.android.ui.IconGenerator;
 import com.kimmyungsun.danger.constanst.IDangerConstants;
 import com.kimmyungsun.danger.datamng.YPYNetUtils;
 import com.kimmyungsun.danger.geocode.GeoCodeCalc;
@@ -196,6 +200,9 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	protected void onResume() {
 		Log.d(TAG, "onResume");
 		super.onResume();
+		
+		checkGPS();
+		
 //		dangerDataSource.open();
 //		googleApiClient.connect();
 		setUpGoogleApiClient();
@@ -387,17 +394,46 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
         List<Company> companys = dangerDataSource.getAllCompanys();
 //        List<Company> companys = getContentResolver().
         
+        LatLng org = new LatLng(lat, lng);
+        
+        IconGenerator iconFactory = new IconGenerator(this);
+        iconFactory.setStyle(IconGenerator.STYLE_RED);
         
         CircleOptions co = new CircleOptions();
-        co.center(new LatLng(lat, lng));
+        co.center(org);
         co.strokeWidth(1.0f);
         co.radius(5000);
         co.fillColor(Color.argb(30, 50, 0, 0));
+//        iconFactory.setColor(Color.argb(30, 50, 0, 0));
+        addIcon(iconFactory, "5KM", new LatLng(org.latitude + ( 0.00436 * 10), org.longitude));
         
         googleMap.addCircle(co);
         
+//        IconGenerator iconFactory = new IconGenerator(this);
+//        iconFactory.setStyle(IconGenerator.STYLE_RED);
+//        addIcon(iconFactory, "500M", new LatLng(org.latitude + 0.00436, org.longitude));
+
+//        iconFactory.setColor(Color.CYAN);
+//        addIcon(iconFactory, "5KM", new LatLng(org.latitude + ( 0.00436 * 10), org.longitude));
+
+//        iconFactory.setRotation(90);
+//        iconFactory.setStyle(IconGenerator.STYLE_RED);
+//        addIcon(iconFactory, "2KM", new LatLng(org.latitude + ( 0.00436 * 4), org.longitude));
+
+//        iconFactory.setContentRotation(-90);
+//        iconFactory.setStyle(IconGenerator.STYLE_PURPLE);
+//        addIcon(iconFactory, "Rotate=90, ContentRotate=-90", new LatLng(org.latitude, org.longitude));
+//
+//        iconFactory.setRotation(0);
+//        iconFactory.setContentRotation(90);
+//        iconFactory.setStyle(IconGenerator.STYLE_GREEN);
+//        addIcon(iconFactory, "ContentRotate=90", new LatLng(org.latitude, org.longitude));
+ 
+        
         co.radius(2000);
         co.fillColor(Color.argb(40, 100, 0, 0));
+//        iconFactory.setColor(Color.argb(40, 100, 0, 0));
+        addIcon(iconFactory, "2KM", new LatLng(org.latitude + ( 0.00436 * 4), org.longitude));
         
         googleMap.addCircle(co);
         
@@ -407,6 +443,7 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 //        googleMap.addCircle(co);
         
         co.radius(500);
+        addIcon(iconFactory, "500M", new LatLng(org.latitude + 0.00436, org.longitude));
         
         googleMap.addCircle(co);
         
@@ -829,44 +866,48 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 		
 	}
 
-//	@Override
-//	public void onScrollEnded() {
-//		SlidingDrawer slidingDrwawer = ( SlidingDrawer ) findViewById(R.id.slidingCompanyDetails);
-//		int height = slidingDrwawer.getHeight();
-//		Fragment fMap = getFragmentManager().findFragmentById(R.id.map);
-//		int mapHeight = fMap.getView().getHeight();
-//		FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) fMap.getView().getLayoutParams();
-//		params.height = mapHeight - height;
-//		fMap.getView().setLayoutParams(params);
-//
-//	}
-//
-//	@Override
-//	public void onScrollStarted() {
-//		// TODO Auto-generated method stub
-//		
-//	}
-//
-//	@Override
-//	public void onDrawerClosed() {
-//		Fragment fMap = getFragmentManager().findFragmentById(R.id.map);
-//		FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) fMap.getView().getLayoutParams();
-//		params.height = android.widget.FrameLayout.LayoutParams.MATCH_PARENT;
-//		fMap.getView().setLayoutParams(params);
-//		
-//	}
-//
-//	@Override
-//	public void onDrawerOpened() {
-//		SlidingDrawer slidingDrwawer = ( SlidingDrawer ) findViewById(R.id.slidingCompanyDetails);
-//		Button handle = ( Button ) findViewById(R.id.handle);
-//		int height = slidingDrwawer.getHeight() - handle.getHeight();
-//		Fragment fMap = getFragmentManager().findFragmentById(R.id.map);
-//		int mapHeight = fMap.getView().getHeight();
-//		FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) fMap.getView().getLayoutParams();
-//		params.height = mapHeight - height;
-//		fMap.getView().setLayoutParams(params);
-//		
-//	}
+	private void addIcon(IconGenerator iconFactory, String text, LatLng position) {
+	    MarkerOptions markerOptions = new MarkerOptions().
+	            icon(BitmapDescriptorFactory.fromBitmap(iconFactory.makeIcon(text))).
+	            position(position).
+	            anchor(iconFactory.getAnchorU(), iconFactory.getAnchorV());
+	
+	    googleMap.addMarker(markerOptions);
+	}
+	
+	private void checkGPS() {
+		
+		LocationManager locationManager = ( LocationManager )  getSystemService(LOCATION_SERVICE);
+		if ( !locationManager.isProviderEnabled( LocationManager.GPS_PROVIDER)) {
+			
+		
+			AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
+			dialogBuilder.setMessage("GPS가 비활성상태 입니다.")
+			.setCancelable(false)
+			.setPositiveButton("GPS 설정", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					Intent gpsOptionsIntent = new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+					startActivity(gpsOptionsIntent);
+				}
+			})
+			.setNegativeButton("계속", new DialogInterface.OnClickListener() {
+				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.cancel();
+//					finish();
+					
+				}
+			})
+			;
+			AlertDialog alert = dialogBuilder.create();
+			alert.setTitle("GPS 설정");
+			alert.setIcon(R.drawable.ic_launcher);
+			alert.show();
+		}
+	}
+
 
 }

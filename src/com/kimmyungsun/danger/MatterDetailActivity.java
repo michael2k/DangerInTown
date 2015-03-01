@@ -4,12 +4,15 @@ import com.kimmyungsun.danger.provider.DangersDataSource;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MatterDetailActivity extends Activity {
+	
+	private static final String TAG = MatterDetailActivity.class.getName();
 	
 	public static final String MATTER_ID = "matter_id";
 	
@@ -18,6 +21,7 @@ public class MatterDetailActivity extends Activity {
 	private ImageView imgRiskInfo;
 	private ImageView imgResultInfo;
 	private TextView txtEtcInfo;
+	private ResultInfo resultInfo;
 	
 	private int matterId;
 	private Matter matter;
@@ -40,6 +44,8 @@ public class MatterDetailActivity extends Activity {
 		ds = new DangersDataSource(this);
 		if ( matterId > 0 ) {
 			matter = ds.getMatter(matterId);
+			resultInfo = new ResultInfo(matter.getResultPart());
+			Log.d(TAG, resultInfo.toString());
 		}
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
@@ -79,6 +85,7 @@ public class MatterDetailActivity extends Activity {
 			txtRiskInfo.setText(matter.getRiskInfo());
 			txtEtcInfo.setText("CAS No:" + matter.getCasNo() + ", 배출량(kg):" + matter.getOutQty() + ", 이동량(kg):" + matter.getMoveQty());
 			imgRiskInfo.setImageResource(Matter.getIconType(matter));
+			
 		}
 		super.onResume();
 	}

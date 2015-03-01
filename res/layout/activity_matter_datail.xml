@@ -60,12 +60,22 @@
         android:id="@+id/imgResultInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@+id/btnRiskInfo"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_below="@+id/linearLayout1"
         android:layout_margin="10dp"
         android:contentDescription="종양발호부위"
+        android:padding="5dp"
         android:src="@drawable/human_body_all" />
+
+    <Button
+        android:id="@+id/btnRiskInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="Button" />
 
 </RelativeLayout>

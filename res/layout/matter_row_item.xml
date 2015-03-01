@@ -7,42 +7,24 @@
 
     <ImageView
         android:id="@+id/imgRiskInfo"
-        android:layout_width="30dp"
-        android:layout_height="match_parent"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_gravity="left"
         android:layout_margin="10dp"
         android:src="@drawable/circle_white" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txtMatterName"
+        android:layout_width="96dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/txtMatterName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="물질명" />
-
-        <TextView
-            android:id="@+id/txtRiskInfo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="위험정보" />
-
-        <TextView
-            android:id="@+id/txtEtcInfo"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="기타정보" />
-    </LinearLayout>
+        android:layout_weight="0.50"
+        android:text="물질명" />
 
     <TextView
-        android:id="@+id/txtResultInfo"
-        android:layout_width="100dp"
-        android:layout_height="fill_parent"
-        android:layout_gravity="right"
-        android:text="종양호발부위"
-        android:textColor="@color/red" />
+        android:id="@+id/txtRiskInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.40"
+        android:text="위험정보" />
 
 </LinearLayout>
