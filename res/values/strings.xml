@@ -135,5 +135,6 @@
     <string name="action_join">이용자 참여방</string>
     <string name="title_activity_join">이용자 참여</string>
     <string name="title_activity_matter_datail">물질상세정보</string>
+    <string name="title_activity_riskinfo_datail">위험성 상세정보</string>
 
 </resources>

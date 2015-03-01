@@ -2,6 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="true"
+    android:onClick="showRiskInfoDetails"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -23,37 +25,22 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/txtMatterName"
         android:layout_marginTop="15dp"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
 
-        <ImageView
-            android:id="@+id/imgRiskInfo"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:layout_margin="10dp"
-            android:src="@drawable/circle_red" />
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/txtRiskInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:text="위험정보"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:id="@+id/txtRiskInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="위험정보"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+        <TextView
+            android:id="@+id/txtEtcInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="기타정보"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:id="@+id/txtEtcInfo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:text="기타정보"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
-        </LinearLayout>
     </LinearLayout>
 
     <ImageView
@@ -67,7 +54,7 @@
         android:layout_margin="10dp"
         android:contentDescription="종양발호부위"
         android:padding="5dp"
-        android:src="@drawable/human_body_all" />
+        android:src="@drawable/human_body_empty" />
 
     <Button
         android:id="@+id/btnRiskInfo"
@@ -76,6 +63,8 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:text="Button" />
+        android:onClick="showRiskInfoDetails"
+        android:text="사고대비물질별 대피요령 및 위험성 정보"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 </RelativeLayout>

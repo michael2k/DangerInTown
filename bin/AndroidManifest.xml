@@ -127,6 +127,10 @@
             android:label="@string/title_activity_matter_datail"
             >
         </activity>
+        <activity 
+            android:name="RiskInfoDetailsActivity" 
+            android:label="@string/title_activity_riskinfo_datail" 
+            />
     </application>
 
 </manifest>

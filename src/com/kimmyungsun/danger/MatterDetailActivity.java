@@ -1,14 +1,16 @@
 package com.kimmyungsun.danger;
 
-import com.kimmyungsun.danger.provider.DangersDataSource;
-
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.kimmyungsun.danger.provider.DangersDataSource;
 
 public class MatterDetailActivity extends Activity {
 	
@@ -18,7 +20,7 @@ public class MatterDetailActivity extends Activity {
 	
 	private TextView txtMatterName;
 	private TextView txtRiskInfo;
-	private ImageView imgRiskInfo;
+//	private ImageView imgRiskInfo;
 	private ImageView imgResultInfo;
 	private TextView txtEtcInfo;
 	private ResultInfo resultInfo;
@@ -36,7 +38,7 @@ public class MatterDetailActivity extends Activity {
 		txtMatterName = (TextView) findViewById(R.id.txtMatterName);
 		txtRiskInfo = (TextView) findViewById(R.id.txtRiskInfo);
 		txtEtcInfo = (TextView) findViewById(R.id.txtEtcInfo);
-		imgRiskInfo = (ImageView) findViewById(R.id.imgRiskInfo);
+//		imgRiskInfo = (ImageView) findViewById(R.id.imgRiskInfo);
 		imgResultInfo = (ImageView) findViewById(R.id.imgResultInfo);
 		
 		matterId = getIntent().getIntExtra(MATTER_ID, -1);
@@ -84,9 +86,30 @@ public class MatterDetailActivity extends Activity {
 			txtMatterName.setText(matter.getMatterName());
 			txtRiskInfo.setText(matter.getRiskInfo());
 			txtEtcInfo.setText("CAS No:" + matter.getCasNo() + ", 배출량(kg):" + matter.getOutQty() + ", 이동량(kg):" + matter.getMoveQty());
-			imgRiskInfo.setImageResource(Matter.getIconType(matter));
+			int resourceId = R.drawable.human_body_empty;
+			if ( matter.getCasNo() != null && !matter.getCasNo().isEmpty() ) {
+				String casNo = matter.getCasNo().trim();
+				if ( "000106-98-9".equals(casNo)) {
+					resourceId = R.drawable.hb_000106_98_9;
+				} else if ( "000106-99-0".equals(casNo)) {
+					resourceId = R.drawable.hb_000106_99_0;
+				} else if ( "000107-06-2".equals(casNo)) {
+					resourceId = R.drawable.hb_000107_06_2;
+				} else if ( "000123-91-1".equals(casNo)) {
+					resourceId = R.drawable.hb_000123_91_1;
+				}
+			}
+			imgResultInfo.setImageResource(resourceId);
 			
 		}
 		super.onResume();
+	}
+	
+	public void showRiskInfoDetails(View view) {
+		Log.d(TAG, "showRiskInfoDetails");
+		
+		Intent riskInfoIntent = new Intent(this, RiskInfoDetailsActivity.class);
+		startActivity(riskInfoIntent);
+		
 	}
 }
