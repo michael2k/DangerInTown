@@ -219,7 +219,7 @@ public class IconGenerator {
      * @param color the color for the background tint.
      */
     public void setColor(int color) {
-        mBackground.setColor(color);
+        mBackground.setColor(Color.argb(100, 255, 255, 0));
         setBackground(mBackground);
     }
 
@@ -269,12 +269,12 @@ public class IconGenerator {
         switch (style) {
             default:
             case STYLE_DEFAULT:
-            case STYLE_WHITE:
-                return 0xffffffff;
-            case STYLE_RED:
-                return 0xffcc0000;
             case STYLE_BLUE:
                 return 0xff0099cc;
+            case STYLE_WHITE:
+            	return 0xffffffff;
+            case STYLE_RED:
+            	return 0xffcc0000;
             case STYLE_GREEN:
                 return 0xff669900;
             case STYLE_PURPLE:
@@ -289,13 +289,13 @@ public class IconGenerator {
             default:
             case STYLE_DEFAULT:
             case STYLE_WHITE:
-                return R.style.Bubble_TextAppearance_Dark;
+            	return R.style.Bubble_TextAppearance_Light;
             case STYLE_RED:
             case STYLE_BLUE:
             case STYLE_GREEN:
             case STYLE_PURPLE:
             case STYLE_ORANGE:
-                return R.style.Bubble_TextAppearance_Light;
+            	return R.style.Bubble_TextAppearance_Dark;
         }
     }
 }

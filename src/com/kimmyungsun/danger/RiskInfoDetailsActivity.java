@@ -7,7 +7,7 @@ import android.widget.ListView;
 
 public class RiskInfoDetailsActivity extends Activity {
 	
-	private ListView listRiskInfos;
+//	private ListView listRiskInfos;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +17,7 @@ public class RiskInfoDetailsActivity extends Activity {
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
-		listRiskInfos = (ListView) findViewById(R.id.listRiskInfos);
+//		listRiskInfos = (ListView) findViewById(R.id.listRiskInfos);
 		
 	}
 
@@ -29,7 +29,7 @@ public class RiskInfoDetailsActivity extends Activity {
 
 	@Override
 	protected void onResume() {
-		listRiskInfos.setAdapter(new RiskInfoArrayAdapter(this, R.layout.riskinfo_row));
+//		listRiskInfos.setAdapter(new RiskInfoArrayAdapter(this, R.layout.riskinfo_row));
 		super.onResume();
 	}
 

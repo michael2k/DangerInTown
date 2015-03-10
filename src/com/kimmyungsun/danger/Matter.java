@@ -150,7 +150,7 @@ public class Matter {
 		
 		if ( s != null && !s.isEmpty() ) {
 			matter = new Matter();
-			String[] atts = s.split(",", -1);
+			String[] atts = s.split("\\|", -1);
 			matter.setCompanyCode(Integer.valueOf(atts[0]));
 			matter.setMatterName(atts[1]);
 			matter.setCasNo(atts[2]);

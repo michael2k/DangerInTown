@@ -1,69 +1,164 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayout1"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.kimmyungsun.danger.JoinActivity" >
+    android:layout_height="match_parent" >
 
-    <Button
-        android:id="@+id/btnRequest"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:linksClickable="true"
-        android:onClick="goRequest"
-        android:text="알권리법 제정 청원운동" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/btnSpeech"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:linksClickable="true"
-        android:onClick="goSpeech"
-        android:text="환경부 요청히기(자유발언대)" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/btnSupport"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:linksClickable="true"
-        android:onClick="goSupport"
-        android:text="일과건강 후원하기" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/btnFacebook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:linksClickable="true"
-        android:onClick="goFacebook"
-        android:text="일과건강 페이스북페이지" />
+                <ImageButton
+                    android:id="@+id/btnRequest"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:onClick="goRequest"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_join_request" />
 
-    <Button
-        android:id="@+id/btnAskDetails"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:linksClickable="true"
-        android:onClick="goAskDetails"
-        android:text="상세정보 문의(일과건강)" />
+            </LinearLayout>
 
-    <Button
-        android:id="@+id/btnRecommend"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:linksClickable="true"
-        android:onClick="goARecommend"
-        android:text="친구, 지인에게 소개하기" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/btnHome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:linksClickable="true"
-        android:onClick="goHome"
-        android:text="안전보건이슈(일과건강)" />
+                <ImageButton
+                    android:id="@+id/btnSpeech"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:onClick="goSpeech"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_join_speech" />
 
-</LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/btnSearchCancer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@color/white"
+                    android:onClick="goSearchCancer"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_join_search_cancer" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageView
+                    android:id="@+id/btnAsk"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:onClick="goAskDetails"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_join_ask" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/btnJoinNews"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:onClick="goHome"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_join_news" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/btnRecommend"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_join_recommend" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/btnSupport"
+                    android:layout_width="fill_parent"
+                    android:layout_height="70dp"
+                    android:onClick="goSupport"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_join_support" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+

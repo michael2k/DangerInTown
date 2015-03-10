@@ -30,7 +30,7 @@ public class DangerDBHelper extends SQLiteOpenHelper implements IDangerConstants
 	}
 	
 	private static final String DATABASE_NAME = "DBMS_DANGER.db";
-	private static final int DATABASE_VERSION = 6;
+	private static final int DATABASE_VERSION = 9;
 
 	public static final String TABLE_COMPANY = "tblcompany";
 	public static final String TABLE_MATTER = "tblmatter";

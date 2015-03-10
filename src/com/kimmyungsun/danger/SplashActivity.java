@@ -130,7 +130,7 @@ public class SplashActivity extends Activity implements IDBTaskListener, IDanger
 //			return;
 //		}
 		try {
-			Thread.sleep(4000);
+			Thread.sleep(2000);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
