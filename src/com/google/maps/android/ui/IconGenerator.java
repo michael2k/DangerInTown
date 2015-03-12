@@ -219,7 +219,7 @@ public class IconGenerator {
      * @param color the color for the background tint.
      */
     public void setColor(int color) {
-        mBackground.setColor(Color.argb(100, 255, 255, 0));
+        mBackground.setColor(Color.argb(0, 255, 255, 0));
         setBackground(mBackground);
     }
 

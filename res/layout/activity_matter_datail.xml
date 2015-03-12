@@ -33,6 +33,7 @@
                     android:id="@+id/txtMatterName"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:gravity="center"
                     android:text="물질명"
                     android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -53,6 +54,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="카스번호"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -61,6 +63,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="기타정보"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -84,9 +87,13 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:gravity="center"
                     android:text="위험정보"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:textColor="@color/red"
+                    android:textStyle="bold" />
 
+                <!-- 
                 <TextView
                     android:id="@+id/txtResultInfo"
                     android:layout_width="fill_parent"
@@ -94,10 +101,12 @@
                     android:layout_weight="1"
                     android:text="종양호발부위"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
+                 -->
 
             </LinearLayout>
         </LinearLayout>
 
+        <!-- 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
@@ -122,11 +131,12 @@
 
             </LinearLayout>
         </LinearLayout>
+         -->
 
         <LinearLayout
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
             android:orientation="horizontal" >
 
             <LinearLayout
@@ -146,6 +156,7 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
             </LinearLayout>
 
+            <!-- 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
@@ -163,6 +174,7 @@
                     android:textAppearance="?android:attr/textAppearanceSmall" />
 
             </LinearLayout>
+             -->
         </LinearLayout>
 
     </LinearLayout>

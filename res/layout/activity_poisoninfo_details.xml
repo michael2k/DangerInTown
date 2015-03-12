@@ -40,13 +40,13 @@
                 android:padding="3dp" >
 
                 <Button
-                    android:id="@+id/btnSpeech"
+                    android:id="@+id/btnDangerManual"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_gravity="center"
                     android:linksClickable="true"
-                    android:onClick="goSpeech"
-                    android:text="대피요령 정보제공 홈피 링크" />
+                    android:onClick="goAccidentManual"
+                    android:text="대피요령 정보제공" />
             </LinearLayout>
         </LinearLayout>
 

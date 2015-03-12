@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/FrameLayout1"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView1"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent"
+    android:fillViewport="true" >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -10,391 +11,479 @@
         android:orientation="vertical" >
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
+            android:layout_margin="5dp"
+            android:background="@color/blue"
+            android:orientation="vertical" >
 
             <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:background="@color/white"
+                android:orientation="horizontal" >
 
-                <TextView
-                    android:id="@+id/textView1"
-                    android:layout_width="fill_parent"
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/TextView01"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:text="사고대비물질"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:gravity="center"
-                    android:text="사고대비\n물질"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
 
+                    <TextView
+                        android:id="@+id/TextView04"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="사고시 대피요령 안내"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="50dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:background="@color/white"
+                android:orientation="horizontal" >
 
-                <ImageView
-                    android:id="@+id/imageView1"
-                    android:layout_width="50dp"
+                <LinearLayout
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/TextView02"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="1"
+                        android:gravity="left|center"
+                        android:text="발암성"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/circle_red" />
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="3dp" >
-
-                <TextView
-                    android:id="@+id/TextView12"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center_vertical"
-                    android:text="독성과 폭발성이 강한 물질"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
-
-                <TextView
-                    android:id="@+id/TextView01"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center"
-                    android:text="발암성"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="50dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
-
-                <ImageView
-                    android:id="@+id/ImageView01"
-                    android:layout_width="50dp"
-                    android:layout_height="fill_parent"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/circle_yellow" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="3dp" >
-
-                <TextView
-                    android:id="@+id/TextView13"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center_vertical"
-                    android:text="암을 발생시키는 물질"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
+                    <TextView
+                        android:id="@+id/TextView03"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="발생 가능한 암 종류 안내"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
+            android:layout_margin="5dp"
+            android:background="@color/black"
+            android:orientation="vertical" >
 
             <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal" >
 
-                <TextView
-                    android:id="@+id/TextView02"
-                    android:layout_width="fill_parent"
+                <LinearLayout
+                    android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:gravity="center"
-                    android:text="생식독성"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textStyle="bold" />
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
 
+                    <TextView
+                        android:id="@+id/TextView23"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="사고대비물질"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ImageView07"
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/circle_red" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/TextView19"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="급성독성/폭발성 등이 강하여 사고발생의 가능성이 높거나 사고가 발생한 경우에 그 피해 규모가 클 것으로 우려되는 화학물질로서 사고 대비/대응계획이 필요하다고 인정되는 물질"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="50dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:orientation="horizontal" >
 
-                <ImageView
-                    android:id="@+id/ImageView02"
-                    android:layout_width="50dp"
+                <LinearLayout
+                    android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/circle_orange" />
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/TextView25"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="발암성"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ImageView08"
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/circle_yellow" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/TextView20"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="암을 발생시키는 물질, 세계보건기구 국제암연구소(IARC)는 1급 인체 발암성 물질(1), 2급 인체 발암성 추정물질(2A), 3급 인체 발암성 가능물질(2B)으로 구분하고 있다."
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="3dp" >
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:orientation="horizontal" >
 
-                <TextView
-                    android:id="@+id/TextView03"
-                    android:layout_width="fill_parent"
+                <LinearLayout
+                    android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:gravity="center_vertical"
-                    android:text="유산을 발생시키는 물질"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
 
-            </LinearLayout>
-        </LinearLayout>
+                    <TextView
+                        android:id="@+id/TextView24"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="생식독성"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
+                    <ImageView
+                        android:id="@+id/ImageView09"
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/circle_orange" />
+                </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
-
-                <TextView
-                    android:id="@+id/TextView04"
-                    android:layout_width="fill_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:gravity="center"
-                    android:text="발달독성"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
 
-            <LinearLayout
-                android:layout_width="50dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
+                    <TextView
+                        android:id="@+id/TextView27"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="생식능력의 장애(불임, 생리불순)을 일으키거나, 유산을 발생시키는 물질"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
-                <ImageView
-                    android:id="@+id/ImageView03"
-                    android:layout_width="50dp"
-                    android:layout_height="fill_parent"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/circle_purple" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="3dp" >
-
-                <TextView
-                    android:id="@+id/TextView05"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center_vertical"
-                    android:text="발달장애를 발생시키는 물질"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
-
-                <TextView
-                    android:id="@+id/TextView06"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center"
-                    android:text="환경호르몬"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textStyle="bold" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="50dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:orientation="horizontal" >
 
-                <ImageView
-                    android:id="@+id/ImageView04"
-                    android:layout_width="50dp"
+                <LinearLayout
+                    android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/circle_white" />
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/TextView26"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="발달독성"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ImageView10"
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/circle_purple" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/TextView18"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="발달장애를 발생시키는 물질(엄마가 톨루엔에 노출되면 말이 늦는 문제 발생. 임신초기 화학물질 노출시 자폐 발생 등)"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="3dp" >
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:orientation="horizontal" >
 
-                <TextView
-                    android:id="@+id/TextView07"
-                    android:layout_width="fill_parent"
+                <LinearLayout
+                    android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:gravity="center_vertical"
-                    android:text="행동, 학습장애를 발생시키는 물질"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-            </LinearLayout>
-        </LinearLayout>
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
 
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
+                    <TextView
+                        android:id="@+id/TextView17"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="환경호르몬"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
+                    <ImageView
+                        android:id="@+id/ImageView11"
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/circle_white" />
+                </LinearLayout>
 
-                <TextView
-                    android:id="@+id/TextView09"
-                    android:layout_width="fill_parent"
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="fill_parent"
-                    android:gravity="center"
-                    android:text="변이원성"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
 
-            <LinearLayout
-                android:layout_width="50dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
-
-                <ImageView
-                    android:id="@+id/ImageView05"
-                    android:layout_width="50dp"
-                    android:layout_height="fill_parent"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/circle_white" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="3dp" >
-
-                <TextView
-                    android:id="@+id/TextView08"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center_vertical"
-                    android:text="돌연변이를 발생시키는 물질"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
-
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
-
-                <TextView
-                    android:id="@+id/TextView10"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:gravity="center"
-                    android:text="잔류성\n농축성"
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/TextView16"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="인체의 호르몬과 유사하게 인식되어 호르몬을 교란시키는 물질"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="50dp"
-                android:layout_height="fill_parent"
-                android:orientation="vertical"
-                android:padding="3dp" >
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:orientation="horizontal" >
 
-                <ImageView
-                    android:id="@+id/ImageView06"
-                    android:layout_width="50dp"
+                <LinearLayout
+                    android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:padding="5dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/circle_white" />
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/TextView14"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="변이원성"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ImageView12"
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/circle_white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/TextView15"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="세포 또는 생물집단에게 돌연변이를 발생시키는 물질"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:padding="3dp" >
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
+                android:orientation="horizontal" >
 
-                <TextView
-                    android:id="@+id/TextView11"
-                    android:layout_width="fill_parent"
+                <LinearLayout
+                    android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:gravity="center_vertical"
-                    android:text="몸에 축적되는 물질"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/TextView21"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="잔류성/농축성\n/독성(PBTs)"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/ImageView13"
+                        android:layout_width="fill_parent"
+                        android:layout_height="30dp"
+                        android:padding="5dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/circle_white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginLeft="1dp"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
+
+                    <TextView
+                        android:id="@+id/TextView22"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="생태계에서 잘 없어지지 않고 먹이사슬을 통해 계속 축적되며, 사람 몸속에 들어와서 잘 빠져나가지 않는 독성물질"
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
     </LinearLayout>
 
-</FrameLayout>
+</ScrollView>

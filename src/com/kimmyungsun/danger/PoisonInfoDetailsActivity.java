@@ -1,8 +1,11 @@
 package com.kimmyungsun.danger;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 
 public class PoisonInfoDetailsActivity extends Activity {
@@ -47,5 +50,16 @@ public class PoisonInfoDetailsActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+
+	public void goAccidentManual(View view) {
+		goToUrl ( "http://safedu.org/pds1/76052" );
+	}
+	
+	private void goToUrl( String url ) {
+		Uri uriUrl = Uri.parse(url);
+		Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
+		startActivity(launchBrowser);
+	}
+	
 
 }

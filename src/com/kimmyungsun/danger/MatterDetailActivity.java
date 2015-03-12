@@ -26,8 +26,8 @@ public class MatterDetailActivity extends Activity {
 	private TextView txtCasNo;
 	private TextView txtRiskInfo;
 //	private ImageView imgRiskInfo;
-	private ImageView imgResultInfo;
-	private TextView txtResultInfo;
+//	private ImageView imgResultInfo;
+//	private TextView txtResultInfo;
 	private TextView txtEtcInfo;
 //	private ResultInfo resultInfo;
 	
@@ -86,8 +86,8 @@ public class MatterDetailActivity extends Activity {
 		txtRiskInfo = (TextView) findViewById(R.id.txtRiskInfo);
 		txtEtcInfo = (TextView) findViewById(R.id.txtEtcInfo);
 //		imgRiskInfo = (ImageView) findViewById(R.id.imgRiskInfo);
-		imgResultInfo = (ImageView) findViewById(R.id.imgResultInfo);
-		txtResultInfo = (TextView) findViewById(R.id.txtResultInfo);
+//		imgResultInfo = (ImageView) findViewById(R.id.imgResultInfo);
+//		txtResultInfo = (TextView) findViewById(R.id.txtResultInfo);
 		
 		matterId = getIntent().getIntExtra(MATTER_ID, -1);
 		
@@ -142,20 +142,20 @@ public class MatterDetailActivity extends Activity {
 //			}
 			txtRiskInfo.setText(matter.getRiskInfo());
 			txtEtcInfo.setText("배출량(kg):" + matter.getOutQty() + ", 이동량(kg):" + matter.getMoveQty());
-			txtResultInfo.setText(matter.getResultPart());
+//			txtResultInfo.setText(matter.getResultPart());
 
-			int resourceId = R.drawable.human_body_empty;
-			
-			if ( matter.getResultPart() != null && !matter.getResultPart().isEmpty() ) {
-				
-				if ( matter.getCasNo() != null && !matter.getCasNo().isEmpty() ) {
-					String casNo = matter.getCasNo().trim();
-					if ( hbMap.containsKey(casNo)) {
-						resourceId = hbMap.get(casNo);
-					}
-				}
-			}
-			imgResultInfo.setImageResource(resourceId);
+//			int resourceId = R.drawable.human_body_empty;
+//			
+//			if ( matter.getResultPart() != null && !matter.getResultPart().isEmpty() ) {
+//				
+//				if ( matter.getCasNo() != null && !matter.getCasNo().isEmpty() ) {
+//					String casNo = matter.getCasNo().trim();
+//					if ( hbMap.containsKey(casNo)) {
+//						resourceId = hbMap.get(casNo);
+//					}
+//				}
+//			}
+//			imgResultInfo.setImageResource(resourceId);
 			
 		}
 		super.onResume();

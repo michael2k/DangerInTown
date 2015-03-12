@@ -13,6 +13,7 @@ import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -103,15 +104,21 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	private int buttonStatus = BUTTON_ENABLED;
 //	private int buttonStatus = BUTTON_DISABLED;
 	
+	private SharedPreferences mPrefs;
+	
+//	private Bundle instanceStatus;
+	
 	private Handler handler = new Handler();
 	
 	private LatLng mLatLng;
 	
-	private EditText txtSearch;
-	private Button btnSearch;
+//	private EditText txtSearch;
+//	private Button btnSearch;
 	
 	private Marker markerSelected;
 	private Intent oldIntent;
+	
+	private boolean checkedGPS;
 	
 	private List<Company> nearCompanys = new ArrayList<Company>();
 	
@@ -122,6 +129,10 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 			.setInterval(5000) // 5 seconds
 			.setFastestInterval(16) // 16ms = 60fps
 			.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+	private static final LocationRequest REQUEST2 = LocationRequest.create()
+//			.setInterval(5000) // 5 seconds
+//			.setFastestInterval(16) // 16ms = 60fps
+			.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -129,6 +140,8 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.activity_main);
+		
+		mPrefs = getSharedPreferences("DANGER_PREFS", MODE_PRIVATE);
 		
 //		RelativeLayout rl = (RelativeLayout) findViewById(R.id.RelativeLayout1);
 //		
@@ -146,6 +159,8 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 		dangerDataSource = new DangersDataSource(this);
 
 		setUpGoogleApiClient();
+		
+//		instanceStatus = savedInstanceState;
 		
 	}
 
@@ -187,11 +202,32 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	@Override
 	protected void onPause() {
 		Log.d(TAG, "onPause");
+		
+		SharedPreferences.Editor ed = mPrefs.edit();
+		
+//		long[] companyIds = new long[nearCompanys.size()];
+//		for( int i = 0; i < companyIds.length; i++) {
+//			companyIds[i] = nearCompanys.get(i).getId();
+//		}
+//		outState.putLongArray("companyIds", companyIds);
+
+		if ( markerSelected != null ) {
+			ed.putString("companyId", markerSelected.getSnippet());
+		}
+		
+		ed.putInt("button_status", buttonStatus);
+		ed.putFloat("mLatLng.lat", (float)mLatLng.latitude);
+		ed.putFloat("mLatLng.lng", (float)mLatLng.longitude);
+		ed.putBoolean("checkedGPS", checkedGPS);
+		
+		ed.commit();
+
 		if (googleApiClient != null && googleApiClient.isConnected()) {
 			LocationServices.FusedLocationApi
 					.removeLocationUpdates(googleApiClient, this);
 			googleApiClient.disconnect();
 		}
+
 //		dangerDataSource.close();
 		super.onPause();
 	}
@@ -201,13 +237,36 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 		Log.d(TAG, "onResume");
 		super.onResume();
 		
+		checkedGPS = mPrefs.getBoolean("checkedGPS", false);
+		float lat = mPrefs.getFloat("mLatLng.lat", 0f);
+		float lng = mPrefs.getFloat("mLatLng.lng", 0f);
+		mLatLng = new LatLng(lat, lng);
+		buttonStatus = mPrefs.getInt("button_status", BUTTON_ENABLED);
+		
+//		String companyIdSelected = mPrefs.getString("companyId", null);
+		
+//		long[] companyIds = savedInstanceState.getLongArray("companyIds");
+//		if ( companyIds != null ) {
+//			for ( int i = 0; i < companyIds.length; i++ ) {
+//				Company c = dangerDataSource.getCompany(companyIds[i]);
+//				Marker m = addCompanyMarker(c);
+//				if ( companyIdSelected != null && companyIdSelected.isEmpty() ) {
+//					long companyId = Long.parseLong(companyIdSelected);
+//					if ( c.getId() == companyId) {
+//						onMarkerClick(m);
+//					}
+//				}
+//			}
+//		}
 		checkGPS();
 		
 //		dangerDataSource.open();
 //		googleApiClient.connect();
 		setUpGoogleApiClient();
 		
-//		if ( googleMap != null && mLatLng != null ) {
+//		if ( googleMap != null && mLatLng != null 
+//				&& ( mLatLng.latitude > 0 && mLatLng.longitude > 0 )  ) {
+//			googleMap.clear();
 //			processLocationChanged(mLatLng.latitude, mLatLng.longitude);
 //			if ( markerSelected != null ) {
 //				onMarkerClick(markerSelected);
@@ -256,7 +315,9 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 			public void run() {
 				if (buttonStatus == BUTTON_ENABLED) {
 					LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, REQUEST, DangerDataTest.this); // LocationListener
-				} 
+				} else {
+					LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, REQUEST2, DangerDataTest.this); // LocationListener
+				}
 				
 			}
 		});
@@ -611,7 +672,7 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 			
 			oldIntent = intent;
 			
-		} else {
+		} else if ( markerSelected != null && mLatLng != null ) {
 //			Log.d(TAG, nearCompanys.toString());
 			Log.d(TAG, markerSelected.toString());
 			Log.d(TAG, mLatLng.toString());
@@ -819,50 +880,52 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onRestoreInstanceState(android.os.Bundle)
 	 */
-	@Override
-	protected void onRestoreInstanceState(Bundle savedInstanceState) {
-		Log.d(TAG, "onRestoreInstanceState");
-		super.onRestoreInstanceState(savedInstanceState);
-		mLatLng = savedInstanceState.getParcelable("mLatLng");
-		buttonStatus = savedInstanceState.getInt("button_status");
-		
-		String companyIdSelected = savedInstanceState.getString("companyId");
-		
-		long[] companyIds = savedInstanceState.getLongArray("companyIds");
-		if ( companyIds != null ) {
-			for ( int i = 0; i < companyIds.length; i++ ) {
-				Company c = dangerDataSource.getCompany(companyIds[i]);
-				Marker m = addCompanyMarker(c);
-				if ( companyIdSelected != null && companyIdSelected.isEmpty() ) {
-					long companyId = Long.parseLong(companyIdSelected);
-					if ( c.getId() == companyId) {
-						onMarkerClick(m);
-					}
-				}
-			}
-		}
-	}
+//	@Override
+//	protected void onRestoreInstanceState(Bundle savedInstanceState) {
+//		super.onRestoreInstanceState(savedInstanceState);
+//		Log.d(TAG, "onRestoreInstanceState");
+//		checkedGPS = savedInstanceState.getBoolean("checkedGPS");
+//		mLatLng = savedInstanceState.getParcelable("mLatLng");
+//		buttonStatus = savedInstanceState.getInt("button_status");
+//		
+//		String companyIdSelected = savedInstanceState.getString("companyId");
+//		
+//		long[] companyIds = savedInstanceState.getLongArray("companyIds");
+//		if ( companyIds != null ) {
+//			for ( int i = 0; i < companyIds.length; i++ ) {
+//				Company c = dangerDataSource.getCompany(companyIds[i]);
+//				Marker m = addCompanyMarker(c);
+//				if ( companyIdSelected != null && companyIdSelected.isEmpty() ) {
+//					long companyId = Long.parseLong(companyIdSelected);
+//					if ( c.getId() == companyId) {
+//						onMarkerClick(m);
+//					}
+//				}
+//			}
+//		}
+//	}
 
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onSaveInstanceState(android.os.Bundle)
 	 */
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
-		Log.d(TAG, "onSaveInstanceState");
 		super.onSaveInstanceState(outState);
+		Log.d(TAG, "onSaveInstanceState");
 
-		long[] companyIds = new long[nearCompanys.size()];
-		for( int i = 0; i < companyIds.length; i++) {
-			companyIds[i] = nearCompanys.get(i).getId();
-		}
-		outState.putLongArray("companyIds", companyIds);
-
-		if ( markerSelected != null ) {
-			outState.putString("companyId", markerSelected.getSnippet());
-		}
-		
-		outState.putInt("button_status", buttonStatus);
-		outState.putParcelable("mLatLng", mLatLng);
+//		long[] companyIds = new long[nearCompanys.size()];
+//		for( int i = 0; i < companyIds.length; i++) {
+//			companyIds[i] = nearCompanys.get(i).getId();
+//		}
+//		outState.putLongArray("companyIds", companyIds);
+//
+//		if ( markerSelected != null ) {
+//			outState.putString("companyId", markerSelected.getSnippet());
+//		}
+//		
+//		outState.putInt("button_status", buttonStatus);
+//		outState.putParcelable("mLatLng", mLatLng);
+//		outState.putBoolean("checkedGPS", checkedGPS);
 		
 	}
 
@@ -878,7 +941,7 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	private void checkGPS() {
 		
 		LocationManager locationManager = ( LocationManager )  getSystemService(LOCATION_SERVICE);
-		if ( !locationManager.isProviderEnabled( LocationManager.GPS_PROVIDER)) {
+		if ( !checkedGPS && !locationManager.isProviderEnabled( LocationManager.GPS_PROVIDER)) {
 			
 		
 			AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -896,6 +959,7 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 				
 				@Override
 				public void onClick(DialogInterface dialog, int which) {
+					checkedGPS = true;
 					dialog.cancel();
 //					finish();
 					
@@ -906,6 +970,8 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 			alert.setTitle("GPS 설정");
 			alert.setIcon(R.drawable.ic_launcher);
 			alert.show();
+		} else if ( locationManager.isProviderEnabled( LocationManager.GPS_PROVIDER) ) {
+			checkedGPS = false;
 		}
 	}
 

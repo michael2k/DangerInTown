@@ -44,9 +44,9 @@ class BubbleDrawable extends Drawable {
 
     @Override
     public void draw(Canvas canvas) {
-        mMask.draw(canvas);
+//        mMask.draw(canvas);
         canvas.drawColor(mColor, PorterDuff.Mode.SRC_IN);
-        mShadow.draw(canvas);
+//        mShadow.draw(canvas);
     }
 
     @Override

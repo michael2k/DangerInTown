@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">우리동네 위험지도</string>
-    <string name="copyright">© 2015 일과건강</string>
+    <string name="copyright">© 2015 화확물질감시네트워크</string>
     <string name="action_settings">Settings</string>
     <string name="findContact">find Contacts</string>
     <string name="findCompany">회사명, 주소</string>
