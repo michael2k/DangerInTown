@@ -1,5 +1,8 @@
 package com.kimmyungsun.danger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.database.Cursor;
 
 public class Matter {
@@ -160,6 +163,24 @@ public class Matter {
 			matter.setResultPart(atts[6]);
 		}
 		return matter;
+	}
+	
+	public static List<String> getRiskInfos( Matter matter ) {
+		List<String> riskInfos = new ArrayList<String>();
+		
+		String riskInfo = matter.getRiskInfo();
+		if ( riskInfo != null & !riskInfo.isEmpty() ) {
+			String[] risks = riskInfo.trim().split(",");
+			if ( risks != null && risks.length > 0 ) {
+				for ( String risk : risks ) {
+					if ( risk != null && !risk.isEmpty() ) {
+						riskInfos.add(risk.trim());
+					}
+				}
+			}
+		}
+		
+		return riskInfos;
 	}
 	
 	

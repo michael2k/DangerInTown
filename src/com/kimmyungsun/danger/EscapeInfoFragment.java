@@ -1,27 +1,34 @@
 package com.kimmyungsun.danger;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
+import android.app.Fragment;
+import android.content.Intent;
+import android.net.Uri;
+import android.opengl.Visibility;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.LinearLayout;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.kimmyungsun.danger.provider.DangersDataSource;
 
-import android.app.Activity;
-import android.app.FragmentManager;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
-
-public class RiskInfoDetailsActivity extends Activity {
+public class EscapeInfoFragment extends Fragment
+{
 	
-	private static final String TAG = RiskInfoDetailsActivity.class.getName();
+	private static final String TAG = EscapeInfoFragment.class.getName();
 	
-	public static final String MATTER_ID = "matter_id";
-
+	private DangersDataSource ds;
+	private Matter matter;
 	private static final String LINK_URL = "http://safedu.org/commun_pds/";
 	
 	private static String[][] links = new String[][] {
@@ -104,93 +111,38 @@ public class RiskInfoDetailsActivity extends Activity {
 		}
 	}
 	
-	//	private ListView listRiskInfos;
-	private EscapeInfoFragment rif;
-	private int matterId;
-	private DangersDataSource ds;
-	private Matter matter;
-	private EscapeInfoFragment eif;
-	private CancerInfoFragment cif;
-	private List<String> riskInfos;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
 		
-		setContentView(R.layout.activity_riskinfo_details);
-		
-		getActionBar().setDisplayHomeAsUpEnabled(true);
-		
-		matterId = getIntent().getIntExtra(MATTER_ID, -1);
-		
-		ds = new DangersDataSource(this);
-		if ( matterId > 0 ) {
-			matter = ds.getMatter(matterId);
-			Log.d(TAG, matter.toString());
-			
-//			riskInfos = Matter.getRiskInfos(matter);
-		}
-		
-		FragmentManager fm = getFragmentManager();
-		
-		eif = (EscapeInfoFragment) getFragmentManager().findFragmentById(R.id.fragmentEscapeInfo);
-        cif = (CancerInfoFragment) getFragmentManager().findFragmentById(R.id.fragmentCancerInfo);
+		View view = inflater.inflate(R.layout.fragment_escapeinfo, container, false);
+ 
+		return view;
+	}
+	
 
-		String riskInfo = matter.getRiskInfo();
-		Log.d(TAG, "riskInfo:" + riskInfo);
-		if ( riskInfo == null || riskInfo.isEmpty() || !riskInfo.contains("발암") ) {
-			// hide eif
-			fm.beginTransaction().hide(cif).commit();
-		} else {
-			cif.updateMatterInfo(matter);
-		}
-		if ( riskInfo == null || riskInfo.isEmpty() || !riskInfo.contains("사고대비") ) {
-			// hide eif
-			fm.beginTransaction().hide(eif).commit();
-		} else {
-			eif.updateMatterInfo(matter);
-		}
-        
-		
+	@Override
+	public void onStart() {
+	    super.onStart();
+	
 	}
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
 	@Override
-	protected void onPause() {
-		
-		super.onPause();
-	}
-
-	@Override
-	protected void onResume() {
-//		String riskInfo = matter.getRiskInfo();
-//		if ( riskInfo != null && !riskInfo.isEmpty() ) {
-//			if ( riskInfo.contains("발암")) {
-//		        // show cif
-//		        getFragmentManager().beginTransaction().show(cif).commit();
-//			}
-//			if ( riskInfo.contains("사고대비")) {
-//				// show eif
-//				getFragmentManager().beginTransaction().show(eif).commit();
-//			}
-//		}
+	public void onResume() {
 		super.onResume();
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		} else if ( id == android.R.id.home ) {
-			finish();
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
+	public void updateMatterInfo(final Matter matter ) {
+		Log.d(TAG, "updateMatterInfo[" + matter.toString() + "]");
+		
+		this.matter = matter;
+			
 	}
-
+	
 	public void goEscapeInfo(View view ) {
 		Log.d(TAG, "goEscapeInfo[" + matter.getMatterName() + "]");
 		String matterName = matter.getMatterName().replace(" ", "").trim();
@@ -199,22 +151,13 @@ public class RiskInfoDetailsActivity extends Activity {
 			goToUrl( url );
 		}
 	}
-	
-	
+
+
 	private void goToUrl( String url ) {
 		Uri uriUrl = Uri.parse(url);
 		Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
 		startActivity(launchBrowser);
 	}
-	
-	public void goCancerInfo(View view) {
-		Log.d(TAG, "goCancerInfo");
-		
-		Intent cancerInfoIntent = new Intent(this, CancerInfoDetailsActivity.class);
-		cancerInfoIntent.putExtra(MATTER_ID, matter.getId());
-		startActivity(cancerInfoIntent);
-	}
-	
 	
 	
 

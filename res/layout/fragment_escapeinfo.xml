@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@color/blue"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/layoutEscape"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:onClick="goEscapeInfo"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:onClick="goEscapeInfo"
+            android:orientation="vertical"
+            android:padding="3dp" >
+
+            <TextView
+                android:id="@+id/TextView01"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:gravity="left|center"
+                android:onClick="goEscapeInfo"
+                android:text="사고대비물질"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:onClick="goEscapeInfo"
+            android:orientation="vertical"
+            android:padding="3dp" >
+
+            <TextView
+                android:id="@+id/txtEscapeInfo"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:onClick="goEscapeInfo"
+                android:text="사고시 대피요령 안내"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

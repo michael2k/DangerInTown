@@ -1,55 +1,32 @@
 package com.kimmyungsun.danger;
 
-import java.net.URL;
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-//import android.support.v4.view.MenuItemCompat;
-//import android.support.v7.app.ActionBarActivity;
-//import android.support.v7.widget.SearchView;
-//import android.support.v7.widget.SearchView.OnQueryTextListener;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup.LayoutParams;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
-//import android.widget.SearchView;
-//import android.widget.SearchView.OnQueryTextListener;
-
-
-
-
-
-
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
-import android.widget.SlidingDrawer;
-import android.widget.SlidingDrawer.OnDrawerCloseListener;
-import android.widget.SlidingDrawer.OnDrawerOpenListener;
-import android.widget.SlidingDrawer.OnDrawerScrollListener;
 
 import com.google.android.gms.common.ConnectionResult;
 //import com.google.android.gms.common.GooglePlayServicesClient.ConnectionCallbacks;
@@ -71,10 +48,8 @@ import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.GoogleMap.OnMyLocationButtonClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -99,21 +74,16 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	private GoogleMap googleMap;
 	private DangersDataSource dangerDataSource;
 	private GoogleApiClient googleApiClient;
+	private CompanyInfoFragment cif;
 	public static final int BUTTON_DISABLED = 0;
 	public static final int BUTTON_ENABLED = 1;
 	private int buttonStatus = BUTTON_ENABLED;
-//	private int buttonStatus = BUTTON_DISABLED;
 	
 	private SharedPreferences mPrefs;
-	
-//	private Bundle instanceStatus;
 	
 	private Handler handler = new Handler();
 	
 	private LatLng mLatLng;
-	
-//	private EditText txtSearch;
-//	private Button btnSearch;
 	
 	private Marker markerSelected;
 	private Intent oldIntent;
@@ -141,26 +111,14 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 		
 		setContentView(R.layout.activity_main);
 		
+		cif = ( CompanyInfoFragment ) getFragmentManager().findFragmentById(R.id.companyInfoFragment);
+		getFragmentManager().beginTransaction().hide(cif).commit();
+
 		mPrefs = getSharedPreferences("DANGER_PREFS", MODE_PRIVATE);
-		
-//		RelativeLayout rl = (RelativeLayout) findViewById(R.id.RelativeLayout1);
-//		
-//		Fragment fMap = getSupportFragmentManager().findFragmentById(R.id.map);
-//		fMap.getView().getLayoutParams().height = android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-//		Fragment fMatter = getFragmentManager().findFragmentById(R.id.fragment1);
-		
-//		Fragment fragment = 
-		
-//		SlidingDrawer slidingDrawer = ( SlidingDrawer ) findViewById(R.id.slidingCompanyDetails);
-//		slidingDrawer.setOnDrawerScrollListener(this);
-//		slidingDrawer.setOnDrawerOpenListener(this);
-//		slidingDrawer.setOnDrawerCloseListener(this);
 		
 		dangerDataSource = new DangersDataSource(this);
 
 		setUpGoogleApiClient();
-		
-//		instanceStatus = savedInstanceState;
 		
 	}
 
@@ -189,12 +147,12 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 	    SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
 	    SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
 	    searchView.setMaxWidth(400);
-	    
-	    // Assumes current activity is the searchable activity
+//	    
+//	    // Assumes current activity is the searchable activity
 	    searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
 //	    searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
 	    
-		searchView.setOnQueryTextListener(onQueryTextHandler);
+//		searchView.setOnQueryTextListener(onQueryTextHandler);
 
 		return true;
 	}
@@ -609,32 +567,35 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 //				ResponsePlaceResult rpr = YPYNetUtils.getListPlacesBaseOnText(DangerDataTest.this, mLatLng.longitude, mLatLng.latitude, txtSearch.getText().toString());
 				ResponsePlaceResult rpr = YPYNetUtils.getListPlacesBaseOnText(DangerDataTest.this, latLng.longitude, latLng.latitude, query);
 				
-				Log.d(TAG, rpr.toString());
-				
-				List<PlaceObject> places = rpr.getListPlaceObjects();
-				for ( final PlaceObject po : places ) {
-					Log.d(TAG, po.getName());
-					AsyncTask.execute(new Runnable() {
-						
-						@Override
-						public void run() {
-							runOnUiThread(new Runnable() {
-								
-								@Override
-								public void run() {
-									googleMap.addMarker(
-											new MarkerOptions()
-											.position(new LatLng(po.getLocation().getLatitude(), po.getLocation().getLongitude()))
-											.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_university))
-											.title(po.getName())
-											);
+				if ( rpr != null ) {
+					Log.d(TAG, rpr.toString());
+					
+					List<PlaceObject> places = rpr.getListPlaceObjects();
+					for ( final PlaceObject po : places ) {
+						Log.d(TAG, po.getName());
+						AsyncTask.execute(new Runnable() {
+							
+							@Override
+							public void run() {
+								runOnUiThread(new Runnable() {
 									
-								}
-							});
-						}
-					});
+									@Override
+									public void run() {
+										googleMap.addMarker(
+												new MarkerOptions()
+												.position(new LatLng(po.getLocation().getLatitude(), po.getLocation().getLongitude()))
+												.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_university))
+												.title(po.getName())
+												);
+										
+									}
+								});
+							}
+						});
+					}
+					
 				}
-				
+					
 			}
 		});
 		
@@ -776,24 +737,11 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 			markerSelected.setIcon(BitmapDescriptorFactory.fromResource(Company.getIconType(matters, 0)));
 		}
 		
-//		CompanyInfoFragment cif = new CompanyInfoFragment();
-//		Bundle bundle = new Bundle();
-//		bundle.putString(CompanyInfoFragment.COMPANY_ID, marker.getSnippet());
-//		cif.setArguments(bundle);
-		
-		CompanyInfoFragment cif = ( CompanyInfoFragment ) getFragmentManager().findFragmentById(R.id.companyInfoFragment);
-//		RelativeLayout dangerMainLayout = ( RelativeLayout ) findViewById(R.id.dangerMainLayout);
-//		FragmentManager fm = getFragmentManager();
-//		FragmentTransaction ft = fm.beginTransaction();
-//		ft.add(R.id.dangerMainLayout, cif);
-//		ft.commit();
+		getFragmentManager().beginTransaction().hide(cif).commit();
 		
 		cif.updateCompanyInfo(marker.getSnippet());
 		
-//		RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams ) cif.getView().getLayoutParams();
-//		params.height = 300;
-//		
-//		cif.getView().setLayoutParams(params);
+		getFragmentManager().beginTransaction().show(cif).commit();
 		
 		googleMap.moveCamera(CameraUpdateFactory.newLatLng(marker.getPosition()));
 		

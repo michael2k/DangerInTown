@@ -1,111 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/ScrollView1"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutRiskInfo"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:fillViewport="true" >
+    android:orientation="vertical" >
 
-    <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="vertical" >
+    <fragment
+        android:id="@+id/fragmentEscapeInfo"
+        android:name="com.kimmyungsun.danger.EscapeInfoFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:background="@color/blue"
-            android:orientation="vertical" >
+    <fragment
+        android:id="@+id/fragmentCancerInfo"
+        android:name="com.kimmyungsun.danger.CancerInfoFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp" />
 
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="1dp"
-                android:background="@color/white"
-                android:orientation="horizontal" >
-
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="3dp" >
-
-                    <TextView
-                        android:id="@+id/TextView01"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_weight="1"
-                        android:gravity="left|center"
-                        android:text="사고대비물질"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="3dp" >
-
-                    <TextView
-                        android:id="@+id/TextView04"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:gravity="center_vertical"
-                        android:text="사고시 대피요령 안내"
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:background="@color/white"
-                android:orientation="horizontal" >
-
-                <LinearLayout
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="3dp" >
-
-                    <TextView
-                        android:id="@+id/TextView02"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_weight="1"
-                        android:gravity="left|center"
-                        android:text="발암성"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="fill_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="3dp" >
-
-                    <TextView
-                        android:id="@+id/TextView03"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:gravity="center_vertical"
-                        android:text="발생 가능한 암 종류 안내"
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
-                </LinearLayout>
-            </LinearLayout>
-        </LinearLayout>
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="5dp"
+        android:fillViewport="true" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
             android:background="@color/black"
             android:orientation="vertical" >
 
@@ -142,11 +66,12 @@
                         android:padding="5dp"
                         android:scaleType="centerInside"
                         android:src="@drawable/circle_red" />
+
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="1dp"
                     android:layout_weight="1"
                     android:background="@color/white"
@@ -266,7 +191,6 @@
                         android:gravity="center_vertical"
                         android:text="생식능력의 장애(불임, 생리불순)을 일으키거나, 유산을 발생시키는 물질"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
-
                 </LinearLayout>
             </LinearLayout>
 
@@ -479,11 +403,10 @@
                         android:gravity="center_vertical"
                         android:text="생태계에서 잘 없어지지 않고 먹이사슬을 통해 계속 축적되며, 사람 몸속에 들어와서 잘 빠져나가지 않는 독성물질"
                         android:textAppearance="?android:attr/textAppearanceSmall" />
-
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
-</ScrollView>
+</LinearLayout>

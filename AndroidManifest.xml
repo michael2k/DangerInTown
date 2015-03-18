@@ -6,7 +6,7 @@
 
     <uses-sdk
         android:minSdkVersion="14"
-        android:targetSdkVersion="21" />
+        android:targetSdkVersion="22" />
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -27,15 +27,15 @@
         >
         <!--
         15 
-        -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyAa0VCzUiaKafw-sNERQX_nG2E0dlnK7vw" />
+        -->
 <!--         13 
+-->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBHSu7Gakue-Jgb86x4hOG62aXMWct4X0o" />
--->
 		<!--  RELEASE
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
@@ -132,6 +132,10 @@
         <activity 
             android:name="PoisonInfoDetailsActivity" 
             android:label="@string/title_activity_poisoninfo_datail" 
+            />
+        <activity 
+            android:name="CancerInfoDetailsActivity" 
+            android:label="@string/title_activity_cancerinfo_datail" 
             />
         <uses-library android:name="com.google.android.maps" />
         </application>
