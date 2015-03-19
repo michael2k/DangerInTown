@@ -2,9 +2,6 @@ package com.kimmyungsun.danger;
 
 import java.util.List;
 
-import com.kimmyungsun.danger.provider.DangersDataSource;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,7 +14,9 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
-public class CompanyDetailsActivity extends Activity 
+import com.kimmyungsun.danger.provider.DangersDataSource;
+
+public class CompanyDetailsActivity extends DangerActivity 
 implements OnItemClickListener
 {
 	
@@ -41,6 +40,7 @@ implements OnItemClickListener
 		setContentView(R.layout.activity_company_details);
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setHomeButtonEnabled(true);
 		
 		txtComapnyName = (TextView) findViewById(R.id.txtCompanyName);
 		txtAddress = (TextView) findViewById(R.id.txtCompanyAddress);
@@ -61,34 +61,6 @@ implements OnItemClickListener
 		
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.company_details, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onRestoreInstanceState(android.os.Bundle)
-	 */
-	@Override
-	protected void onRestoreInstanceState(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
-		super.onRestoreInstanceState(savedInstanceState);
-	}
-
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onResume()
 	 */
@@ -100,24 +72,6 @@ implements OnItemClickListener
 			listMatters.setAdapter(new MatterDetailsAdapter(this, R.layout.matter_row_item, matters));
 		}
 		super.onResume();
-	}
-
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onSaveInstanceState(android.os.Bundle)
-	 */
-	@Override
-	protected void onSaveInstanceState(Bundle outState) {
-		// TODO Auto-generated method stub
-		super.onSaveInstanceState(outState);
-	}
-
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onPause()
-	 */
-	@Override
-	protected void onPause() {
-		// TODO Auto-generated method stub
-		super.onPause();
 	}
 
 	@Override

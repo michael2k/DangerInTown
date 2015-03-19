@@ -3,19 +3,15 @@ package com.kimmyungsun.danger;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.kimmyungsun.danger.provider.DangersDataSource;
-
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
-public class CancerInfoDetailsActivity extends Activity {
+import com.kimmyungsun.danger.provider.DangersDataSource;
+
+public class CancerInfoDetailsActivity extends DangerActivity {
 	
 	private static final String TAG = CancerInfoDetailsActivity.class.getName();
 	private DangersDataSource ds;
@@ -100,12 +96,6 @@ public class CancerInfoDetailsActivity extends Activity {
 	}
 
 	@Override
-	protected void onPause() {
-		// TODO Auto-generated method stub
-		super.onPause();
-	}
-
-	@Override
 	protected void onResume() {
 		if ( matter != null ) {
 
@@ -124,21 +114,6 @@ public class CancerInfoDetailsActivity extends Activity {
 			
 		}
 		super.onResume();
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		} else if ( id == android.R.id.home ) {
-			finish();
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
 	}
 
 

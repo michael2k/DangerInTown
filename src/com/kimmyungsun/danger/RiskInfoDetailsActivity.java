@@ -1,22 +1,19 @@
 package com.kimmyungsun.danger;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.kimmyungsun.danger.provider.DangersDataSource;
-
-import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.MenuItem;
 import android.view.View;
 
-public class RiskInfoDetailsActivity extends Activity {
+import com.kimmyungsun.danger.provider.DangersDataSource;
+
+public class RiskInfoDetailsActivity extends DangerActivity {
 	
 	private static final String TAG = RiskInfoDetailsActivity.class.getName();
 	
@@ -152,43 +149,6 @@ public class RiskInfoDetailsActivity extends Activity {
 		}
         
 		
-	}
-
-	@Override
-	protected void onPause() {
-		
-		super.onPause();
-	}
-
-	@Override
-	protected void onResume() {
-//		String riskInfo = matter.getRiskInfo();
-//		if ( riskInfo != null && !riskInfo.isEmpty() ) {
-//			if ( riskInfo.contains("발암")) {
-//		        // show cif
-//		        getFragmentManager().beginTransaction().show(cif).commit();
-//			}
-//			if ( riskInfo.contains("사고대비")) {
-//				// show eif
-//				getFragmentManager().beginTransaction().show(eif).commit();
-//			}
-//		}
-		super.onResume();
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		} else if ( id == android.R.id.home ) {
-			finish();
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
 	}
 
 	public void goEscapeInfo(View view ) {

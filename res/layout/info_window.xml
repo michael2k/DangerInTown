@@ -13,24 +13,22 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="회사명"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/blue"
         android:textStyle="bold" />
 
-    <ScrollView
-        android:id="@+id/scrollView1"
+    <LinearLayout
+        android:id="@+id/LinearLayout2"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:fillViewport="true" >
+        android:orientation="vertical" >
 
         <ListView
             android:id="@+id/listMatters"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent" >
         </ListView>
-
-    </ScrollView>
+    </LinearLayout>
 
 </LinearLayout>

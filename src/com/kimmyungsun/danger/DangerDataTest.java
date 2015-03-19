@@ -1,10 +1,8 @@
 package com.kimmyungsun.danger;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.SearchManager;
 import android.content.Context;
@@ -22,7 +20,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewConfiguration;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
@@ -56,14 +53,13 @@ import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.maps.android.ui.IconGenerator;
-import com.kimmyungsun.danger.constanst.IDangerConstants;
 import com.kimmyungsun.danger.datamng.YPYNetUtils;
 import com.kimmyungsun.danger.geocode.GeoCodeCalc;
 import com.kimmyungsun.danger.object.PlaceObject;
 import com.kimmyungsun.danger.object.ResponsePlaceResult;
 import com.kimmyungsun.danger.provider.DangersDataSource;
 
-public class DangerDataTest extends Activity implements OnMapReadyCallback, LocationListener, IDangerConstants,
+public class DangerDataTest extends DangerActivity implements OnMapReadyCallback, LocationListener,
 		ConnectionCallbacks, OnConnectionFailedListener, CancelableCallback, OnCameraChangeListener,
 		OnMyLocationButtonClickListener, OnMapClickListener, OnInfoWindowClickListener,
 		OnMarkerClickListener, // OnDrawerScrollListener, OnDrawerOpenListener, OnDrawerCloseListener,
@@ -112,7 +108,7 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 		setContentView(R.layout.activity_main);
 		
 		cif = ( CompanyInfoFragment ) getFragmentManager().findFragmentById(R.id.companyInfoFragment);
-		getFragmentManager().beginTransaction().hide(cif).commit();
+//		getFragmentManager().beginTransaction().hide(cif).commit();
 
 		mPrefs = getSharedPreferences("DANGER_PREFS", MODE_PRIVATE);
 		
@@ -737,11 +733,7 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 			markerSelected.setIcon(BitmapDescriptorFactory.fromResource(Company.getIconType(matters, 0)));
 		}
 		
-		getFragmentManager().beginTransaction().hide(cif).commit();
-		
 		cif.updateCompanyInfo(marker.getSnippet());
-		
-		getFragmentManager().beginTransaction().show(cif).commit();
 		
 		googleMap.moveCamera(CameraUpdateFactory.newLatLng(marker.getPosition()));
 		
@@ -801,29 +793,7 @@ public class DangerDataTest extends Activity implements OnMapReadyCallback, Loca
 		
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle item selected
-		
-		Intent intent = null;
-		switch( item.getItemId() ) {
-		case R.id.action_join:
-			intent = new Intent(this, JoinActivity.class);
-			
-			startActivity(intent);
-			
-			return true;
-		case R.id.action_settings:
-			intent = new Intent(this, SettingsActivity.class);
-			
-			startActivity(intent);
-			return true;
-			
-		default:
-			return super.onOptionsItemSelected(item);
-				
-		}
-	}
+	
 
 	/* (non-Javadoc)
 	 * @see android.app.Activity#onRestoreInstanceState(android.os.Bundle)

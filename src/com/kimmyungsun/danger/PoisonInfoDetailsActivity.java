@@ -1,14 +1,13 @@
 package com.kimmyungsun.danger;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ListView;
 
-public class PoisonInfoDetailsActivity extends Activity {
+public class PoisonInfoDetailsActivity extends DangerActivity {
 	
 //	private ListView listPoisonInfos;
 
@@ -24,33 +23,6 @@ public class PoisonInfoDetailsActivity extends Activity {
 		
 	}
 
-	@Override
-	protected void onPause() {
-		// TODO Auto-generated method stub
-		super.onPause();
-	}
-
-	@Override
-	protected void onResume() {
-//		listPoisonInfos.setAdapter(new RiskInfoArrayAdapter(this, R.layout.riskinfo_row));
-		super.onResume();
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		} else if ( id == android.R.id.home ) {
-			finish();
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
 	public void goAccidentManual(View view) {
 		goToUrl ( "http://safedu.org/pds1/76052" );
 	}
@@ -59,6 +31,15 @@ public class PoisonInfoDetailsActivity extends Activity {
 		Uri uriUrl = Uri.parse(url);
 		Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
 		startActivity(launchBrowser);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.kimmyungsun.danger.DangerActivity#onCreateOptionsMenu(android.view.Menu)
+	 */
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// TODO Auto-generated method stub
+		return super.onCreateOptionsMenu(menu);
 	}
 	
 

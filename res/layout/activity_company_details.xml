@@ -15,7 +15,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="업체명"
+        android:text="@string/company_name"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/black"
         android:textStyle="bold" />
@@ -25,30 +25,23 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="주소"
+        android:text="@string/address"
         android:textColor="@color/blue"
         android:textStyle="bold" />
 
-    <ScrollView
-        android:id="@+id/scrollView1"
+    <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:fillViewport="true" >
+        android:layout_height="match_parent"
+        android:dividerPadding="5dp"
+        android:orientation="vertical" >
 
-        <LinearLayout
+        <ListView
+            android:id="@+id/listMatters"
             android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:dividerPadding="5dp"
-            android:orientation="vertical" >
+            android:layout_height="0dp"
+            android:layout_weight="1" >
 
-            <ListView
-                android:id="@+id/listMatters"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_weight="1" >
-
-            </ListView>
-        </LinearLayout>
-    </ScrollView>
+        </ListView>
+    </LinearLayout>
 
 </LinearLayout>

@@ -2,9 +2,6 @@ package com.kimmyungsun.danger;
 
 import java.util.List;
 
-import com.google.android.gms.wearable.NodeApi.GetConnectedNodesResult;
-import com.kimmyungsun.danger.provider.DangersDataSource;
-
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,8 +13,9 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import com.kimmyungsun.danger.provider.DangersDataSource;
 
 public class CompanyInfoFragment extends Fragment
 implements OnItemClickListener
@@ -30,15 +28,11 @@ implements OnItemClickListener
 
 	private Company company;
 
-//	private int companyId;
-
 	private DangersDataSource ds;
 
 	private ListView listMatters;
 
 	private List<Matter> matters;
-
-//	private TextView txtAddress;
 
 	private TextView txtCompanyName;
 
@@ -55,7 +49,6 @@ implements OnItemClickListener
             companyId = savedInstanceState.getString(COMPANY_ID);
         }
         
-//        view.setLayoutParams(((DangerDataTest) getActivity() ).fetchLayoutParams());
 		return view;
 	}
 	
@@ -72,7 +65,6 @@ implements OnItemClickListener
 				startActivity(intent);
 			}
 		});
-//		txtAddress = (TextView) getView().findViewById(R.id.txtCompanyAddress);
 		listMatters = (ListView) getView().findViewById(R.id.listMatters);
 		
 		ds = new DangersDataSource(getActivity());
@@ -87,20 +79,10 @@ implements OnItemClickListener
 
 		if ( company != null ) {
 			txtCompanyName.setText(company.getCompanyName());
-//			txtAddress.setText(company.getAddress());
 			listMatters.setAdapter(new MatterArrayAdapter(getActivity(), R.layout.matter_row_item, matters));
 			listMatters.setOnItemClickListener(this);
 		}
 		
-		
-//		RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams ) getView().getLayoutParams();
-//		if ( matters.size() > 3 ) {
-//			params.height = 4 * 50 + txtCompanyName.getHeight();
-//		} else if ( matters.size() > 0 ) {	
-//			params.height = matters.size() * 50 + txtCompanyName.getHeight();
-//		}
-//		
-//		getView().setLayoutParams(params);
 		
 	}
 
@@ -137,7 +119,6 @@ implements OnItemClickListener
 	public void onResume() {
 		if ( company != null ) {
 			txtCompanyName.setText(company.getCompanyName());
-//			txtAddress.setText(company.getAddress());
 			listMatters.setAdapter(new MatterArrayAdapter(getActivity(), R.layout.matter_row_item, matters));
 		}
 		super.onResume();

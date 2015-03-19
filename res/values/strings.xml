@@ -140,5 +140,11 @@
     <string name="title_activity_cancerinfo_datail">발암성물질 상세정보</string>
     <string name="action_details">액션상세</string>
     <string name="action_help">도우말</string>
+    <string name="company_name">업체명</string>
+    <string name="address">주소</string>
+    <string name="riskinfo_circle">위험정보 circle</string>
+    <string name="matter_name">물질명</string>
+    <string name="riskinfo_string">위험정보</string>
+    <string name="gohome">HOME</string>
 
 </resources>
