@@ -224,7 +224,7 @@ int id ImageView11 0x7f0d004f
 int id ImageView12 0x7f0d0052
 int id ImageView13 0x7f0d0055
 int id LinearLayout1 0x7f0d0017
-int id LinearLayout2 0x7f0d005b
+int id LinearLayout2 0x7f0d0059
 int id ScrollView1 0x7f0d0031
 int id TextView01 0x7f0d0033
 int id TextView02 0x7f0d001a
@@ -287,7 +287,7 @@ int id imgCircle 0x7f0d0060
 int id imgResultInfo 0x7f0d001c
 int id imgRiskInfo 0x7f0d005e
 int id layoutCancer 0x7f0d0057
-int id layoutEscape 0x7f0d0059
+int id layoutEscape 0x7f0d005a
 int id layoutRiskInfo 0x7f0d003e
 int id linearLayout1 0x7f0d002c
 int id listMatters 0x7f0d001f
@@ -312,7 +312,7 @@ int id txtCancerInfo 0x7f0d0058
 int id txtCasNo 0x7f0d002d
 int id txtCompanyAddress 0x7f0d001e
 int id txtCompanyName 0x7f0d001d
-int id txtEscapeInfo 0x7f0d005a
+int id txtEscapeInfo 0x7f0d005b
 int id txtEtcInfo 0x7f0d002e
 int id txtMatterName 0x7f0d0019
 int id txtResultInfo 0x7f0d001b
@@ -329,8 +329,8 @@ int layout activity_matter_datail 0x7f030004
 int layout activity_poisoninfo_details 0x7f030005
 int layout activity_riskinfo_details 0x7f030006
 int layout fragment_cancerinfo 0x7f030007
-int layout fragment_escapeinfo 0x7f030008
-int layout info_window 0x7f030009
+int layout fragment_company_info 0x7f030008
+int layout fragment_escapeinfo 0x7f030009
 int layout item_progress_bar 0x7f03000a
 int layout matter_row_item 0x7f03000b
 int layout riskinfo_row 0x7f03000c

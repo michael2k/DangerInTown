@@ -40,7 +40,7 @@ implements OnItemClickListener
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View view = inflater.inflate(R.layout.info_window, container, false);
+		View view = inflater.inflate(R.layout.fragment_company_info, container, false);
  
 		// If activity recreated (such as from screen rotate), restore
         // the previous article selection set by onSaveInstanceState().

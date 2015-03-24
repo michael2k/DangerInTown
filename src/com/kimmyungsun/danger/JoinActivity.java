@@ -39,6 +39,10 @@ public class JoinActivity extends DangerActivity {
 		goToUrl ( "https://kangmin.cartodb.com/viz/07769b6a-a5fa-11e4-ab27-0e0c41326911/public_map" );
 	}
 	
+	public void goSafetyNews(View view) {
+		goToUrl ( "http://www.safedu.org/news1" );
+	}
+	
 	public void goSearchCancer(View view) {
 //		goToUrl ( "https://facebook.com/profile.php?id=1565798033654421" );
 		goToUrl ( "http://nocancer.kr/carcinogen2/search.html" );

@@ -123,7 +123,7 @@
                     android:id="@+id/btnJoinNews"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:onClick="goHome"
+                    android:onClick="goSafetyNews"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_news" />
             </LinearLayout>

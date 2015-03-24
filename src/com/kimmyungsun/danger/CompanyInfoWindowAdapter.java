@@ -31,7 +31,7 @@ public class CompanyInfoWindowAdapter implements InfoWindowAdapter {
 	public View getInfoContents(Marker marker) {
 		
 		// Getting view from the layout file info_window_layout
-		View v = activity.getLayoutInflater().inflate(R.layout.info_window, null);
+		View v = activity.getLayoutInflater().inflate(R.layout.fragment_company_info, null);
 		
 		TextView txtCompany = (TextView) v.findViewById(R.id.txtCompanyName);
 		TextView txtAddress = (TextView) v.findViewById(R.id.txtCompanyAddress);

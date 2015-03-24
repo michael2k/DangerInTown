@@ -8,10 +8,8 @@
     <style name="AppTheme" parent="AppBaseTheme">
     </style>
 
-    <style name="AppBaseTheme" parent="android:Theme.Holo.Light">
-        <!-- 
-       <item name="android:dropDownItemStyle">@style/myDropDownItemStyle</item>
-         -->
+    <style name="AppBaseTheme" parent="android:Theme.Holo">
+        <item name="android:background">@color/cyan</item>
     </style>
 
     <!-- 
@@ -37,7 +35,6 @@
     </style>
     
     <style name="activity.danger.linearlayout" parent="activity.danger">
-        <item name="android:background">@color/grey</item>
         <item name="android:orientation">vertical</item>
     </style>
 </resources>
