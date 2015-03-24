@@ -130,6 +130,9 @@ public class Company {
 		int iYellow = 0;
 		int iOrange = 0;
 		int iPurple = 0;
+		int iDarkGreen = 0;
+		int iBlue = 0;
+		int iDarkBlue = 0;
 		
 		for (Matter matter : matters) {
 			if (matter.getRiskInfo().contains("발암")) {
@@ -140,6 +143,14 @@ public class Company {
 				iOrange++;
 			} else if (matter.getRiskInfo().contains("발달독성")) {
 				iPurple++;
+			} else if (matter.getRiskInfo().contains("환경호르몬")) {
+				iDarkGreen++;
+			} else if (matter.getRiskInfo().contains("변이원성")) {
+				iBlue++;
+			} else if (matter.getRiskInfo().contains("잔류성")
+					|| matter.getRiskInfo().contains("농축성")
+					|| matter.getRiskInfo().contains("독성") ) {
+				iDarkBlue++;
 			} 
 		}
 		if ( iSize == 0 ) {
@@ -151,6 +162,12 @@ public class Company {
 				iconType = R.drawable.marker_orange_s;
 			} else if ( iPurple > 0 ) {
 				iconType = R.drawable.marker_purple_s;
+			} else if ( iDarkGreen > 0 ) {
+				iconType = R.drawable.marker_dark_green_s;
+			} else if ( iBlue > 0 ) {
+				iconType = R.drawable.marker_blue_s;
+			} else if ( iDarkBlue > 0 ) {
+				iconType = R.drawable.marker_dark_blue_s;
 			} else {
 				iconType = R.drawable.marker_white_s;
 			}
@@ -163,6 +180,12 @@ public class Company {
 				iconType = R.drawable.marker_orange_b;
 			} else if ( iPurple > 0 ) {
 				iconType = R.drawable.marker_purple_b;
+			} else if ( iDarkGreen > 0 ) {
+				iconType = R.drawable.marker_dark_green_b;
+			} else if ( iBlue > 0 ) {
+				iconType = R.drawable.marker_blue_b;
+			} else if ( iDarkBlue > 0 ) {
+				iconType = R.drawable.marker_dark_blue_b;
 			} else {
 				iconType = R.drawable.marker_white_b;
 			}

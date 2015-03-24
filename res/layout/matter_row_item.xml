@@ -9,6 +9,7 @@
         android:id="@+id/imgRiskInfo"
         android:layout_width="15dp"
         android:layout_height="15dp"
+        android:layout_gravity="center_vertical"
         android:layout_margin="5dp"
         android:contentDescription="@string/riskinfo_circle"
         android:src="@drawable/circle_white" />
@@ -16,16 +17,17 @@
     <TextView
         android:id="@+id/txtMatterName"
         android:layout_width="100dp"
-        android:layout_height="fill_parent"
-        android:layout_weight="0.50"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
         android:gravity="center_vertical"
         android:text="@string/matter_name" />
 
     <TextView
         android:id="@+id/txtRiskInfo"
         android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
-        android:layout_weight="0.40"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
         android:gravity="center_vertical"
         android:text="@string/riskinfo_string" />
 

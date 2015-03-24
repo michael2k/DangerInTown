@@ -3,13 +3,8 @@ package com.kimmyungsun.danger;
 import java.util.List;
 
 import android.app.Activity;
-import android.graphics.Color;
 import android.view.View;
-import android.webkit.WebView.FindListener;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.GoogleMap.InfoWindowAdapter;

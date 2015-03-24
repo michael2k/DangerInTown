@@ -6,7 +6,6 @@ import java.util.Map;
 
 import android.app.FragmentManager;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +28,7 @@ public class RiskInfoDetailsActivity extends DangerActivity {
 		new String[] {"알릴알코올","88756"},
 		new String[] {"알릴클로라이드","88762"},
 		new String[] {"암모니아","88766"},
+		new String[] {"암모니아(수산화암모늄포함)","88766"},
 		new String[] {"질산암모늄","88770"},
 		new String[] {"아르신","88775"},
 		new String[] {"벤젠","88779"},
@@ -101,7 +101,6 @@ public class RiskInfoDetailsActivity extends DangerActivity {
 		}
 	}
 	
-	//	private ListView listRiskInfos;
 	private EscapeInfoFragment rif;
 	private int matterId;
 	private DangersDataSource ds;
@@ -125,7 +124,6 @@ public class RiskInfoDetailsActivity extends DangerActivity {
 			matter = ds.getMatter(matterId);
 			Log.d(TAG, matter.toString());
 			
-//			riskInfos = Matter.getRiskInfos(matter);
 		}
 		
 		FragmentManager fm = getFragmentManager();
@@ -160,12 +158,6 @@ public class RiskInfoDetailsActivity extends DangerActivity {
 		}
 	}
 	
-	
-	private void goToUrl( String url ) {
-		Uri uriUrl = Uri.parse(url);
-		Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
-		startActivity(launchBrowser);
-	}
 	
 	public void goCancerInfo(View view) {
 		Log.d(TAG, "goCancerInfo");

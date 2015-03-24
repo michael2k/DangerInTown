@@ -7,6 +7,7 @@
         android:id="@+id/action_gohome"
         android:orderInCategory="100"
         android:title="@string/gohome"
+        android:icon="@drawable/ic_menu_home"
         android:showAsAction="always"/>
 
 </menu>

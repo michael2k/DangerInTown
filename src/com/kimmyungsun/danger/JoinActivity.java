@@ -1,34 +1,18 @@
 package com.kimmyungsun.danger;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.GridView;
-import android.widget.Toast;
 
-public class JoinActivity extends Activity {
+public class JoinActivity extends DangerActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_join);
 		
-//		GridView joinView = (GridView) findViewById(R.id.joinView);
-//		joinView.setAdapter(new JoinViewAdapter(this));
-//		
-//		joinView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//
-//			@Override
-//			public void onItemClick(AdapterView<?> parent, View view,
-//					int position, long id) {
-//				Toast.makeText(JoinActivity.this, "" + position, Toast.LENGTH_SHORT).show();
-//			}
-//		});
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
 	}
 
@@ -51,6 +35,10 @@ public class JoinActivity extends Activity {
 		goToUrl ( "http://safedu.org/support" );
 	}
 	
+	public void goSearchPlants(View view) {
+		goToUrl ( "https://kangmin.cartodb.com/viz/07769b6a-a5fa-11e4-ab27-0e0c41326911/public_map" );
+	}
+	
 	public void goSearchCancer(View view) {
 //		goToUrl ( "https://facebook.com/profile.php?id=1565798033654421" );
 		goToUrl ( "http://nocancer.kr/carcinogen2/search.html" );
@@ -71,11 +59,5 @@ public class JoinActivity extends Activity {
 	
 	public void goHome(View view) {
 		goToUrl ( "http://safedu.org" );
-	}
-	
-	private void goToUrl( String url ) {
-		Uri uriUrl = Uri.parse(url);
-		Intent launchBrowser = new Intent(Intent.ACTION_VIEW, uriUrl);
-		startActivity(launchBrowser);
 	}
 }

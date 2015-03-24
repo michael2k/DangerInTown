@@ -40,7 +40,6 @@ implements OnItemClickListener
 		setContentView(R.layout.activity_company_details);
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
-		getActionBar().setHomeButtonEnabled(true);
 		
 		txtComapnyName = (TextView) findViewById(R.id.txtCompanyName);
 		txtAddress = (TextView) findViewById(R.id.txtCompanyAddress);
@@ -57,21 +56,14 @@ implements OnItemClickListener
 			
 			company = ds.getCompany(this.companyId);
 			matters = ds.searchMatters(company);
+			
+			if ( company != null ) {
+				txtComapnyName.setText(company.getCompanyName());
+				txtAddress.setText(company.getAddress());
+				listMatters.setAdapter(new MatterDetailsAdapter(this, R.layout.matter_row_item, matters));
+			}
 		}
 		
-	}
-
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onResume()
-	 */
-	@Override
-	protected void onResume() {
-		if ( company != null ) {
-			txtComapnyName.setText(company.getCompanyName());
-			txtAddress.setText(company.getAddress());
-			listMatters.setAdapter(new MatterDetailsAdapter(this, R.layout.matter_row_item, matters));
-		}
-		super.onResume();
 	}
 
 	@Override

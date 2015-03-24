@@ -128,6 +128,14 @@ public class Matter {
 			iconType = R.drawable.circle_orange;
 		} else if (matter.getRiskInfo().contains("발달독성")) {
 			iconType = R.drawable.circle_purple;
+		} else if (matter.getRiskInfo().contains("환경호르몬")) {
+			iconType = R.drawable.circle_dark_green;
+		} else if (matter.getRiskInfo().contains("변이원성")) {
+			iconType = R.drawable.circle_blue;
+		} else if (matter.getRiskInfo().contains("잔류성")
+				|| matter.getRiskInfo().contains("농축성")
+				|| matter.getRiskInfo().contains("독성") ) {
+			iconType = R.drawable.circle_dark_blue;
 		} else {
 			iconType = R.drawable.circle_white;
 		}
@@ -173,7 +181,7 @@ public class Matter {
 			String[] risks = riskInfo.trim().split(",");
 			if ( risks != null && risks.length > 0 ) {
 				for ( String risk : risks ) {
-					if ( risk != null && !risk.isEmpty() ) {
+					if ( risk != null && !risk.trim().isEmpty() ) {
 						riskInfos.add(risk.trim());
 					}
 				}

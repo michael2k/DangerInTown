@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layoutRiskInfo"
+    style="@style/activity.danger.linearlayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:background="@color/grey"
     android:orientation="vertical" >
 
     <fragment
@@ -45,7 +47,7 @@
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -74,7 +76,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="1dp"
                     android:layout_weight="1"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -99,7 +101,7 @@
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -127,7 +129,7 @@
                     android:layout_height="fill_parent"
                     android:layout_marginLeft="1dp"
                     android:layout_weight="1"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -152,7 +154,7 @@
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -180,7 +182,7 @@
                     android:layout_height="fill_parent"
                     android:layout_marginLeft="1dp"
                     android:layout_weight="1"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -205,7 +207,7 @@
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -233,7 +235,7 @@
                     android:layout_height="fill_parent"
                     android:layout_marginLeft="1dp"
                     android:layout_weight="1"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -258,7 +260,7 @@
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -278,7 +280,7 @@
                         android:layout_height="30dp"
                         android:padding="5dp"
                         android:scaleType="centerInside"
-                        android:src="@drawable/circle_white" />
+                        android:src="@drawable/circle_dark_green" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -286,7 +288,7 @@
                     android:layout_height="fill_parent"
                     android:layout_marginLeft="1dp"
                     android:layout_weight="1"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -311,7 +313,7 @@
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -331,7 +333,7 @@
                         android:layout_height="30dp"
                         android:padding="5dp"
                         android:scaleType="centerInside"
-                        android:src="@drawable/circle_white" />
+                        android:src="@drawable/circle_blue" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -339,7 +341,7 @@
                     android:layout_height="fill_parent"
                     android:layout_marginLeft="1dp"
                     android:layout_weight="1"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -364,7 +366,7 @@
                 <LinearLayout
                     android:layout_width="120dp"
                     android:layout_height="fill_parent"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -384,7 +386,7 @@
                         android:layout_height="30dp"
                         android:padding="5dp"
                         android:scaleType="centerInside"
-                        android:src="@drawable/circle_white" />
+                        android:src="@drawable/circle_dark_blue" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -392,7 +394,7 @@
                     android:layout_height="fill_parent"
                     android:layout_marginLeft="1dp"
                     android:layout_weight="1"
-                    android:background="@color/white"
+                    android:background="@color/grey"
                     android:orientation="vertical"
                     android:padding="3dp" >
 

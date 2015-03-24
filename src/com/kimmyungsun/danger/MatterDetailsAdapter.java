@@ -3,13 +3,11 @@ package com.kimmyungsun.danger;
 import java.util.List;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 public class MatterDetailsAdapter extends BaseAdapter {
@@ -52,28 +50,19 @@ public class MatterDetailsAdapter extends BaseAdapter {
 		ImageView imgRiskInfo = (ImageView) convertView.findViewById(R.id.imgRiskInfo);
 		TextView txtMatterName = (TextView) convertView.findViewById(R.id.txtMatterName);
 		TextView txtRiskInfo = (TextView) convertView.findViewById(R.id.txtRiskInfo);
-//		TextView txtEtcInfo = (TextView) convertView.findViewById(R.id.txtEtcInfo);
-//		TextView txtResultInfo = (TextView) convertView.findViewById(R.id.txtResultInfo);
 		
 		Matter matter = (Matter) list.get(position);
 		
 		txtMatterName.setText(matter.getMatterName());
-		txtRiskInfo.setText(matter.getRiskInfo());
-//		txtEtcInfo.setText("CAS No:" + matter.getCasNo() + ", 배출량(kg):" + matter.getOutQty() + ", 이동량(kg):" + matter.getMoveQty());
-//		txtResultInfo.setText(matter.getResultPart());
 		
-//		int iconType;
-//		 if ( matter.getRiskInfo().contains("사고대비")) {
-//			 iconType = R.drawable.circle_red;
-//		 } else if ( matter.getRiskInfo().contains("발암")) {
-//			iconType = R.drawable.circle_yellow;
-//		} else if ( matter.getRiskInfo().contains("생식독성")) {
-//			iconType = R.drawable.circle_orange;
-//		} else if ( matter.getRiskInfo().contains("발달독성")) {
-//			iconType = R.drawable.circle_purple;
-//		} else {
-//			iconType = R.drawable.circle_white;
-//		}
+		List<String> riskInfos = Matter.getRiskInfos(matter);
+		StringBuilder sb = new StringBuilder();
+		for( int i = 0; i < riskInfos.size(); i++ ) {
+			if (sb.length() > 0 ) sb.append(",");
+			sb.append(riskInfos.get(i));
+		}
+		txtRiskInfo.setText(sb.toString());
+		
 		imgRiskInfo.setImageResource(Matter.getIconType(matter));
 		
 		return convertView;

@@ -5,10 +5,10 @@
         android:id="@+id/action_gohome"
         android:orderInCategory="100"
         android:title="@string/gohome"
+        android:icon="@drawable/ic_menu_home"
         android:showAsAction="always"/>
     
     <item android:id="@+id/action_join" 
-          android:icon="@android:drawable/ic_menu_share"
         android:title="@string/action_join"
         android:showAsAction="always"
          android:orderInCategory="200"/>

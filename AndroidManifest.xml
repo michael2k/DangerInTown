@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="17"
-        android:targetSdkVersion="22" />
+        android:minSdkVersion="14"
+        android:targetSdkVersion="21" />
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -32,15 +32,15 @@
             android:value="AIzaSyAa0VCzUiaKafw-sNERQX_nG2E0dlnK7vw" />
         -->
 <!--         13 
--->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyBHSu7Gakue-Jgb86x4hOG62aXMWct4X0o" />
+-->
 		<!--  RELEASE
+		 -->
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDQeTdWNiUWbJqScErPrlJ5D0y-sY73_K0" />
-		 -->
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -77,27 +77,13 @@
             android:name=".provider.DangerContentProvider"
             android:authorities="com.kimmyungsun.danger.provider.DangerContentProvider" />
 
-        <!--
-        <activity
-            android:name=".CompanyInfoFragment"
-            android:alwaysRetainTaskState="true"
-            android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
-            android:finishOnCloseSystemDialogs="true"
-            android:label="@string/title_activity_company_info"
-            android:parentActivityName=".DangerDataTest" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.kimmyungsun.danger.DangerDataTest" />
-        </activity>
-        -->
         <activity
             android:name=".CompanyDetailsActivity"
             android:alwaysRetainTaskState="true"
             android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:finishOnCloseSystemDialogs="true"
             android:icon="@drawable/ic_launcher"
-            android:label="@string/title_activity_company_details"
-            android:parentActivityName=".DangerDataTest" >
+            android:label="@string/title_activity_company_details" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.kimmyungsun.danger.DangerDataTest" />
@@ -114,8 +100,7 @@
             android:alwaysRetainTaskState="true"
             android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:finishOnCloseSystemDialogs="true"
-            android:label="@string/title_activity_join"
-            android:parentActivityName=".DangerDataTest" >
+            android:label="@string/title_activity_join" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.kimmyungsun.danger.DangerDataTest" />

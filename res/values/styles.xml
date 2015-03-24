@@ -33,4 +33,11 @@
     </style>
 
 
+    <style name="activity.danger" parent="AppTheme">
+    </style>
+    
+    <style name="activity.danger.linearlayout" parent="activity.danger">
+        <item name="android:background">@color/grey</item>
+        <item name="android:orientation">vertical</item>
+    </style>
 </resources>

@@ -21,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
 import android.widget.SearchView.OnQueryTextListener;
@@ -733,14 +734,28 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 			markerSelected.setIcon(BitmapDescriptorFactory.fromResource(Company.getIconType(matters, 0)));
 		}
 		
+		List<Matter> matters = dangerDataSource.searchMatters(marker.getSnippet());
+		marker.setIcon(BitmapDescriptorFactory.fromResource(Company.getIconType(matters, 1)));
+
+		
 		cif.updateCompanyInfo(marker.getSnippet());
+
+		LinearLayout companyInfoLayout = (LinearLayout) findViewById(R.id.companyInfoLayout);
+		android.widget.LinearLayout.LayoutParams params = ( android.widget.LinearLayout.LayoutParams )companyInfoLayout.getLayoutParams();
+		if ( matters.size() == 1 ) {
+			params.height = 345;
+		} else if ( matters.size() == 2 ) {
+			params.height = 445;
+		} else if ( matters.size() == 3 ) {
+			params.height = 545;
+		} else {
+			params.height = 645;
+		}
+		companyInfoLayout.setLayoutParams(params);
 		
 		googleMap.moveCamera(CameraUpdateFactory.newLatLng(marker.getPosition()));
 		
-		List<Matter> matters = dangerDataSource.searchMatters(marker.getSnippet());
-		marker.setIcon(BitmapDescriptorFactory.fromResource(Company.getIconType(matters, 1)));
 		markerSelected = marker;
-		
 		return true;
 	}
 	

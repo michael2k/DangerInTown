@@ -62,11 +62,9 @@ public class CancerInfoDetailsActivity extends DangerActivity {
 	}
 	
 	private Matter matter;
-	//	private ResultInfo resultInfo;
 	
 	private int matterId;
 	private TextView txtMatterName;
-	private String casNo;
 	private ImageView imgResultInfo;
 	private TextView txtResultInfo;
 	public static final String MATTER_ID = "matter_id";
@@ -90,30 +88,27 @@ public class CancerInfoDetailsActivity extends DangerActivity {
 			matter = ds.getMatter(matterId);
 			txtMatterName.setText(matter.getMatterName());
 			txtResultInfo.setText(matter.getResultPart());
+			
 //			resultInfo = new ResultInfo(matter.getResultPart());
 //			Log.d(TAG, resultInfo.toString());
-		}
-	}
-
-	@Override
-	protected void onResume() {
-		if ( matter != null ) {
-
-			int resourceId = R.drawable.human_body_empty;
 			
-			if ( matter.getResultPart() != null && !matter.getResultPart().isEmpty() ) {
+			if ( matter != null ) {
+	
+				int resourceId = R.drawable.human_body_empty;
 				
-				if ( matter.getCasNo() != null && !matter.getCasNo().isEmpty() ) {
-					String casNo = matter.getCasNo().trim();
-					if ( hbMap.containsKey(casNo)) {
-						resourceId = hbMap.get(casNo);
+				if ( matter.getResultPart() != null && !matter.getResultPart().isEmpty() ) {
+					
+					if ( matter.getCasNo() != null && !matter.getCasNo().isEmpty() ) {
+						String casNo = matter.getCasNo().trim();
+						if ( hbMap.containsKey(casNo)) {
+							resourceId = hbMap.get(casNo);
+						}
 					}
 				}
+				imgResultInfo.setImageResource(resourceId);
+				
 			}
-			imgResultInfo.setImageResource(resourceId);
-			
 		}
-		super.onResume();
 	}
 
 

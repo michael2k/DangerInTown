@@ -62,7 +62,7 @@ public class SplashActivity extends Activity implements IDBTaskListener, IDanger
 				mDBTask = new DBTask(SplashActivity.this);
 				mDBTask.execute();
 			}
-		}, 2000);
+		}, 3000);
 	}
 	
 	@Override
@@ -129,11 +129,11 @@ public class SplashActivity extends Activity implements IDBTaskListener, IDanger
 //			Toast.makeText(this, R.string.info_parse_error, Toast.LENGTH_LONG).show();
 //			return;
 //		}
-		try {
-			Thread.sleep(2000);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(2000);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		this.mProgressBar.setVisibility(View.INVISIBLE);
 		Intent mIntent = new Intent(SplashActivity.this, DangerDataTest.class);
 		mIntent.putExtra(KEY_START_FROM, START_FROM_SPLASH);

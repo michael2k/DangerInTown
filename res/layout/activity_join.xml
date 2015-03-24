@@ -1,4 +1,6 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    style="@style/activity.danger.linearlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
@@ -22,13 +24,53 @@
                 android:orientation="vertical" >
 
                 <ImageButton
+                    android:id="@+id/btnPlants"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:onClick="goSearchPlants"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_join_plants" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageButton
+                    android:id="@+id/btnSearchCancer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:onClick="goSearchCancer"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/btn_join_search_cancer" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="1"
+                android:orientation="vertical" >
+
+                <ImageButton
                     android:id="@+id/btnRequest"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:onClick="goRequest"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_request" />
-
             </LinearLayout>
 
             <LinearLayout
@@ -45,7 +87,6 @@
                     android:onClick="goSpeech"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_speech" />
-
             </LinearLayout>
         </LinearLayout>
 
@@ -63,39 +104,13 @@
                 android:orientation="vertical" >
 
                 <ImageButton
-                    android:id="@+id/btnSearchCancer"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:background="@color/white"
-                    android:onClick="goSearchCancer"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/btn_join_search_cancer" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:orientation="vertical" >
-
-                <ImageView
                     android:id="@+id/btnAsk"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:onClick="goAskDetails"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_ask" />
-
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal" >
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -111,8 +126,15 @@
                     android:onClick="goHome"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_news" />
-
             </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
 
             <LinearLayout
                 android:layout_width="0dp"
@@ -127,18 +149,11 @@
                     android:layout_height="fill_parent"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_recommend" />
-
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
 
             <LinearLayout
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:orientation="vertical" >
@@ -146,27 +161,13 @@
                 <ImageButton
                     android:id="@+id/btnSupport"
                     android:layout_width="fill_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="fill_parent"
                     android:onClick="goSupport"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_support" />
-
             </LinearLayout>
+
         </LinearLayout>
     </LinearLayout>
 
-</FrameLayout>
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
+</LinearLayout>
