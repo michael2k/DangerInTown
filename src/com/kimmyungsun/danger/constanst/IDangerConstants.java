@@ -6,11 +6,11 @@ import android.net.Uri;
 
 public interface IDangerConstants {
 	
-//	public static final String MAP_KEY = "AIzaSyBHSu7Gakue-Jgb86x4hOG62aXMWct4X0o"; // 13 Danger0102
+	public static final String MAP_KEY = "AIzaSyBHSu7Gakue-Jgb86x4hOG62aXMWct4X0o"; // 13 Danger0102
 //	public static final String MAP_KEY = "AIzaSyAa0VCzUiaKafw-sNERQX_nG2E0dlnK7vw"; // 15 Danger0101
-	public static final String MAP_KEY = "AIzaSyDQeTdWNiUWbJqScErPrlJ5D0y-sY73_K0"; // RELEASE Danger0102
+//	public static final String MAP_KEY = "AIzaSyDQeTdWNiUWbJqScErPrlJ5D0y-sY73_K0"; // RELEASE Danger0102
 	
-	public static final String API_KEY = "AIzaSyDYzJufVULJ1Xl2kbaUbhTh9WxAlvuPZgQ"; // API Project
+	public static final String API_KEY = "AIzaSyA-wPeeie6sUt4mr1nSrVZXGa-pISdVFs8"; // API Project
 	
 	public static final boolean DEBUG=true; 
 	

@@ -120,18 +120,26 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 	}
 
 	private void setUpMap() {
+		Log.d(TAG, "setUpMap");
 		
-		googleMap.getUiSettings().setMapToolbarEnabled(false);
+//		googleMap.getUiSettings().setMapToolbarEnabled(false);
+		Log.d(TAG, "1");
 		googleMap.setMyLocationEnabled(true);
+		Log.d(TAG, "2");
 		googleMap.setOnMyLocationButtonClickListener(this);
+		Log.d(TAG, "3");
 		googleMap.setOnMapClickListener(this);
+		Log.d(TAG, "4");
 		googleMap.setOnMapLongClickListener(this);
+		Log.d(TAG, "5");
 		
         // Setting a custom info window adapter for the google map
 //        googleMap.setInfoWindowAdapter(new CompanyInfoWindowAdapter(this, dangerDataSource));
 //		googleMap.setOnInfoWindowClickListener(this);
         googleMap.setOnMarkerClickListener(this);
+        Log.d(TAG, "6");
         googleMap.setOnCameraChangeListener(this);
+        Log.d(TAG, "7");
 	}
 
 	@Override
@@ -170,7 +178,7 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 			ed.putString("companyId", markerSelected.getSnippet());
 		}
 		
-		ed.putInt("button_status", buttonStatus);
+//		ed.putInt("button_status", buttonStatus);
 		ed.putFloat("mLatLng.lat", (float)mLatLng.latitude);
 		ed.putFloat("mLatLng.lng", (float)mLatLng.longitude);
 		ed.putBoolean("checkedGPS", checkedGPS);
@@ -196,7 +204,7 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 		float lat = mPrefs.getFloat("mLatLng.lat", 0f);
 		float lng = mPrefs.getFloat("mLatLng.lng", 0f);
 		mLatLng = new LatLng(lat, lng);
-		buttonStatus = mPrefs.getInt("button_status", BUTTON_ENABLED);
+//		buttonStatus = mPrefs.getInt("button_status", BUTTON_ENABLED);
 		
 //		String companyIdSelected = mPrefs.getString("companyId", null);
 		
