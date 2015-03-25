@@ -52,7 +52,7 @@ public class CompanyInfoWindowAdapter implements InfoWindowAdapter {
 			
 			ListView listMatters = (ListView) v.findViewById(R.id.listMatters);
 			
-			listMatters.setAdapter(new MatterArrayAdapter(activity, R.layout.matter_row_item, matters));
+			listMatters.setAdapter(new MatterArrayAdapter(activity, R.layout.matter_item_in_company, matters));
 			
 	
 		} else {

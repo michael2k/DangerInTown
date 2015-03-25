@@ -47,9 +47,9 @@ public class MatterDetailsAdapter extends BaseAdapter {
 			convertView = inf.inflate(layout, null);
 		}
 		
-		ImageView imgRiskInfo = (ImageView) convertView.findViewById(R.id.imgRiskInfo);
-		TextView txtMatterName = (TextView) convertView.findViewById(R.id.txtMatterName);
-		TextView txtRiskInfo = (TextView) convertView.findViewById(R.id.txtRiskInfo);
+		ImageView imgRiskInfo = (ImageView) convertView.findViewById(R.id.imgcdRiskInfo);
+		TextView txtMatterName = (TextView) convertView.findViewById(R.id.txtcdMatterName);
+		TextView txtRiskInfo = (TextView) convertView.findViewById(R.id.txtcdRiskInfo);
 		
 		Matter matter = (Matter) list.get(position);
 		

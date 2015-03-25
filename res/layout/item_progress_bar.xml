@@ -7,7 +7,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#282828"
         android:padding="15sp" >
 
         <ProgressBar

@@ -60,7 +60,7 @@ implements OnItemClickListener
 			if ( company != null ) {
 				txtComapnyName.setText(company.getCompanyName());
 				txtAddress.setText(company.getAddress());
-				listMatters.setAdapter(new MatterDetailsAdapter(this, R.layout.matter_row_item, matters));
+				listMatters.setAdapter(new MatterDetailsAdapter(this, R.layout.matter_item_in_company, matters));
 			}
 		}
 		

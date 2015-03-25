@@ -3,34 +3,28 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@style/activity.danger"
-    android:gravity="bottom"
+    android:gravity="top"
     android:orientation="vertical"
-    android:padding="5dp" >
+    android:padding="10dp" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="top"
         android:orientation="vertical" >
 
         <LinearLayout
+            style="@style/CompanyTitle"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="1dp"
-            android:orientation="vertical" >
+            android:layout_height="wrap_content" >
 
             <TextView
                 android:id="@+id/txtCompanyName"
+                style="@style/CompanyName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:hint="@string/matter_name"
-                android:paddingLeft="10dp"
-                android:text="@string/matter_name"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/blue"
-                android:textStyle="bold" />
-
+                android:text="@string/matter_name" />
         </LinearLayout>
 
         <LinearLayout
@@ -46,7 +40,6 @@
                 android:layout_height="fill_parent" >
             </ListView>
         </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>

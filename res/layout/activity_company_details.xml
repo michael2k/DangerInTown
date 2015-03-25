@@ -1,10 +1,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/LinearLayout1"
-    style="@style/activity.danger.linearlayout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/grey"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -19,47 +17,45 @@
         android:orientation="vertical" >
 
         <LinearLayout
+            style="@style/CompanyTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="1dp"
-            android:background="@color/grey"
+            android:layout_marginBottom="1dp"
+            android:layout_marginRight="1dp"
             android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/txtCompanyName"
+                style="@style/CompanyName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/company_name"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textColor="@color/black"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtCompanyAddress"
+                style="@style/companyAddress"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/address"
-                android:textColor="@color/blue"
-                android:textStyle="bold" />
+                android:text="@string/address" />
+
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_marginBottom="1dp"
-            android:layout_marginLeft="1dp"
-            android:layout_marginRight="1dp"
-            android:background="@color/grey"
             android:dividerPadding="5dp"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:paddingTop="10dp" >
 
             <ListView
                 android:id="@+id/listMatters"
                 android:layout_width="fill_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1" >
+
             </ListView>
         </LinearLayout>
     </LinearLayout>

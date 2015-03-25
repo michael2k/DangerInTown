@@ -79,7 +79,7 @@ implements OnItemClickListener
 
 		if ( company != null ) {
 			txtCompanyName.setText(company.getCompanyName());
-			listMatters.setAdapter(new MatterArrayAdapter(getActivity(), R.layout.matter_row_item, matters));
+			listMatters.setAdapter(new MatterArrayAdapter(getActivity(), R.layout.matter_item_in_info, matters));
 			listMatters.setOnItemClickListener(this);
 		}
 		
@@ -110,18 +110,6 @@ implements OnItemClickListener
 	        // Set article based on saved instance state defined during onCreateView
 	        updateCompanyInfo(companyId);
 	    }
-	}
-
-	/* (non-Javadoc)
-	 * @see android.app.Activity#onResume()
-	 */
-	@Override
-	public void onResume() {
-		if ( company != null ) {
-			txtCompanyName.setText(company.getCompanyName());
-			listMatters.setAdapter(new MatterArrayAdapter(getActivity(), R.layout.matter_row_item, matters));
-		}
-		super.onResume();
 	}
 
 	@Override

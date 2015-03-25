@@ -68,12 +68,4 @@ public class MatterDetailActivity extends DangerActivity {
 		startActivity(riskInfoIntent);
 		
 	}
-	
-	public void showPoisonInfoDetails(View view) {
-		Log.d(TAG, "showPoisonInfoDetails");
-		
-		Intent poisonInfoIntent = new Intent(this, PoisonInfoDetailsActivity.class);
-		startActivity(poisonInfoIntent);
-		
-	}
 }

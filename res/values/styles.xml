@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -17,24 +17,27 @@
         <item name="android:textColor">@color/cyan</item>
     </style>
      -->
-    <style name="Bubble.TextAppearance.Dark" parent="android:TextAppearance.Medium">
-        <item name="android:textSize">14sp</item>
-        <item name="android:textColor">#ff7f7f7f</item>
-    </style>
-    <style name="Bubble.TextAppearance.Light" parent="Bubble.TextAppearance.Dark">
-        <item name="android:textColor">#ffeeeeee</item>
-    </style>
-    <style name="ClusterIcon.TextAppearance" parent="android:TextAppearance">
-        <item name="android:textColor">#ffeeeeee</item>
-        <item name="android:textSize">16sp</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-
     <style name="activity.danger" parent="AppTheme">
     </style>
     
     <style name="activity.danger.linearlayout" parent="activity.danger">
         <item name="android:orientation">vertical</item>
+    </style>
+    <style name="CompanyTitle">
+        <item name="android:background">@color/blue</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="CompanyName" parent="android:Widget.Holo.TextView">
+        <item name="android:background">@color/blue</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="companyAddress" parent="android:Widget.Holo.TextView">
+        <item name="android:background">@color/blue</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textStyle">bold</item>
     </style>
 </resources>

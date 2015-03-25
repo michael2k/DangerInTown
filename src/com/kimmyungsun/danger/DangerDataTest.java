@@ -18,7 +18,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
@@ -53,7 +52,6 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.maps.android.ui.IconGenerator;
 import com.kimmyungsun.danger.datamng.YPYNetUtils;
 import com.kimmyungsun.danger.geocode.GeoCodeCalc;
 import com.kimmyungsun.danger.object.PlaceObject;
@@ -170,7 +168,7 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 			ed.putString("companyId", markerSelected.getSnippet());
 		}
 		
-		ed.putInt("button_status", buttonStatus);
+//		ed.putInt("button_status", buttonStatus);
 		ed.putFloat("mLatLng.lat", (float)mLatLng.latitude);
 		ed.putFloat("mLatLng.lng", (float)mLatLng.longitude);
 		ed.putBoolean("checkedGPS", checkedGPS);
@@ -196,7 +194,7 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 		float lat = mPrefs.getFloat("mLatLng.lat", 0f);
 		float lng = mPrefs.getFloat("mLatLng.lng", 0f);
 		mLatLng = new LatLng(lat, lng);
-		buttonStatus = mPrefs.getInt("button_status", BUTTON_ENABLED);
+//		buttonStatus = mPrefs.getInt("button_status", BUTTON_ENABLED);
 		
 //		String companyIdSelected = mPrefs.getString("companyId", null);
 		
@@ -412,56 +410,38 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
         
         LatLng org = new LatLng(lat, lng);
         
-        IconGenerator iconFactory = new IconGenerator(this);
-        iconFactory.setStyle(IconGenerator.STYLE_RED);
-        
         CircleOptions co = new CircleOptions();
         co.center(org);
         co.strokeWidth(1.0f);
         co.radius(5000);
         co.fillColor(Color.argb(30, 50, 0, 0));
-//        iconFactory.setColor(Color.argb(30, 50, 0, 0));
-        addIcon(iconFactory, "5KM", new LatLng(org.latitude + ( 0.00436 * 10), org.longitude));
         
-        googleMap.addCircle(co);
-        
-//        IconGenerator iconFactory = new IconGenerator(this);
-//        iconFactory.setStyle(IconGenerator.STYLE_RED);
-//        addIcon(iconFactory, "500M", new LatLng(org.latitude + 0.00436, org.longitude));
-
-//        iconFactory.setColor(Color.CYAN);
-//        addIcon(iconFactory, "5KM", new LatLng(org.latitude + ( 0.00436 * 10), org.longitude));
-
-//        iconFactory.setRotation(90);
-//        iconFactory.setStyle(IconGenerator.STYLE_RED);
-//        addIcon(iconFactory, "2KM", new LatLng(org.latitude + ( 0.00436 * 4), org.longitude));
-
-//        iconFactory.setContentRotation(-90);
-//        iconFactory.setStyle(IconGenerator.STYLE_PURPLE);
-//        addIcon(iconFactory, "Rotate=90, ContentRotate=-90", new LatLng(org.latitude, org.longitude));
-//
-//        iconFactory.setRotation(0);
-//        iconFactory.setContentRotation(90);
-//        iconFactory.setStyle(IconGenerator.STYLE_GREEN);
-//        addIcon(iconFactory, "ContentRotate=90", new LatLng(org.latitude, org.longitude));
- 
+		googleMap.addMarker(new MarkerOptions()
+		.position(new LatLng(org.latitude + ( 0.00436 * 10), org.longitude))
+		.icon(BitmapDescriptorFactory.fromResource(R.drawable.distance_5km))
+				)
+				;
+		googleMap.addCircle(co);
         
         co.radius(2000);
         co.fillColor(Color.argb(40, 100, 0, 0));
-//        iconFactory.setColor(Color.argb(40, 100, 0, 0));
-        addIcon(iconFactory, "2KM", new LatLng(org.latitude + ( 0.00436 * 4), org.longitude));
         
-        googleMap.addCircle(co);
-        
-//        co.radius(1000);
-//        co.fillColor(Color.argb(50, 200, 0, 0));
-//        
-//        googleMap.addCircle(co);
+		googleMap.addMarker(new MarkerOptions()
+		.position(new LatLng(org.latitude + ( 0.00436 * 4), org.longitude))
+		.icon(BitmapDescriptorFactory.fromResource(R.drawable.distance_2km))
+				)
+				;
+       googleMap.addCircle(co);
         
         co.radius(500);
-        addIcon(iconFactory, "500M", new LatLng(org.latitude + 0.00436, org.longitude));
         
-        googleMap.addCircle(co);
+		googleMap.addMarker(new MarkerOptions()
+		.position(new LatLng(org.latitude + 0.00436, org.longitude))
+		.icon(BitmapDescriptorFactory.fromResource(R.drawable.distance_500m))
+				)
+				;
+        
+       googleMap.addCircle(co);
         
         addCompanyMarker(lat, lng, companys);
        
@@ -743,13 +723,13 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 		LinearLayout companyInfoLayout = (LinearLayout) findViewById(R.id.companyInfoLayout);
 		android.widget.LinearLayout.LayoutParams params = ( android.widget.LinearLayout.LayoutParams )companyInfoLayout.getLayoutParams();
 		if ( matters.size() == 1 ) {
-			params.height = 345;
-		} else if ( matters.size() == 2 ) {
 			params.height = 445;
-		} else if ( matters.size() == 3 ) {
+		} else if ( matters.size() == 2 ) {
 			params.height = 545;
-		} else {
+		} else if ( matters.size() == 3 ) {
 			params.height = 645;
+		} else {
+			params.height = 745;
 		}
 		companyInfoLayout.setLayoutParams(params);
 		
@@ -862,15 +842,6 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 		
 	}
 
-	private void addIcon(IconGenerator iconFactory, String text, LatLng position) {
-	    MarkerOptions markerOptions = new MarkerOptions().
-	            icon(BitmapDescriptorFactory.fromBitmap(iconFactory.makeIcon(text))).
-	            position(position).
-	            anchor(iconFactory.getAnchorU(), iconFactory.getAnchorV());
-	
-	    googleMap.addMarker(markerOptions);
-	}
-	
 	private void checkGPS() {
 		
 		LocationManager locationManager = ( LocationManager )  getSystemService(LOCATION_SERVICE);
