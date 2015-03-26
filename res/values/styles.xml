@@ -9,14 +9,16 @@
     </style>
 
     <style name="AppBaseTheme" parent="android:Theme.Holo">
-        <item name="android:background">@color/cyan</item>
+        <item name="android:colorBackground">@color/cyan</item>
+    </style>
+    
+    <style name="DangerActionBar" parent="android:Widget.Holo.ActionBar.Solid">
+        
     </style>
 
     <!-- 
     <style name="myDropDownItemStyle" parent="android:style/Widget.Holo.Light.Spinner">
-        <item name="android:textColor">@color/cyan</item>
     </style>
-     -->
     <style name="activity.danger" parent="AppTheme">
     </style>
     
@@ -40,4 +42,5 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">bold</item>
     </style>
+     -->
 </resources>

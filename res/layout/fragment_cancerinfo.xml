@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:background="@color/blue"
     android:orientation="vertical" >
 
     <LinearLayout
@@ -14,7 +13,6 @@
         android:layout_marginLeft="1dp"
         android:layout_marginRight="1dp"
         android:layout_marginTop="1dp"
-        android:background="@color/grey"
         android:clickable="true"
         android:onClick="goCancerInfo"
         android:orientation="horizontal" >

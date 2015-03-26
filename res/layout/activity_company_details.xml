@@ -13,11 +13,9 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@color/black"
         android:orientation="vertical" >
 
         <LinearLayout
-            style="@style/CompanyTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="1dp"
@@ -26,7 +24,6 @@
 
             <TextView
                 android:id="@+id/txtCompanyName"
-                style="@style/CompanyName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
@@ -36,7 +33,6 @@
 
             <TextView
                 android:id="@+id/txtCompanyAddress"
-                style="@style/companyAddress"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/address" />

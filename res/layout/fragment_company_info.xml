@@ -14,13 +14,11 @@
         android:orientation="vertical" >
 
         <LinearLayout
-            style="@style/CompanyTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
             <TextView
                 android:id="@+id/txtCompanyName"
-                style="@style/CompanyName"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/matter_name"
