@@ -8,14 +8,51 @@
     <style name="AppTheme" parent="AppBaseTheme">
     </style>
 
-    <style name="AppBaseTheme" parent="android:Theme.Holo">
-        <item name="android:colorBackground">@color/cyan</item>
+    <style name="AppBaseTheme" parent="CustomActionBarTheme">
     </style>
     
-    <style name="DangerActionBar" parent="android:Widget.Holo.ActionBar.Solid">
-        
-    </style>
+ <!-- the theme applied to the application or activity -->
+    <style name="CustomActionBarTheme"
+           parent="@android:style/Theme.Holo">
 
+        <item name="android:background">@color/background_holo_dark</item>
+        
+        <item name="android:colorForeground">@color/bright_foreground_holo_light</item>
+        <item name="android:colorForegroundInverse">@color/bright_foreground_inverse_holo_light</item>
+        <item name="android:colorBackground">@color/background_holo_light</item>
+        <item name="android:colorBackgroundCacheHint">@drawable/background_cache_hint_selector_holo_light</item>
+		<!-- 
+		 -->           
+        
+        
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <!-- 
+        <item name="android:colorForeground">@color/bright_foreground_holo_dark</item>
+        <item name="android:colorForegroundInverse">@color/bright_foreground_inverse_holo_dark</item>
+        <item name="android:colorBackground">@android:color/background_holo_dark</item>
+		<item name="android:colorBackground">@color/cyan_500</item>
+        <item name="android:disabledAlpha">0.5</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+         -->
+		
+	</style>
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+           parent="@android:style/Widget.Holo.ActionBar">
+		
+        <item name="android:titleTextStyle">@android:style/TextAppearance.Holo.Widget.ActionBar.Title</item>
+        <item name="android:subtitleTextStyle">@android:style/TextAppearance.Holo.Widget.ActionBar.Subtitle</item>
+        <item name="android:background">@drawable/ab_transparent_dark_holo</item>
+        <item name="android:backgroundStacked">@drawable/ab_stacked_transparent_dark_holo</item>
+        <item name="android:backgroundSplit">@drawable/ab_bottom_transparent_dark_holo</item>
+        <item name="android:divider">?android:attr/dividerVertical</item>
+        <item name="android:progressBarStyle">@android:style/Widget.Holo.ProgressBar.Horizontal</item>
+        <item name="android:indeterminateProgressStyle">@android:style/Widget.Holo.ProgressBar</item>
+        <item name="android:progressBarPadding">32dip</item>
+        <item name="android:itemPadding">8dip</item>
+    </style>
+    
     <!-- 
     <style name="myDropDownItemStyle" parent="android:style/Widget.Holo.Light.Spinner">
     </style>

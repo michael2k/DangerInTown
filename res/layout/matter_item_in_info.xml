@@ -3,6 +3,7 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
+    android:background="@color/background_holo_light"
     android:orientation="horizontal"
     android:paddingBottom="1dp"
     android:paddingTop="1dp" >
@@ -13,6 +14,7 @@
         android:layout_height="15dp"
         android:layout_gravity="center_vertical"
         android:layout_margin="5dp"
+        android:background="@color/background_holo_light"
         android:contentDescription="@string/riskinfo_circle"
         android:src="@drawable/circle_white" />
 
@@ -21,6 +23,7 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
+        android:background="@color/background_holo_light"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/matter_name" />
 
@@ -30,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
+        android:background="@color/background_holo_light"
         android:gravity="center_vertical|center_horizontal"
         android:text="@string/riskinfo_string" />
 
