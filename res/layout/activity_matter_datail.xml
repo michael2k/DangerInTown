@@ -3,6 +3,7 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_holo_light"
     android:clickable="true"
     android:onClick="showRiskInfoDetails"
     android:orientation="vertical"
@@ -22,6 +23,7 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_weight="1"
+            android:background="@color/background_holo_light"
             android:orientation="vertical" >
 
             <LinearLayout
@@ -107,12 +109,14 @@
             android:layout_width="fill_parent"
             android:layout_height="150dp"
             android:layout_weight="1"
+            android:background="@color/background_holo_light"
             android:orientation="horizontal" >
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
+                android:background="@color/background_holo_light"
                 android:orientation="vertical"
                 android:padding="3dp" >
 
@@ -121,9 +125,11 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
+                    android:background="@color/background_holo_dark"
                     android:onClick="showRiskInfoDetails"
                     android:text="@string/title_riskinfo_button"
                     android:textAppearance="?android:attr/textAppearanceSmall" />
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

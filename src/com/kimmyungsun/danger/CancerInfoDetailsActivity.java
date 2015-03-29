@@ -77,9 +77,9 @@ public class CancerInfoDetailsActivity extends DangerActivity {
 		
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		
-		txtMatterName = (TextView) findViewById(R.id.txtMatterName);
-		imgResultInfo = (ImageView) findViewById(R.id.imgResultInfo);
-		txtResultInfo = (TextView) findViewById(R.id.txtResultInfo);
+		txtMatterName = (TextView) findViewById(R.id.txtCancerMatterName);
+		imgResultInfo = (ImageView) findViewById(R.id.imgCancerResultInfo);
+		txtResultInfo = (TextView) findViewById(R.id.txtCancerResultInfo);
 		
 		matterId = getIntent().getIntExtra(MATTER_ID, -1);
 		

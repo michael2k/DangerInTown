@@ -28,7 +28,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:clickable="true"
-                android:gravity="left|center"
+                android:gravity="center"
                 android:onClick="goEscapeInfo"
                 android:text="사고대비물질"
                 android:textAppearance="?android:attr/textAppearanceMedium"

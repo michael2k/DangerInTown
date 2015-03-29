@@ -3,59 +3,57 @@
     android:id="@+id/layoutRiskInfo"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:background="@color/background_holo_light"
+    android:orientation="vertical"
+    android:padding="16dp" >
 
     <fragment
         android:id="@+id/fragmentEscapeInfo"
         android:name="com.kimmyungsun.danger.EscapeInfoFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp" />
+        android:layout_height="wrap_content" />
 
     <fragment
         android:id="@+id/fragmentCancerInfo"
         android:name="com.kimmyungsun.danger.CancerInfoFragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp" />
+        android:layout_height="wrap_content" />
 
     <ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/background_holo_light"
         android:fillViewport="true" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/background_holo_light"
             android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/background_holo_dark"
                 android:orientation="horizontal" >
 
                 <LinearLayout
                     android:layout_width="120dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
                     <TextView
                         android:id="@+id/TextView23"
+                        style="@style/riskInfoDeatilsTitleText"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:gravity="center"
-                        android:text="사고대비물질"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textStyle="bold" />
+                        android:text="사고대비물질" />
 
                     <ImageView
                         android:id="@+id/ImageView07"
@@ -64,50 +62,45 @@
                         android:padding="5dp"
                         android:scaleType="centerInside"
                         android:src="@drawable/circle_red" />
-
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="1dp"
                     android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:padding="3dp" >
+                    android:orientation="vertical" >
 
                     <TextView
                         android:id="@+id/TextView19"
+                        style="@style/riskInfoDetailsText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:gravity="center_vertical"
-                        android:text="급성독성/폭발성 등이 강하여 사고발생의 가능성이 높거나 사고가 발생한 경우에 그 피해 규모가 클 것으로 우려되는 화학물질로서 사고 대비/대응계획이 필요하다고 인정되는 물질"
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                        android:text="급성독성/폭발성 등이 강하여 사고발생의 가능성이 높거나 사고가 발생한 경우에 그 피해 규모가 클 것으로 우려되는 화학물질로서 사고 대비/대응계획이 필요하다고 인정되는 물질" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
-                android:orientation="horizontal" >
+                android:layout_marginTop="5dp"
+                android:orientation="horizontal"
+                android:paddingTop="5dp" >
 
                 <LinearLayout
                     android:layout_width="120dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
                     <TextView
                         android:id="@+id/TextView25"
+                        style="@style/riskInfoDeatilsTitleText"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="발암성"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textStyle="bold" />
+                        android:text="발암성" />
 
                     <ImageView
                         android:id="@+id/ImageView08"
@@ -128,36 +121,37 @@
 
                     <TextView
                         android:id="@+id/TextView20"
+                        style="@style/riskInfoDetailsText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
                         android:text="암을 발생시키는 물질, 세계보건기구 국제암연구소(IARC)는 1급 인체 발암성 물질(1), 2급 인체 발암성 추정물질(2A), 3급 인체 발암성 가능물질(2B)으로 구분하고 있다."
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal" >
 
                 <LinearLayout
                     android:layout_width="120dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
                     <TextView
                         android:id="@+id/TextView24"
+                        style="@style/riskInfoDeatilsTitleText"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="생식독성"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -179,36 +173,37 @@
 
                     <TextView
                         android:id="@+id/TextView27"
+                        style="@style/riskInfoDetailsText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
                         android:text="생식능력의 장애(불임, 생리불순)을 일으키거나, 유산을 발생시키는 물질"
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal" >
 
                 <LinearLayout
                     android:layout_width="120dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
                     <TextView
                         android:id="@+id/TextView26"
+                        style="@style/riskInfoDeatilsTitleText"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="발달독성"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -230,25 +225,26 @@
 
                     <TextView
                         android:id="@+id/TextView18"
+                        style="@style/riskInfoDetailsText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
                         android:text="발달장애를 발생시키는 물질(엄마가 톨루엔에 노출되면 말이 늦는 문제 발생. 임신초기 화학물질 노출시 자폐 발생 등)"
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal" >
 
                 <LinearLayout
                     android:layout_width="120dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -259,7 +255,6 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="환경호르몬"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -281,37 +276,37 @@
 
                     <TextView
                         android:id="@+id/TextView16"
+                        style="@style/riskInfoDetailsText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
                         android:text="인체의 호르몬과 유사하게 인식되어 호르몬을 교란시키는 물질"
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal" >
 
                 <LinearLayout
                     android:layout_width="120dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
                     <TextView
                         android:id="@+id/TextView14"
+                        style="@style/riskInfoDeatilsTitleText"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:text="변이원성"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
-                        android:textStyle="bold" />
+                        android:text="변이원성" />
 
                     <ImageView
                         android:id="@+id/ImageView12"
@@ -332,25 +327,27 @@
 
                     <TextView
                         android:id="@+id/TextView15"
+                        style="@style/riskInfoDetailsText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
                         android:text="세포 또는 생물집단에게 돌연변이를 발생시키는 물질"
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="1dp"
-                android:layout_marginLeft="1dp"
-                android:layout_marginRight="1dp"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal" >
 
                 <LinearLayout
+                    style="@style/riskInfoDetailsText"
                     android:layout_width="120dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:orientation="vertical"
                     android:padding="3dp" >
 
@@ -361,7 +358,6 @@
                         android:layout_weight="1"
                         android:gravity="center"
                         android:text="잔류성/농축성\n/독성(PBTs)"
-                        android:textAppearance="?android:attr/textAppearanceMedium"
                         android:textStyle="bold" />
 
                     <ImageView
@@ -383,15 +379,16 @@
 
                     <TextView
                         android:id="@+id/TextView22"
+                        style="@style/riskInfoDetailsText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
                         android:text="생태계에서 잘 없어지지 않고 먹이사슬을 통해 계속 축적되며, 사람 몸속에 들어와서 잘 빠져나가지 않는 독성물질"
-                        android:textAppearance="?android:attr/textAppearanceSmall" />
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textSize="10sp" />
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-
     </ScrollView>
 
 </LinearLayout>

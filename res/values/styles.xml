@@ -43,7 +43,10 @@
 		
         <item name="android:titleTextStyle">@android:style/TextAppearance.Holo.Widget.ActionBar.Title</item>
         <item name="android:subtitleTextStyle">@android:style/TextAppearance.Holo.Widget.ActionBar.Subtitle</item>
+        <!-- 
         <item name="android:background">@drawable/ab_transparent_dark_holo</item>
+         -->
+        <item name="android:background">@color/background_holo_dark</item>
         <item name="android:backgroundStacked">@drawable/ab_stacked_transparent_dark_holo</item>
         <item name="android:backgroundSplit">@drawable/ab_bottom_transparent_dark_holo</item>
         <item name="android:divider">?android:attr/dividerVertical</item>
@@ -80,4 +83,14 @@
         <item name="android:textStyle">bold</item>
     </style>
      -->
+    <style name="riskInfoDetailsText" parent="android:Widget.Holo.TextView">
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="riskInfoDeatilsTitleText" parent="android:Widget.Holo.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 </resources>

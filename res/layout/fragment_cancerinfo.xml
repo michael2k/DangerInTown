@@ -31,7 +31,7 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:clickable="true"
-                android:gravity="left|center"
+                android:gravity="center"
                 android:onClick="goCancerInfo"
                 android:text="발암성"
                 android:textAppearance="?android:attr/textAppearanceMedium"
