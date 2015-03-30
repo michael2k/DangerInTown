@@ -140,7 +140,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:background="@color/background_holo_dark"
-                    android:gravity="center"
+                    android:gravity="left|center_vertical"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
 
             </LinearLayout>

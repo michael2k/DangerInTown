@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import android.os.Bundle;
+import android.text.Html;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
@@ -87,11 +89,12 @@ public class CancerInfoDetailsActivity extends DangerActivity {
 		if ( matterId > 0 ) {
 			matter = ds.getMatter(matterId);
 			txtMatterName.setText(matter.getMatterName());
-			txtResultInfo.setText(matter.getResultPart());
 			
-//			resultInfo = new ResultInfo(matter.getResultPart());
-//			Log.d(TAG, resultInfo.toString());
+			ResultInfo resultInfo = new ResultInfo(matter.getResultPart());
+			Log.d(TAG, resultInfo.toString());
 			
+			txtResultInfo.setText(Html.fromHtml(resultInfo.toColoredString()));
+
 			if ( matter != null ) {
 	
 				int resourceId = R.drawable.human_body_empty;

@@ -24,7 +24,7 @@ public class JoinActivity extends DangerActivity {
 	}
 
 	public void goRequest(View view) {
-		goToUrl ( "" );
+		goToUrl ( "http://bbs3.agora.media.daum.net/gaia/do/petition/read?bbsId=P001&articleId=165377" );
 	}
 	
 	public void goSpeech(View view) {

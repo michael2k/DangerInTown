@@ -51,8 +51,16 @@ public class MatterArrayAdapter extends BaseAdapter {
 		ImageView imgRiskInfo = (ImageView) convertView.findViewById(R.id.imgiRiskInfo);
 		TextView txtMatterName = (TextView) convertView.findViewById(R.id.txtiMatterName);
 		TextView txtRiskInfo = (TextView) convertView.findViewById(R.id.txtiRiskInfo);
-		
+
 		Matter matter = (Matter) list.get(position);
+
+		List<String> riskInfos = Matter.getRiskInfos(matter);
+		StringBuilder sb = new StringBuilder();
+		for( int i = 0; i < riskInfos.size(); i++ ) {
+			if (sb.length() > 0 ) sb.append(",");
+			sb.append(riskInfos.get(i));
+		}
+		txtRiskInfo.setText(sb.toString());
 		
 		txtMatterName.setText(matter.getMatterName());
 		txtRiskInfo.setText(matter.getRiskInfo());
