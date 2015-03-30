@@ -8,7 +8,7 @@
     <style name="AppTheme" parent="AppBaseTheme">
     </style>
 
-    <style name="AppBaseTheme" parent="CustomActionBarTheme.Holo">
+    <style name="AppBaseTheme" parent="CustomActionBarTheme.Light">
     </style>
     
  <!-- the theme applied to the application or activity -->
@@ -26,6 +26,31 @@
         
         
         <item name="android:actionBarStyle">@style/MyActionBar.Holo</item>
+        <!-- 
+        <item name="android:colorForeground">@color/bright_foreground_holo_dark</item>
+        <item name="android:colorForegroundInverse">@color/bright_foreground_inverse_holo_dark</item>
+        <item name="android:colorBackground">@android:color/background_holo_dark</item>
+		<item name="android:colorBackground">@color/cyan_500</item>
+        <item name="android:disabledAlpha">0.5</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+         -->
+		
+	</style>
+
+    <style name="CustomActionBarTheme.Light"
+           parent="@android:style/Theme.Holo.Light">
+
+        <item name="android:background">@color/background_holo_light</item>
+		<!-- 
+        
+        <item name="android:colorForeground">@color/bright_foreground_holo_light</item>
+        <item name="android:colorForegroundInverse">@color/bright_foreground_inverse_holo_light</item>
+        <item name="android:colorBackground">@color/background_holo_light</item>
+        <item name="android:colorBackgroundCacheHint">@drawable/background_cache_hint_selector_holo_light</item>
+		 -->           
+        
+        
+        <item name="android:actionBarStyle">@style/MyActionBar.Light</item>
         <!-- 
         <item name="android:colorForeground">@color/bright_foreground_holo_dark</item>
         <item name="android:colorForegroundInverse">@color/bright_foreground_inverse_holo_dark</item>
@@ -99,7 +124,7 @@
     <style name="riskInfoDetailsText" parent="android:Widget.Holo.TextView">
         <item name="android:gravity">center_vertical</item>
         <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">11sp</item>
     </style>
     <style name="riskInfoDeatilsTitleText" parent="android:Widget.Holo.TextView">
         <item name="android:gravity">center</item>

@@ -29,7 +29,6 @@
                 android:hint="@string/matter_name"
                 android:text="@string/matter_name"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/white"
                 android:textStyle="bold" />
 
         </LinearLayout>

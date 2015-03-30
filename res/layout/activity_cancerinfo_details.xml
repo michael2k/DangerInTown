@@ -19,6 +19,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:background="@color/background_holo_dark"
             android:orientation="horizontal"
             android:padding="5dp" >
 
@@ -28,6 +29,7 @@
                 android:layout_marginBottom="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginRight="1dp"
+                android:background="@color/background_holo_dark"
                 android:orientation="vertical"
                 android:padding="3dp" >
 
@@ -35,8 +37,10 @@
                     android:id="@+id/imgCancerResultInfo"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:background="@color/background_holo_dark"
                     android:scaleType="fitCenter"
                     android:src="@drawable/human_body_empty" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -45,12 +49,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:background="@color/background_holo_dark"
             android:orientation="horizontal" >
 
             <LinearLayout
                 android:layout_width="100dp"
                 android:layout_height="fill_parent"
                 android:layout_margin="1dp"
+                android:background="@color/background_holo_dark"
                 android:orientation="vertical"
                 android:padding="3dp" >
 
@@ -58,10 +64,12 @@
                     android:id="@+id/textView1"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:background="@color/background_holo_dark"
                     android:gravity="center"
                     android:text="발암성\n물질명"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textStyle="bold" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -71,6 +79,7 @@
                 android:layout_marginRight="1dp"
                 android:layout_marginTop="1dp"
                 android:layout_weight="1"
+                android:background="@color/background_holo_dark"
                 android:orientation="vertical"
                 android:padding="3dp" >
 
@@ -78,9 +87,11 @@
                     android:id="@+id/txtCancerMatterName"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:background="@color/background_holo_dark"
                     android:gravity="center"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textStyle="bold" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -89,6 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
+            android:background="@color/background_holo_dark"
             android:orientation="horizontal" >
 
             <LinearLayout
@@ -97,6 +109,7 @@
                 android:layout_marginBottom="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginRight="1dp"
+                android:background="@color/background_holo_dark"
                 android:orientation="vertical"
                 android:padding="3dp" >
 
@@ -104,10 +117,12 @@
                     android:id="@+id/TextView02"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:background="@color/background_holo_dark"
                     android:gravity="center"
                     android:text="발생가능한\n암종류"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textStyle="bold" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -116,6 +131,7 @@
                 android:layout_marginBottom="1dp"
                 android:layout_marginRight="1dp"
                 android:layout_weight="1"
+                android:background="@color/background_holo_dark"
                 android:orientation="vertical"
                 android:padding="3dp" >
 
@@ -123,8 +139,10 @@
                     android:id="@+id/txtCancerResultInfo"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:background="@color/background_holo_dark"
                     android:gravity="center"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
+
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

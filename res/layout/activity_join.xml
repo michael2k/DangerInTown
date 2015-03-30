@@ -21,28 +21,40 @@
                 android:layout_height="fill_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:background="@color/background_holo_dark"
                 android:orientation="vertical" >
 
                 <ImageButton
-                    android:id="@+id/btnPlants"
+                    android:id="@+id/ImageButton01"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:background="@color/background_holo_dark"
                     android:onClick="goSearchPlants"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_plants" />
+
             </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
+                android:background="@color/background_holo_dark"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnSearchCancer"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:background="@color/background_holo_dark"
                     android:onClick="goSearchCancer"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_search_cancer" />
@@ -68,9 +80,11 @@
                     android:id="@+id/btnRequest"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:background="@color/background_holo_dark"
                     android:onClick="goRequest"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_request" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -84,9 +98,11 @@
                     android:id="@+id/btnSpeech"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:background="@color/background_holo_dark"
                     android:onClick="goSpeech"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_speech" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -107,9 +123,11 @@
                     android:id="@+id/btnAsk"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:background="@color/background_holo_dark"
                     android:onClick="goAskDetails"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_ask" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -123,9 +141,11 @@
                     android:id="@+id/btnJoinNews"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:background="@color/background_holo_dark"
                     android:onClick="goSafetyNews"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_news" />
+
             </LinearLayout>
 
         </LinearLayout>
@@ -147,8 +167,10 @@
                     android:id="@+id/btnRecommend"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:background="@color/background_holo_dark"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_recommend" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -162,12 +184,15 @@
                     android:id="@+id/btnSupport"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:background="@color/background_holo_dark"
                     android:onClick="goSupport"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_support" />
+
             </LinearLayout>
 
         </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>
