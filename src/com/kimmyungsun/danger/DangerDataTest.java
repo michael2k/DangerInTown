@@ -107,7 +107,6 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 		setContentView(R.layout.activity_main);
 		
 		cif = ( CompanyInfoFragment ) getFragmentManager().findFragmentById(R.id.companyInfoFragment);
-//		getFragmentManager().beginTransaction().hide(cif).commit();
 
 		mPrefs = getSharedPreferences("DANGER_PREFS", MODE_PRIVATE);
 		
@@ -406,7 +405,6 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 		Log.d(TAG, "processLocationChanged");
 		
         List<Company> companys = dangerDataSource.getAllCompanys();
-//        List<Company> companys = getContentResolver().
         
         LatLng org = new LatLng(lat, lng);
         
@@ -443,8 +441,16 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
         
        googleMap.addCircle(co);
         
-        addCompanyMarker(lat, lng, companys);
+       addCompanyMarker(lat, lng, companys);
        
+       co = new CircleOptions();
+       co.center(org);
+       co.strokeWidth(1.0f);
+       co.radius(100);
+       co.fillColor(Color.argb(255, 0, 0, 255));
+       googleMap.addCircle(co);
+       
+       googleMap.moveCamera(CameraUpdateFactory.newLatLng(org));
 	}
 	
 	private List<Marker> addCompanyMarker(List<Company> companys ) {
@@ -517,7 +523,7 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 		
 //		googleMap.moveCamera(CameraUpdateFactory.newLatLng(shortMarker.getPosition()));
 		
-		onMarkerClick(shortMarker);
+//		onMarkerClick(shortMarker);
 		
 	}
 	
@@ -525,7 +531,7 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 	/*
 	 * called when the user clicks the btnSearch button
 	 */
-	public void searchLocation(final LatLng latLng, final String query) {
+	public void searchLocation(final LatLng latLng, final String query, final int resourceId) {
 		Log.d(TAG, "searchLocation[" + query + "]:" + latLng.toString());
 //		String searchString = txtSearch.getText().toString();
 //		Log.d(TAG, "searchString:" + searchString);
@@ -561,7 +567,7 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 										googleMap.addMarker(
 												new MarkerOptions()
 												.position(new LatLng(po.getLocation().getLatitude(), po.getLocation().getLongitude()))
-												.icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_university))
+												.icon(BitmapDescriptorFactory.fromResource(resourceId))
 												.title(po.getName())
 												);
 										
@@ -722,9 +728,9 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 
 		LinearLayout companyInfoLayout = (LinearLayout) findViewById(R.id.companyInfoLayout);
 		android.widget.LinearLayout.LayoutParams params = ( android.widget.LinearLayout.LayoutParams )companyInfoLayout.getLayoutParams();
-		if ( matters.size() == 1 ) {
-			params.height = 445;
-		} else if ( matters.size() == 2 ) {
+		if ( matters.size() > 1 ) {
+//			params.height = 445;
+//		} else if ( matters.size() == 2 ) {
 			params.height = 545;
 		} else if ( matters.size() == 3 ) {
 			params.height = 645;
@@ -736,6 +742,7 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 		googleMap.moveCamera(CameraUpdateFactory.newLatLng(marker.getPosition()));
 		
 		markerSelected = marker;
+		
 		return true;
 	}
 	
@@ -780,8 +787,8 @@ public class DangerDataTest extends DangerActivity implements OnMapReadyCallback
 	public void onCameraChange(CameraPosition cameraPosition) {
 		Log.d(TAG, "onCameraChange");
 		
-        searchLocation(cameraPosition.target, "어린이집");
-        searchLocation(cameraPosition.target, "학교");
+        searchLocation(cameraPosition.target, "어린이집", R.drawable.baby_house);
+        searchLocation(cameraPosition.target, "초등학교", R.drawable.ic_university);
         
 //		View v = (View) findViewById(R.id.dangerMainLayout);
 //		if ( v.getVisibility() != View.VISIBLE) v.setVisibility(View.VISIBLE);

@@ -149,5 +149,6 @@
     <string name="casno_string">카스번호</string>
     <string name="etcinfo_string">기타정보</string>
     <string name="title_riskinfo_button">위험성 정보</string>
+    <string name="plz_select_marker">마커를 선택하면 정보가 표시됩니다.</string>
 
 </resources>
