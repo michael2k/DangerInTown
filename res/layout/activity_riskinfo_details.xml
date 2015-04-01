@@ -139,8 +139,7 @@
                         android:background="@color/background_holo_dark"
                         android:gravity="center_vertical"
                         android:text="암을 발생시키는 물질, 세계보건기구 국제암연구소(IARC)는 1급 인체 발암성 물질(1), 2급 인체 발암성 추정물질(2A), 3급 인체 발암성 가능물질(2B)으로 구분하고 있다."
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="10sp" />
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -199,8 +198,7 @@
                         android:background="@color/background_holo_dark"
                         android:gravity="center_vertical"
                         android:text="생식능력의 장애(불임, 생리불순)을 일으키거나, 유산을 발생시키는 물질"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="10sp" />
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -259,8 +257,7 @@
                         android:background="@color/background_holo_dark"
                         android:gravity="center_vertical"
                         android:text="발달장애를 발생시키는 물질(엄마가 톨루엔에 노출되면 말이 늦는 문제 발생. 임신초기 화학물질 노출시 자폐 발생 등)"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="10sp" />
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -318,8 +315,7 @@
                         android:background="@color/background_holo_dark"
                         android:gravity="center_vertical"
                         android:text="인체의 호르몬과 유사하게 인식되어 호르몬을 교란시키는 물질"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="10sp" />
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -377,8 +373,7 @@
                         android:background="@color/background_holo_dark"
                         android:gravity="center_vertical"
                         android:text="세포 또는 생물집단에게 돌연변이를 발생시키는 물질"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="10sp" />
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -437,8 +432,7 @@
                         android:background="@color/background_holo_dark"
                         android:gravity="center_vertical"
                         android:text="생태계에서 잘 없어지지 않고 먹이사슬을 통해 계속 축적되며, 사람 몸속에 들어와서 잘 빠져나가지 않는 독성물질"
-                        android:textAppearance="?android:attr/textAppearanceSmall"
-                        android:textSize="10sp" />
+                        android:textAppearance="?android:attr/textAppearanceSmall" />
 
                 </LinearLayout>
             </LinearLayout>

@@ -19,9 +19,9 @@
         android:orientation="horizontal" >
 
         <LinearLayout
-            android:layout_width="120dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@color/background_holo_dark"
+            android:background="@color/cyan_400"
             android:clickable="true"
             android:onClick="goCancerInfo"
             android:orientation="vertical"
@@ -32,36 +32,13 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
-                android:background="@color/background_holo_dark"
+                android:background="@color/cyan_400"
                 android:clickable="true"
                 android:gravity="center"
                 android:onClick="goCancerInfo"
                 android:text="발암성"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="fill_parent"
-            android:layout_weight="1"
-            android:background="@color/background_holo_dark"
-            android:clickable="true"
-            android:onClick="goCancerInfo"
-            android:orientation="vertical"
-            android:padding="3dp" >
-
-            <TextView
-                android:id="@+id/txtCancerInfo"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:background="@color/background_holo_dark"
-                android:clickable="true"
-                android:gravity="center_vertical"
-                android:onClick="goCancerInfo"
-                android:text="발생 가능한 암 종류 안내"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
 
         </LinearLayout>
     </LinearLayout>

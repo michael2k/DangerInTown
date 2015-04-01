@@ -452,7 +452,7 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
        co.fillColor(Color.argb(255, 0, 0, 255));
        googleMap.addCircle(co);
        
-       googleMap.moveCamera(CameraUpdateFactory.newLatLng(org));
+//       googleMap.moveCamera(CameraUpdateFactory.newLatLng(org));
 	}
 	
 	private List<Marker> addCompanyMarker(List<Company> companys ) {
@@ -523,9 +523,9 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 			}
 		}
 		
-//		googleMap.moveCamera(CameraUpdateFactory.newLatLng(shortMarker.getPosition()));
+		googleMap.moveCamera(CameraUpdateFactory.newLatLng(shortMarker.getPosition()));
 		
-//		onMarkerClick(shortMarker);
+		onMarkerClick(shortMarker);
 		
 	}
 	
