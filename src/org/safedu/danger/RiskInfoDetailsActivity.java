@@ -30,7 +30,7 @@ public class RiskInfoDetailsActivity extends DangerActivity {
 		new String[] {"알릴알코올","88756"},
 		new String[] {"알릴클로라이드","88762"},
 		new String[] {"암모니아","88766"},
-		new String[] {"암모니아(수산화암모늄포함)","88766"},
+		new String[] {"암모니아(수산화암모늄(CASNo.1366-21-6)포함)","88766"},
 		new String[] {"질산암모늄","88770"},
 		new String[] {"아르신","88775"},
 		new String[] {"벤젠","88779"},
@@ -60,6 +60,7 @@ public class RiskInfoDetailsActivity extends DangerActivity {
 		new String[] {"디이소시안산이소포론","88878"},
 		new String[] {"사린","88882"},
 		new String[] {"메탄올","88886"},
+		new String[] {"메틸알코올","88886"},
 		new String[] {"메틸아크릴레이트","88890"},
 		new String[] {"염화메틸","88894"},
 		new String[] {"메틸에틸케톤","88898"},
@@ -138,14 +139,10 @@ public class RiskInfoDetailsActivity extends DangerActivity {
 		if ( riskInfo == null || riskInfo.isEmpty() || !riskInfo.contains("발암") ) {
 			// hide eif
 			fm.beginTransaction().hide(cif).commit();
-		} else {
-			cif.updateMatterInfo(matter);
 		}
 		if ( riskInfo == null || riskInfo.isEmpty() || !riskInfo.contains("사고대비") ) {
 			// hide eif
 			fm.beginTransaction().hide(eif).commit();
-		} else {
-			eif.updateMatterInfo(matter);
 		}
         
 		

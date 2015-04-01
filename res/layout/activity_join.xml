@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_margin="15dp"
+        android:layout_margin="20dp"
         android:orientation="vertical" >
 
         <LinearLayout
@@ -17,23 +17,18 @@
             android:orientation="horizontal" >
 
             <LinearLayout
+                style="@style/join_linear_layout"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                android:background="@color/cyan_400"
-                android:orientation="vertical" >
+                android:layout_weight="1" >
 
                 <ImageButton
                     android:id="@+id/ImageButton01"
+                    style="@style/join_button_text"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_margin="20dp"
-                    android:background="@color/cyan_400"
                     android:onClick="goSearchPlants"
-                    android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_plants" />
-
             </LinearLayout>
         </LinearLayout>
 
@@ -44,25 +39,22 @@
             android:orientation="horizontal" >
 
             <LinearLayout
+                style="@style/join_linear_layout"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnSearchCancer"
+                    style="@style/join_button_text"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_margin="20dp"
-                    android:background="@color/cyan_400"
                     android:onClick="goSearchCancer"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_search_cancer" />
 
             </LinearLayout>
-
         </LinearLayout>
 
         <LinearLayout
@@ -72,19 +64,17 @@
             android:orientation="horizontal" >
 
             <LinearLayout
+                style="@style/join_linear_layout"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnRequest"
+                    style="@style/join_button_text"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_margin="20dp"
-                    android:background="@color/cyan_400"
                     android:onClick="goRequest"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_request" />
@@ -92,19 +82,17 @@
             </LinearLayout>
 
             <LinearLayout
+                style="@style/join_linear_layout"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnSpeech"
+                    style="@style/join_button_text"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_margin="20dp"
-                    android:background="@color/cyan_400"
                     android:onClick="goSpeech"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_speech" />
@@ -119,19 +107,17 @@
             android:orientation="horizontal" >
 
             <LinearLayout
+                style="@style/join_linear_layout"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnAsk"
+                    style="@style/join_button_text"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_margin="20dp"
-                    android:background="@color/cyan_400"
                     android:onClick="goAskDetails"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_ask" />
@@ -139,25 +125,22 @@
             </LinearLayout>
 
             <LinearLayout
+                style="@style/join_linear_layout"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnJoinNews"
+                    style="@style/join_button_text"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_margin="20dp"
-                    android:background="@color/cyan_400"
                     android:onClick="goSafetyNews"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_news" />
 
             </LinearLayout>
-
         </LinearLayout>
 
         <LinearLayout
@@ -167,46 +150,40 @@
             android:orientation="horizontal" >
 
             <LinearLayout
+                style="@style/join_linear_layout"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnRecommend"
+                    style="@style/join_button_text"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_margin="20dp"
-                    android:background="@color/cyan_400"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_recommend" />
 
             </LinearLayout>
 
             <LinearLayout
+                style="@style/join_linear_layout"
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnSupport"
+                    style="@style/join_button_text"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:layout_margin="20dp"
-                    android:background="@color/cyan_400"
                     android:onClick="goSupport"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_support" />
 
             </LinearLayout>
-
         </LinearLayout>
-
     </LinearLayout>
 
 </LinearLayout>

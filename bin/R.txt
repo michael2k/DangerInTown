@@ -646,6 +646,8 @@ int style WalletFragmentDefaultButtonTextAppearance 0x7f060003
 int style WalletFragmentDefaultDetailsHeaderTextAppearance 0x7f060002
 int style WalletFragmentDefaultDetailsTextAppearance 0x7f060001
 int style WalletFragmentDefaultStyle 0x7f060004
+int style join_button_text 0x7f06000e
+int style join_linear_layout 0x7f06000d
 int style riskInfoDeatilsTitleText 0x7f06000c
 int style riskInfoDetailsText 0x7f06000b
 int[] styleable AdsAttrs { 0x7f010000, 0x7f010001, 0x7f010002 }

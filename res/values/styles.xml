@@ -131,4 +131,14 @@
         <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
         <item name="android:textStyle">bold</item>
     </style>
+    <style name="join_linear_layout">
+        <item name="android:background">@color/cyan_500</item>
+        <item name="android:layout_margin">15dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="join_button_text" parent="android:Widget.Holo.Light.ImageButton">
+        <item name="android:background">@color/cyan_500</item>
+        <item name="android:layout_margin">15dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
 </resources>
