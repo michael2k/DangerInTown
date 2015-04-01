@@ -31,12 +31,13 @@
                 android:id="@+id/TextView02"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/cyan_400"
                 android:clickable="true"
                 android:gravity="center"
                 android:onClick="goCancerInfo"
-                android:text="발암성"
+                android:text="@string/title_cancer_search"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold" />
 

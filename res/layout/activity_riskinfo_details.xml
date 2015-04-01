@@ -8,14 +8,14 @@
     android:padding="16dp" >
 
     <fragment
-        android:id="@+id/fragmentEscapeInfo"
-        android:name="org.safedu.danger.EscapeInfoFragment"
+        android:id="@+id/fragmentCancerInfo"
+        android:name="org.safedu.danger.CancerInfoFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <fragment
-        android:id="@+id/fragmentCancerInfo"
-        android:name="org.safedu.danger.CancerInfoFragment"
+        android:id="@+id/fragmentEscapeInfo"
+        android:name="org.safedu.danger.EscapeInfoFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

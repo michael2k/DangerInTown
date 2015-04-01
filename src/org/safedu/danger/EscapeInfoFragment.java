@@ -33,6 +33,7 @@ public class EscapeInfoFragment extends Fragment
 		new String[] {"알릴알코올","88756"},
 		new String[] {"알릴클로라이드","88762"},
 		new String[] {"암모니아","88766"},
+		new String[] {"암모니아(수산화암모늄(CASNo.1366-21-6)포함)","88766"},
 		new String[] {"질산암모늄","88770"},
 		new String[] {"아르신","88775"},
 		new String[] {"벤젠","88779"},

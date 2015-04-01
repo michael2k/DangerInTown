@@ -19,7 +19,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
-            android:background="@color/background_holo_dark"
             android:orientation="horizontal"
             android:padding="5dp" >
 
@@ -29,7 +28,6 @@
                 android:layout_marginBottom="1dp"
                 android:layout_marginLeft="1dp"
                 android:layout_marginRight="1dp"
-                android:background="@color/background_holo_dark"
                 android:orientation="vertical"
                 android:padding="3dp" >
 
@@ -37,7 +35,6 @@
                     android:id="@+id/imgCancerResultInfo"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@color/background_holo_dark"
                     android:scaleType="fitCenter"
                     android:src="@drawable/human_body_empty" />
 

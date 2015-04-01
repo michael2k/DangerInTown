@@ -7,7 +7,7 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_margin="10dp"
+        android:layout_margin="15dp"
         android:orientation="vertical" >
 
         <LinearLayout
@@ -19,16 +19,17 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@color/background_holo_dark"
+                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/ImageButton01"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@color/background_holo_dark"
+                    android:layout_margin="20dp"
+                    android:background="@color/cyan_400"
                     android:onClick="goSearchPlants"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_plants" />
@@ -45,16 +46,17 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:background="@color/background_holo_dark"
+                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnSearchCancer"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@color/background_holo_dark"
+                    android:layout_margin="20dp"
+                    android:background="@color/cyan_400"
                     android:onClick="goSearchCancer"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_search_cancer" />
@@ -72,15 +74,17 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnRequest"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@color/background_holo_dark"
+                    android:layout_margin="20dp"
+                    android:background="@color/cyan_400"
                     android:onClick="goRequest"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_request" />
@@ -90,15 +94,17 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnSpeech"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@color/background_holo_dark"
+                    android:layout_margin="20dp"
+                    android:background="@color/cyan_400"
                     android:onClick="goSpeech"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_speech" />
@@ -115,15 +121,17 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnAsk"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@color/background_holo_dark"
+                    android:layout_margin="20dp"
+                    android:background="@color/cyan_400"
                     android:onClick="goAskDetails"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_ask" />
@@ -133,15 +141,17 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnJoinNews"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@color/background_holo_dark"
+                    android:layout_margin="20dp"
+                    android:background="@color/cyan_400"
                     android:onClick="goSafetyNews"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_news" />
@@ -159,15 +169,17 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnRecommend"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@color/background_holo_dark"
+                    android:layout_margin="20dp"
+                    android:background="@color/cyan_400"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_recommend" />
 
@@ -176,15 +188,17 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="fill_parent"
-                android:layout_margin="5dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
+                android:background="@color/cyan_400"
                 android:orientation="vertical" >
 
                 <ImageButton
                     android:id="@+id/btnSupport"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
-                    android:background="@color/background_holo_dark"
+                    android:layout_margin="20dp"
+                    android:background="@color/cyan_400"
                     android:onClick="goSupport"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_support" />

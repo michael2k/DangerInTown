@@ -139,10 +139,11 @@
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:layout_weight="1"
-                    android:background="@color/background_holo_dark"
+                    android:background="@color/cyan_400"
                     android:onClick="showRiskInfoDetails"
                     android:text="@string/title_riskinfo_button"
-                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </LinearLayout>

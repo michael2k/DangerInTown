@@ -145,7 +145,7 @@ public class ResultInfo {
 		StringBuilder sb = new StringBuilder();
 //		return confidneces + ", " + highPossibles + ", " + possibles;
 		if ( confidences.size() > 0 ) {
-			sb.append("<font color=#ff0000>");
+			sb.append("<font color=#ff0000>확실함: ");
 			for ( int i = 0; i < confidences.size(); i++ ) {
 				if ( i > 0 ) sb.append(",");
 				sb.append(confidences.get(i));
@@ -154,7 +154,7 @@ public class ResultInfo {
 		}
 		if ( highPossibles.size() > 0 ) {
 			if ( sb.length() > 0) sb.append("<br />");
-			sb.append("<font color=#ffff00>");
+			sb.append("<font color=#ffff00>가능성 높음: ");
 			for ( int i = 0; i < highPossibles.size(); i++ ) {
 				if ( i > 0 ) sb.append(",");
 				sb.append(highPossibles.get(i));
@@ -163,7 +163,7 @@ public class ResultInfo {
 		}
 		if ( possibles.size() > 0 ) {
 			if ( sb.length() > 0) sb.append("<br />");
-			sb.append("<font color=#ff8000>");
+			sb.append("<font color=#ff8000>가능성 있음: ");
 			for( int i = 0; i < possibles.size(); i++ ) {
 				if ( i > 0 ) sb.append(",");
 				sb.append(possibles.get(i));

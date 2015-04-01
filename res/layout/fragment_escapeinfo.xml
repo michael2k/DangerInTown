@@ -28,12 +28,13 @@
                 android:id="@+id/TextView01"
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
+                android:layout_margin="5dp"
                 android:layout_weight="1"
                 android:background="@color/cyan_400"
                 android:clickable="true"
                 android:gravity="center"
                 android:onClick="goEscapeInfo"
-                android:text="사고대비물질"
+                android:text="@string/title_escape_info"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold" />
 
