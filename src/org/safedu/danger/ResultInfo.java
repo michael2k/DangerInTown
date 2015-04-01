@@ -85,7 +85,7 @@ public class ResultInfo {
 						String s1 = resultInfo.substring(idx2, idx3);
 						String[] s2 = s1.trim().split(":");
 						if ( s2.length > 1 ) {
-							String[] s3 = s2[1].trim().split(" ");
+							String[] s3 = s2[1].trim().split(",");
 							for ( String s4 : s3 ) {
 								highPossibles.add(s4.trim());
 							}
@@ -94,7 +94,7 @@ public class ResultInfo {
 						s1 = resultInfo.substring(idx3);
 						s2 = s1.trim().split(":");
 						if ( s2.length > 1 ) {
-							String[] s3 = s2[1].trim().split(" ");
+							String[] s3 = s2[1].trim().split(",");
 							for ( String s4 : s3 ) {
 								possibles.add(s4.trim());
 							}
@@ -103,7 +103,7 @@ public class ResultInfo {
 					} else {
 						String[] s2 = resultInfo.trim().split(":");
 						if ( s2.length > 1 ) {
-							String[] s3 = s2[1].trim().split(" ");
+							String[] s3 = s2[1].trim().split(",");
 							for ( String s4 : s3 ) {
 								highPossibles.add(s4.trim());
 							}
@@ -114,7 +114,7 @@ public class ResultInfo {
 						String s1 = resultInfo.substring(idx3);
 						String[] s2 = s1.trim().split(":");
 						if ( s2.length > 1 ) {
-							String[] s3 = s2[1].trim().split(" ");
+							String[] s3 = s2[1].trim().split(",");
 							for ( String s4 : s3 ) {
 								possibles.add(s4.trim());
 							}
