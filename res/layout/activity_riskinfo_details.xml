@@ -9,13 +9,13 @@
 
     <fragment
         android:id="@+id/fragmentEscapeInfo"
-        android:name="com.kimmyungsun.danger.EscapeInfoFragment"
+        android:name="org.safedu.danger.EscapeInfoFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <fragment
         android:id="@+id/fragmentCancerInfo"
-        android:name="com.kimmyungsun.danger.CancerInfoFragment"
+        android:name="org.safedu.danger.CancerInfoFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

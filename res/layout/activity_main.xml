@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical"
     android:visibility="invisible"
-    tools:context="com.kimmyungsun.danger.DangerDataTest" >
+    tools:context="org.safedu.danger.DangerInTownActivity" >
 
     <LinearLayout
         android:layout_width="fill_parent"
@@ -30,7 +30,7 @@
 
         <fragment
             android:id="@+id/companyInfoFragment"
-            android:name="com.kimmyungsun.danger.CompanyInfoFragment"
+            android:name="org.safedu.danger.CompanyInfoFragment"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="top" />

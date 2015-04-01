@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.kimmyungsun.danger.CompanyDetailsActivity" >
+    tools:context="org.safedu.danger.CompanyDetailsActivity" >
 
     <LinearLayout
         android:layout_width="fill_parent"
