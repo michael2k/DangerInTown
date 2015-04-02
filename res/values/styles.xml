@@ -124,7 +124,7 @@
     <style name="riskInfoDetailsText" parent="android:Widget.Holo.TextView">
         <item name="android:gravity">center_vertical</item>
         <item name="android:textAppearance">?android:attr/textAppearanceSmall</item>
-        <item name="android:textSize">11sp</item>
+        <item name="android:textSize">12sp</item>
     </style>
     <style name="riskInfoDeatilsTitleText" parent="android:Widget.Holo.TextView">
         <item name="android:gravity">center</item>
@@ -132,13 +132,25 @@
         <item name="android:textStyle">bold</item>
     </style>
     <style name="join_linear_layout">
-        <item name="android:background">@color/cyan_500</item>
+        <item name="android:background">@color/holo_blue_light</item>
         <item name="android:layout_margin">15dp</item>
+        <!-- 
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginLeft">25dp</item>
+        <item name="android:layout_marginRight">25dp</item>
+        <item name="android:layout_marginBottom">15dp</item>
+         -->
         <item name="android:orientation">vertical</item>
     </style>
     <style name="join_button_text" parent="android:Widget.Holo.Light.ImageButton">
-        <item name="android:background">@color/cyan_500</item>
+        <item name="android:background">@color/holo_blue_light</item>
         <item name="android:layout_margin">15dp</item>
+        <!-- 
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_marginBottom">20dp</item>
+         -->
         <item name="android:scaleType">fitCenter</item>
     </style>
 </resources>

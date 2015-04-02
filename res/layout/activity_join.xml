@@ -29,6 +29,7 @@
                     android:layout_height="fill_parent"
                     android:onClick="goSearchPlants"
                     android:src="@drawable/btn_join_plants" />
+
             </LinearLayout>
         </LinearLayout>
 
@@ -65,7 +66,7 @@
 
             <LinearLayout
                 style="@style/join_linear_layout"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:orientation="vertical" >
@@ -78,12 +79,11 @@
                     android:onClick="goRequest"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_request" />
-
             </LinearLayout>
 
             <LinearLayout
                 style="@style/join_linear_layout"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:orientation="vertical" >
@@ -96,7 +96,6 @@
                     android:onClick="goSpeech"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_speech" />
-
             </LinearLayout>
         </LinearLayout>
 
