@@ -50,6 +50,7 @@ public class RiskInfoDetailsActivity extends DangerActivity {
 		new String[] {"에틸렌이민","88835"},
 		new String[] {"플루오린","88839"},
 		new String[] {"포름알데하이드","88843"},
+		new String[] {"포름알데하이드(포름알데하이드)","88843"},
 		new String[] {"폼산","88847"},
 		new String[] {"헥사민","88851"},
 		new String[] {"염화수소","88856"},
