@@ -346,11 +346,6 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 		
 		processLocationChanged(point.latitude, point.longitude);
 
-//		googleMap.addMarker(new MarkerOptions()
-//		.position(point)
-//		.title("현재위치"))
-//		.showInfoWindow();
-		
 		oldIntent = null;
 
 	}
@@ -393,9 +388,7 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 		
         processLocationChanged(lat, lng);
         
-//      if ( buttonStatus == BUTTON_ENABLED ) {
-      googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng),12), this);
-//      }
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng),12), this);
 
 		View v = (View) findViewById(R.id.dangerMainLayout);
 		if ( v.getVisibility() != View.VISIBLE) v.setVisibility(View.VISIBLE);
@@ -452,7 +445,6 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
        co.fillColor(Color.argb(255, 0, 0, 255));
        googleMap.addCircle(co);
        
-//       googleMap.moveCamera(CameraUpdateFactory.newLatLng(org));
 	}
 	
 	private List<Marker> addCompanyMarker(List<Company> companys ) {
@@ -487,7 +479,6 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 		.title(company.getCompanyName())
 				)
 				;
-//		m.showInfoWindow();
 		
 		return m;
 		
@@ -523,9 +514,12 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 			}
 		}
 		
-		googleMap.moveCamera(CameraUpdateFactory.newLatLng(shortMarker.getPosition()));
-		
-		onMarkerClick(shortMarker);
+		if ( shortMarker != null ) {
+			googleMap.moveCamera(CameraUpdateFactory.newLatLng(shortMarker.getPosition()));
+			onMarkerClick(shortMarker);
+		} else {
+	        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng),12), this);
+		}
 		
 	}
 	
