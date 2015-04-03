@@ -62,7 +62,7 @@ import org.safedu.danger.R;
 
 public class DangerInTownActivity extends DangerActivity implements OnMapReadyCallback, LocationListener,
 		ConnectionCallbacks, OnConnectionFailedListener, CancelableCallback, OnCameraChangeListener,
-		OnMyLocationButtonClickListener, OnMapClickListener, OnInfoWindowClickListener,
+		OnMyLocationButtonClickListener, OnMapClickListener, // OnInfoWindowClickListener,
 		OnMarkerClickListener, // OnDrawerScrollListener, OnDrawerOpenListener, OnDrawerCloseListener,
 		OnMapLongClickListener {
 	
@@ -724,7 +724,7 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 
 		LinearLayout companyInfoLayout = (LinearLayout) findViewById(R.id.companyInfoLayout);
 		android.widget.LinearLayout.LayoutParams params = ( android.widget.LinearLayout.LayoutParams )companyInfoLayout.getLayoutParams();
-		if ( matters.size() > 1 ) {
+		if ( matters.size() < 3 ) {
 //			params.height = 445;
 //		} else if ( matters.size() == 2 ) {
 			params.height = 545;
@@ -742,26 +742,26 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 		return true;
 	}
 	
-	public RelativeLayout.LayoutParams fetchLayoutParams() {
-	     RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
-                 LayoutParams.MATCH_PARENT, 200);
+//	public RelativeLayout.LayoutParams fetchLayoutParams() {
+//	     RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+//                 LayoutParams.MATCH_PARENT, 300);
+//
+//	     // We can add any rule available for RelativeLayout and hence can position accordingly
+//	     params.addRule(RelativeLayout.BELOW, R.id.map);
+//	     params.addRule(RelativeLayout.ALIGN_BOTTOM);
+//	     return params;
+//	}
 
-	     // We can add any rule available for RelativeLayout and hence can position accordingly
-	     params.addRule(RelativeLayout.BELOW, R.id.map);
-	     params.addRule(RelativeLayout.ALIGN_BOTTOM);
-	     return params;
-	}
-
-	@Override
-	public void onInfoWindowClick(Marker marker) {
-		Log.d(TAG, "onInfoWindowClick");
-		
-		Intent intent = new Intent(this, CompanyDetailsActivity.class);
-		
-		intent.putExtra(CompanyDetailsActivity.COMPANY_ID, marker.getSnippet());
-		
-		startActivity(intent);
-	}
+//	@Override
+//	public void onInfoWindowClick(Marker marker) {
+//		Log.d(TAG, "onInfoWindowClick");
+//		
+//		Intent intent = new Intent(this, CompanyDetailsActivity.class);
+//		
+//		intent.putExtra(CompanyDetailsActivity.COMPANY_ID, marker.getSnippet());
+//		
+//		startActivity(intent);
+//	}
 
 	@Override
 	public void onCancel() {
