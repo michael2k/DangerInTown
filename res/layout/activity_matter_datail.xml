@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     android:background="@color/background_holo_light"
     android:clickable="true"
-    android:onClick="showRiskInfoDetails"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -48,7 +47,8 @@
                         android:background="@color/background_holo_dark"
                         android:gravity="center"
                         android:text="@string/matter_name"
-                        android:textAppearance="?android:attr/textAppearanceLarge" />
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:textStyle="bold" />
 
                 </LinearLayout>
             </LinearLayout>
@@ -131,7 +131,8 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:background="@color/background_holo_light"
-                android:orientation="vertical"
+                android:onClick="showRiskInfoDetails"
+                android:orientation="horizontal"
                 android:padding="3dp" >
 
                 <Button
@@ -144,6 +145,16 @@
                     android:text="@string/title_riskinfo_button"
                     android:textAppearance="?android:attr/textAppearanceMedium"
                     android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@color/cyan_400"
+                    android:onClick="showRiskInfoDetails"
+                    android:paddingRight="10dp"
+                    android:src="@drawable/next" />
 
             </LinearLayout>
         </LinearLayout>

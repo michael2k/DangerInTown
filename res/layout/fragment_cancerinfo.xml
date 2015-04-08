@@ -9,10 +9,7 @@
         android:id="@+id/layoutCancer"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginTop="1dp"
+        android:layout_margin="1dp"
         android:background="@color/background_holo_dark"
         android:clickable="true"
         android:onClick="goCancerInfo"
@@ -24,14 +21,16 @@
             android:background="@color/cyan_400"
             android:clickable="true"
             android:onClick="goCancerInfo"
-            android:orientation="vertical"
-            android:padding="3dp" >
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:paddingTop="10dp" >
 
             <TextView
                 android:id="@+id/TextView02"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/cyan_400"
                 android:clickable="true"
@@ -40,6 +39,16 @@
                 android:text="@string/title_cancer_search"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@color/cyan_400"
+                android:onClick="goCancerInfo"
+                android:paddingRight="10dp"
+                android:src="@drawable/next" />
 
         </LinearLayout>
     </LinearLayout>

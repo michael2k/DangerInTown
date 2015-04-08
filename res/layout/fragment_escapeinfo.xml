@@ -21,14 +21,16 @@
             android:background="@color/cyan_400"
             android:clickable="true"
             android:onClick="goEscapeInfo"
-            android:orientation="vertical"
-            android:padding="3dp" >
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="3dp"
+            android:paddingRight="3dp"
+            android:paddingTop="10dp" >
 
             <TextView
                 android:id="@+id/TextView01"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:layout_margin="5dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/cyan_400"
                 android:clickable="true"
@@ -37,6 +39,16 @@
                 android:text="@string/title_escape_info"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="@color/cyan_400"
+                android:onClick="goEscapeInfo"
+                android:paddingRight="10dp"
+                android:src="@drawable/next" />
 
         </LinearLayout>
     </LinearLayout>
