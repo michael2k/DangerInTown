@@ -5,7 +5,7 @@
     android:layout_height="fill_parent"
     android:background="@color/background_holo_light"
     android:orientation="vertical"
-    android:padding="16dp" >
+    android:padding="15dp" >
 
     <fragment
         android:id="@+id/fragmentCancerInfo"
@@ -73,15 +73,19 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:layout_margin="1dp"
                     android:layout_weight="1"
-                    android:orientation="vertical" >
+                    android:background="@color/background_holo_dark"
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
 
                     <TextView
                         android:id="@+id/TextView19"
                         style="@style/riskInfoDetailsText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
-                        android:layout_gravity="center"
+                        android:layout_gravity="center_vertical"
                         android:background="@color/background_holo_dark"
                         android:text="급성독성/폭발성 등이 강하여 사고발생의 가능성이 높거나 사고가 발생한 경우에 그 피해 규모가 클 것으로 우려되는 화학물질로서 사고 대비/대응계획이 필요하다고 인정되는 물질" />
 
@@ -94,8 +98,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:background="@color/background_holo_dark"
-                android:orientation="horizontal"
-                android:paddingTop="5dp" >
+                android:orientation="horizontal" >
 
                 <LinearLayout
                     android:layout_width="100dp"
@@ -130,17 +133,20 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="1dp"
                     android:layout_weight="1"
                     android:background="@color/background_holo_dark"
-                    android:orientation="vertical" >
+                    android:gravity="center_vertical"
+                    android:orientation="vertical"
+                    android:padding="3dp" >
 
                     <TextView
                         android:id="@+id/TextView20"
                         style="@style/riskInfoDetailsText"
                         android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
                         android:background="@color/background_holo_dark"
-                        android:gravity="center_vertical"
                         android:text="암을 발생시키는 물질, 세계보건기구 국제암연구소(IARC)는 1급 인체 발암성 물질(1), 2급 인체 발암성 추정물질(2A), 3급 인체 발암성 가능물질(2B)으로 구분하고 있다."
                         android:textAppearance="?android:attr/textAppearanceSmall" />
 
