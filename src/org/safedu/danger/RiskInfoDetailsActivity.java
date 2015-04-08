@@ -11,6 +11,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import org.safedu.danger.R;
 
@@ -112,6 +116,8 @@ public class RiskInfoDetailsActivity extends DangerActivity {
 	private EscapeInfoFragment eif;
 	private CancerInfoFragment cif;
 	private List<String> riskInfos;
+	
+	private Animation animBlink;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -130,6 +136,8 @@ public class RiskInfoDetailsActivity extends DangerActivity {
 			
 		}
 		
+		animBlink = AnimationUtils.loadAnimation(getApplicationContext(), R.animator.blink);
+		
 		FragmentManager fm = getFragmentManager();
 		
 		eif = (EscapeInfoFragment) getFragmentManager().findFragmentById(R.id.fragmentEscapeInfo);
@@ -145,7 +153,40 @@ public class RiskInfoDetailsActivity extends DangerActivity {
 			// hide eif
 			fm.beginTransaction().hide(eif).commit();
 		}
-        
+		
+		// blink layout
+		if ( riskInfo != null && !riskInfo.isEmpty() ) {
+			if ( riskInfo.contains("발암") ) {
+				LinearLayout ll = (LinearLayout) findViewById(R.id.cancerLayout);
+				ll.startAnimation(animBlink);
+			}
+			if ( riskInfo.contains("사고대비") ) {
+				LinearLayout ll = (LinearLayout) findViewById(R.id.accidentLayout);
+				ll.startAnimation(animBlink);
+			}
+			if ( riskInfo.contains("생식") ) {
+				LinearLayout ll = (LinearLayout) findViewById(R.id.fertileLayout);
+				ll.startAnimation(animBlink);
+			}
+			if ( riskInfo.contains("발달") ) {
+				LinearLayout ll = (LinearLayout) findViewById(R.id.developLayout);
+				ll.startAnimation(animBlink);
+			}
+			if ( riskInfo.contains("환경") ) {
+				LinearLayout ll = (LinearLayout) findViewById(R.id.environLayout);
+				ll.startAnimation(animBlink);
+			}
+			if ( riskInfo.contains("변이") ) {
+				LinearLayout ll = (LinearLayout) findViewById(R.id.mutationLayout);
+				ll.startAnimation(animBlink);
+			}
+			if ( riskInfo.contains("변이") ) {
+				LinearLayout ll = (LinearLayout) findViewById(R.id.mutationLayout);
+				ll.startAnimation(animBlink);
+			}
+		}
+		
+		
 		
 	}
 
