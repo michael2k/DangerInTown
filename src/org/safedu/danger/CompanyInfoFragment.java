@@ -14,6 +14,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -37,6 +38,7 @@ implements OnItemClickListener
 	private List<Matter> matters;
 
 	private TextView txtCompanyName;
+	private ImageView imgCompanyInfo;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -58,7 +60,9 @@ implements OnItemClickListener
 		Log.d(TAG, "updateCompanyInfo[" + companyId + "]");
 		
 		txtCompanyName = (TextView) getView().findViewById(R.id.txtCompanyName);
-		txtCompanyName.setOnClickListener(new OnClickListener() {
+		imgCompanyInfo = (ImageView) getView().findViewById(R.id.imgCompnayInfo);
+		
+		OnClickListener ocl = new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
@@ -66,7 +70,11 @@ implements OnItemClickListener
 				intent.putExtra(COMPANY_ID, companyId);
 				startActivity(intent);
 			}
-		});
+		};
+		
+		txtCompanyName.setOnClickListener(ocl);
+		imgCompanyInfo.setOnClickListener(ocl);
+		
 		listMatters = (ListView) getView().findViewById(R.id.listMatters);
 		
 		ds = new DangersDataSource(getActivity());
@@ -82,7 +90,7 @@ implements OnItemClickListener
 		if ( company != null ) {
 			txtCompanyName.setText(company.getCompanyName());
 			listMatters.setAdapter(new MatterArrayAdapter(getActivity(), R.layout.matter_item_in_info, matters));
-			listMatters.setOnItemClickListener(this);
+//			listMatters.setOnItemClickListener(this);
 		}
 		
 		
