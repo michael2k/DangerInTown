@@ -23,20 +23,13 @@
             <TextView
                 android:id="@+id/txtCompanyName"
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="fill_parent"
                 android:layout_margin="10dp"
-                android:layout_weight="1"
                 android:background="@color/background_holo_light"
                 android:hint="@string/matter_name"
+                android:text="@string/plz_select_marker"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/imgCompnayInfo"
-                android:layout_width="30dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center_vertical"
-                android:src="@drawable/next_double" />
 
         </LinearLayout>
 
