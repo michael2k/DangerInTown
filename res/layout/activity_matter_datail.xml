@@ -154,7 +154,7 @@
                     android:background="@color/cyan_400"
                     android:onClick="showRiskInfoDetails"
                     android:paddingRight="10dp"
-                    android:src="@drawable/next" />
+                    android:src="@drawable/next_double" />
 
             </LinearLayout>
         </LinearLayout>
