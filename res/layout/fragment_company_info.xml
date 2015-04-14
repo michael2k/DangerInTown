@@ -27,7 +27,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:background="@color/background_holo_light"
-                android:hint="@string/matter_name"
+                android:hint="@string/company_name"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:textStyle="bold" />
 
@@ -36,7 +36,7 @@
                 android:layout_width="30dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center_vertical"
-                android:src="@drawable/next_double" />
+                android:src="@drawable/next" />
 
         </LinearLayout>
 
