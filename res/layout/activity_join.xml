@@ -161,6 +161,7 @@
                     style="@style/join_button_text"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
+                    android:onClick="goRecommend"
                     android:scaleType="fitCenter"
                     android:src="@drawable/btn_join_recommend" />
 

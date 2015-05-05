@@ -60,7 +60,13 @@ public class JoinActivity extends DangerActivity {
 	}
 	
 	public void goRecommend(View view) {
-		goToUrl ( "" );
+//		goToUrl ( "https://play.google.com/store/apps/details?id=org.safedu.danger" );
+		Intent sendIntent = new Intent();
+		sendIntent.setAction(Intent.ACTION_SEND);
+		sendIntent.putExtra(Intent.EXTRA_TEXT, "https://play.google.com/store/apps/details?id=org.safedu.danger");
+		sendIntent.setType("text/plain");
+		startActivity(sendIntent);
+
 	}
 	
 	public void goHome(View view) {
