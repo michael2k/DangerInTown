@@ -50,6 +50,10 @@ public class JoinActivity extends DangerActivity {
 		goToUrl ( "http://nocancer.kr/carcinogen2/search.html" );
 	}
 	
+	public void goSearchEscape(View view) {
+		goToUrl ( "http://safedu.org/pds1/76052" );
+	}
+	
 	public void goAskDetails(View view) {
 		Intent emailIntent = new Intent(Intent.ACTION_SEND);
 		emailIntent.putExtra(Intent.EXTRA_EMAIL, new String[] { "safedu.org@hanmail.net" });
