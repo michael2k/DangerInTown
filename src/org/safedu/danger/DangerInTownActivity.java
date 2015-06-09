@@ -10,6 +10,7 @@ import org.safedu.danger.object.ResponsePlaceResult;
 import org.safedu.danger.provider.DangersDataSource;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -22,10 +23,13 @@ import android.location.LocationManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+import android.view.Window;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.SearchView;
@@ -58,6 +62,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
 import org.safedu.danger.R;
 
 public class DangerInTownActivity extends DangerActivity implements OnMapReadyCallback, LocationListener,
@@ -115,7 +120,37 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 		dangerDataSource = new DangersDataSource(this);
 
 		setUpGoogleApiClient();
+
+		final Dialog dialog = new Dialog(this);
 		
+		dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		dialog.setContentView(R.layout.dialog_info);
+		Button btnDialogClose = (Button) dialog.findViewById(R.id.btnDialogClose);
+		btnDialogClose.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+		View llMersInfo = (View) dialog.findViewById(R.id.llMersInfo);
+		llMersInfo.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				goToUrl ( "http://newstapa.org/25904" );
+			}
+		});
+		View llRecentAccident = (View) dialog.findViewById(R.id.llRecentAccident);
+		llRecentAccident.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				goToUrl ( "http://safedu.org/app/91289" );
+			}
+		});
+		dialog.show();
+
 	}
 
 	private void setUpMap() {
@@ -195,37 +230,12 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 		float lat = mPrefs.getFloat("mLatLng.lat", 0f);
 		float lng = mPrefs.getFloat("mLatLng.lng", 0f);
 		mLatLng = new LatLng(lat, lng);
-//		buttonStatus = mPrefs.getInt("button_status", BUTTON_ENABLED);
-		
-//		String companyIdSelected = mPrefs.getString("companyId", null);
-		
-//		long[] companyIds = savedInstanceState.getLongArray("companyIds");
-//		if ( companyIds != null ) {
-//			for ( int i = 0; i < companyIds.length; i++ ) {
-//				Company c = dangerDataSource.getCompany(companyIds[i]);
-//				Marker m = addCompanyMarker(c);
-//				if ( companyIdSelected != null && companyIdSelected.isEmpty() ) {
-//					long companyId = Long.parseLong(companyIdSelected);
-//					if ( c.getId() == companyId) {
-//						onMarkerClick(m);
-//					}
-//				}
-//			}
-//		}
+
 		checkGPS();
 		
-//		dangerDataSource.open();
-//		googleApiClient.connect();
 		setUpGoogleApiClient();
 		
-//		if ( googleMap != null && mLatLng != null 
-//				&& ( mLatLng.latitude > 0 && mLatLng.longitude > 0 )  ) {
-//			googleMap.clear();
-//			processLocationChanged(mLatLng.latitude, mLatLng.longitude);
-//			if ( markerSelected != null ) {
-//				onMarkerClick(markerSelected);
-//			}
-//		}
+		
 	}
 	
 	
@@ -882,5 +892,13 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 		}
 	}
 
+	public void goRecentAccident(View view) {
+		goToUrl ( "http://safedu.org/app/91289" );
+	}
+
+	public void goMersInfo(View view) {
+		goToUrl ( "http://newstapa.org/25904" );
+	}
+	
 
 }
