@@ -430,12 +430,12 @@ int id imgCircle 0x7f0e0079
 int id imgCompnayInfo 0x7f0e006d
 int id imgcdRiskInfo 0x7f0e0072
 int id imgiRiskInfo 0x7f0e0075
+int id lAdditionalInfo 0x7f0e0054
 int id layoutCancer 0x7f0e006c
 int id layoutEscape 0x7f0e006f
 int id layoutRiskInfo 0x7f0e0034
 int id linearLayout1 0x7f0e002e
 int id listMatters 0x7f0e001f
-int id llMersInfo 0x7f0e0054
 int id llRecentAccident 0x7f0e0055
 int id map 0x7f0e002a
 int id match_parent 0x7f0e000e
