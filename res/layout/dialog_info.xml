@@ -13,13 +13,13 @@
         android:orientation="vertical" >
 
         <LinearLayout
-            android:id="@+id/llMersInfo"
+            android:id="@+id/lAdditionalInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="1"
             android:clickable="true"
-            android:onClick="goMersInfo"
+            android:onClick="goAdditionalInfo"
             android:orientation="horizontal" >
 
             <TextView
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:layout_weight="1"
-                android:text="메르스관련 병원실명, 지도정보 안내"
+                android:text="어린이용품 유해물질 위험정보 안내]"
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:textSize="15sp"
                 android:textStyle="bold" />

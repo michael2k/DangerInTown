@@ -133,7 +133,7 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 				dialog.dismiss();
 			}
 		});
-		View llMersInfo = (View) dialog.findViewById(R.id.llMersInfo);
+		View llMersInfo = (View) dialog.findViewById(R.id.lAdditionalInfo);
 		llMersInfo.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -901,6 +901,11 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 //		goToUrl ( "http://newstapa.org/25904" );
 		goToUrl ( "http://newstapa.org/mers" );
 	}
+
+	public void goAdditionalInfo(View view) {
+	//		goToUrl ( "http://newstapa.org/25904" );
+			goToUrl ( "http://newstapa.org/mers" );
+		}
 	
 
 }
