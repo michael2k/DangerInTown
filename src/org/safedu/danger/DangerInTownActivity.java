@@ -138,8 +138,7 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 			
 			@Override
 			public void onClick(View v) {
-//				goToUrl ( "http://newstapa.org/25904" );
-				goToUrl ( "http://newstapa.org/mers" );
+				goAdditionalInfo(v);
 			}
 		});
 		View llRecentAccident = (View) dialog.findViewById(R.id.llRecentAccident);
@@ -147,7 +146,8 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 			
 			@Override
 			public void onClick(View v) {
-				goToUrl ( "http://safedu.org/app/91289" );
+//				goToUrl ( "http://safedu.org/app/91289" );
+				goRecentAccident(v);
 			}
 		});
 		dialog.show();
@@ -898,14 +898,8 @@ public class DangerInTownActivity extends DangerActivity implements OnMapReadyCa
 		goToUrl ( "http://safedu.org/app/91289" );
 	}
 
-	public void goMersInfo(View view) {
-//		goToUrl ( "http://newstapa.org/25904" );
-		goToUrl ( "http://newstapa.org/mers" );
-	}
-
 	public void goAdditionalInfo(View view) {
-	//		goToUrl ( "http://newstapa.org/25904" );
-			goToUrl ( "http://newstapa.org/mers" );
+			goToUrl ( "http://nocancer.kr/nopvc" );
 		}
 	
 
