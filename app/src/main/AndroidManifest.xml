@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.safedu.danger" android:revisionCode="20160217">
+    package="org.safedu.danger"
+    android:revisionCode="20160217">
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -21,7 +22,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         >
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
@@ -35,7 +36,7 @@
             android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Holo.NoActionBar" >
+            android:theme="@android:style/Theme.Holo.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -48,7 +49,7 @@
             android:icon="@drawable/ic_launcher"
             android:label="@string/app_name"
             android:launchMode="singleTop"
-            android:theme="@style/AppBaseTheme" >
+            android:theme="@style/AppBaseTheme">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
@@ -68,7 +69,7 @@
             android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:finishOnCloseSystemDialogs="true"
             android:icon="@drawable/ic_launcher"
-            android:label="@string/title_activity_company_details" >
+            android:label="@string/title_activity_company_details">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.safedu.danger.DangerInTownActivity" />
@@ -78,38 +79,33 @@
             android:alwaysRetainTaskState="true"
             android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:finishOnCloseSystemDialogs="true"
-            android:label="@string/title_activity_settings" >
-        </activity>
+            android:label="@string/title_activity_settings"></activity>
         <activity
             android:name="org.safedu.danger.JoinActivity"
             android:alwaysRetainTaskState="true"
             android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:finishOnCloseSystemDialogs="true"
-            android:label="@string/title_activity_join" >
+            android:label="@string/title_activity_join">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.safedu.danger.DangerInTownActivity" />
         </activity>
         <activity
             android:name="org.safedu.danger.MatterDetailActivity"
-            android:label="@string/title_activity_matter_datail"
-            >
-        </activity>
-        <activity 
-            android:name="RiskInfoDetailsActivity" 
-            android:label="@string/title_activity_riskinfo_datail" 
-            />
+            android:label="@string/title_activity_matter_datail"></activity>
+        <activity
+            android:name="RiskInfoDetailsActivity"
+            android:label="@string/title_activity_riskinfo_datail" />
         <!--
         <activity 
             android:name="PoisonInfoDetailsActivity" 
             android:label="@string/title_activity_poisoninfo_datail" 
             />
         -->
-        <activity 
-            android:name="CancerInfoDetailsActivity" 
-            android:label="@string/title_activity_cancerinfo_datail" 
-            />
+        <activity
+            android:name="CancerInfoDetailsActivity"
+            android:label="@string/title_activity_cancerinfo_datail" />
         <uses-library android:name="com.google.android.maps" />
-        </application>
+    </application>
 
 </manifest>

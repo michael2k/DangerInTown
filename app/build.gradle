@@ -15,7 +15,7 @@ android {
         applicationId "org.safedu.danger"
         minSdkVersion 14
         targetSdkVersion 23
-        versionCode 19
+        versionCode 20
         versionName '14'
         signingConfig signingConfigs.DangerInTown
     }
@@ -35,5 +35,7 @@ android {
 
 dependencies {
     compile 'com.google.android.gms:play-services:8.4.+'
+//    compile 'com.google.android.gms:play-services-maps:8.4.+'
+//    compile 'com.google.android.gms:play-services-location:8.4.+'
     compile files('libs/ypylibs.jar')
 }

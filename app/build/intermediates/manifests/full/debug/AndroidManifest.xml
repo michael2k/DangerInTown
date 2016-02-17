@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.safedu.danger"
     android:revisionCode="20160217"
-    android:versionCode="19"
+    android:versionCode="20"
     android:versionName="14" >
 
     <uses-sdk
@@ -85,8 +85,7 @@
             android:alwaysRetainTaskState="true"
             android:configChanges="touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:finishOnCloseSystemDialogs="true"
-            android:label="@string/title_activity_settings" >
-        </activity>
+            android:label="@string/title_activity_settings" />
         <activity
             android:name="org.safedu.danger.JoinActivity"
             android:alwaysRetainTaskState="true"
@@ -99,8 +98,7 @@
         </activity>
         <activity
             android:name="org.safedu.danger.MatterDetailActivity"
-            android:label="@string/title_activity_matter_datail" >
-        </activity>
+            android:label="@string/title_activity_matter_datail" />
         <activity
             android:name="org.safedu.danger.RiskInfoDetailsActivity"
             android:label="@string/title_activity_riskinfo_datail" />

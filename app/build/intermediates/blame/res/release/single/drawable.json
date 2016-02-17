@@ -4,16 +4,16 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_cab_background_top_material.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_list_selector_background_transition_holo_light.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_list_selector_background_transition_holo_light.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/common_plus_signin_btn_text_light.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_plus_signin_btn_text_light.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/mr_ic_cast_light.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_cast_light.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/common_plus_signin_btn_text_light.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_plus_signin_btn_text_light.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_list_selector_background_transition_holo_light.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_list_selector_background_transition_holo_light.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_textfield_search_material.xml",
@@ -28,16 +28,16 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_dialog_material_background_light.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/sample_6.jpg",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable/sample_6.jpg"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/mr_ic_pause_dark.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_pause_dark.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/mr_ic_media_route_connecting_mono_dark.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_media_route_connecting_mono_dark.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/mr_ic_pause_dark.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_pause_dark.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/sample_6.jpg",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable/sample_6.jpg"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/mr_ic_settings_dark.xml",
@@ -64,32 +64,32 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_google_signin_btn_text_light.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/mr_ic_media_route_mono_dark.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_media_route_mono_dark.xml"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/background_lines_20_tiled.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable/background_lines_20_tiled.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/sample_3.jpg",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable/sample_3.jpg"
-    },
-    {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_edit_text_material.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_edit_text_material.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/mr_ic_media_route_mono_dark.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_media_route_mono_dark.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_list_selector_holo_light.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_list_selector_holo_light.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_btn_colored_material.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_btn_colored_material.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_edit_text_material.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_edit_text_material.xml"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/sample_3.jpg",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable/sample_3.jpg"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_btn_radio_material.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_btn_colored_material.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_btn_colored_material.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/common_google_signin_btn_text_dark.xml",
@@ -116,44 +116,44 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_google_signin_btn_icon_light.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_btn_borderless_material.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_btn_borderless_material.xml"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/mr_ic_play_light.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_play_light.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_list_selector_background_transition_holo_dark.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_btn_borderless_material.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_btn_borderless_material.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/cast_ic_notification_connecting.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.4.0/res/drawable/cast_ic_notification_connecting.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/sample_1.jpg",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable/sample_1.jpg"
-    },
-    {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/mr_ic_pause_light.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_pause_light.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_list_selector_background_transition_holo_dark.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_list_selector_background_transition_holo_dark.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_dialog_material_background_dark.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_dialog_material_background_dark.xml"
     },
     {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/mr_ic_pause_light.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_pause_light.xml"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/sample_1.jpg",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable/sample_1.jpg"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_btn_default_mtrl_shape.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_btn_default_mtrl_shape.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/sample_2.jpg",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable/sample_2.jpg"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/mr_ic_play_dark.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable/mr_ic_play_dark.xml"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/sample_2.jpg",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable/sample_2.jpg"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/common_plus_signin_btn_icon_dark.xml",
@@ -188,24 +188,24 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable/sample_0.jpg"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/sample_5.jpg",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable/sample_5.jpg"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/background_cache_hint_selector_holo_light.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable/background_cache_hint_selector_holo_light.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_tab_indicator_material.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_tab_indicator_material.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/sample_5.jpg",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable/sample_5.jpg"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/common_plus_signin_btn_icon_light.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_plus_signin_btn_icon_light.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/common_google_signin_btn_icon_dark.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_google_signin_btn_icon_dark.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/common_plus_signin_btn_icon_light.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable/common_plus_signin_btn_icon_light.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/abc_tab_indicator_material.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable/abc_tab_indicator_material.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/release/drawable/mr_ic_media_route_mono_light.xml",

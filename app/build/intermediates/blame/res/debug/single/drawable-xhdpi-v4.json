@@ -1,27 +1,27 @@
 [
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_dark_blue_b.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/marker_dark_blue_b.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_plusone_small_off_client.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.4.0/res/drawable-xhdpi/ic_plusone_small_off_client.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000107_30_2.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/hb_000107_30_2.png"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_dark_blue_b.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/marker_dark_blue_b.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000062_53_3.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000062_53_3.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_list_divider_mtrl_alpha.9.png"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000107_30_2.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/hb_000107_30_2.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_search_api_mtrl_alpha.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_divider_mtrl_alpha.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_danger_red.png",
@@ -32,24 +32,24 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_icon_light_pressed.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_pause_light.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_pause_light.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_search_activated_mtrl_alpha.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_textfield_search_activated_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_pause_light.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_pause_light.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000107_06_2.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/hb_000107_06_2.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_red_b.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/marker_red_b.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000106_97_8.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000106_97_8.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_red_b.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/marker_red_b.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_ic_notification_2.png",
@@ -72,24 +72,24 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/hb_000079_06_1.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/circle_orange.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/circle_orange.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_white_s.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/marker_white_s.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/circle_orange.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/circle_orange.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_search_api_mtrl_alpha.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_menu_hardkey_panel_mtrl_mult.9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_icon_dark_disabled.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_icon_dark_disabled.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_menu_hardkey_panel_mtrl_mult.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png",
@@ -108,12 +108,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/circle_dark_blue.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/danger_logo_large.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/danger_logo_large.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_danger_45_70.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/marker_danger_45_70.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/danger_logo_large.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/danger_logo_large.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_setting_light.png",
@@ -136,12 +136,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.4.0/res/drawable-xhdpi/cast_ic_notification_0.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000078_79_5.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000078_79_5.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000107_30_2.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000107_30_2.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000078_79_5.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000078_79_5.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_text_light_focused.9.png",
@@ -152,12 +152,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_play_light.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ab_bottom_transparent_light_holo.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/ab_bottom_transparent_light_holo.9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_mono_dark.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_media_route_on_mono_dark.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ab_bottom_transparent_light_holo.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/ab_bottom_transparent_light_holo.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_radio_to_on_mtrl_015.png",
@@ -232,12 +232,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000075_07_0.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/hb_000075_07_0.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/human_body_all.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/human_body_all.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000075_07_0.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/hb_000075_07_0.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ab_background.png",
@@ -284,12 +284,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000077_78_1.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_list_selector_disabled_holo_dark.9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cast_on_2_light.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_cast_on_2_light.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_selector_disabled_holo_dark.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_list_selector_disabled_holo_dark.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_008030_30_6.png",
@@ -332,24 +332,24 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000075_09_2.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_off_mono_dark.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_media_route_off_mono_dark.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/university.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/university.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ab_transparent_light_holo.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/ab_transparent_light_holo.9.png"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_off_mono_dark.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_media_route_off_mono_dark.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_moreoverflow_mtrl_alpha.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_moreoverflow_mtrl_alpha.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000106_89_8.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000106_89_8.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_moreoverflow_mtrl_alpha.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_moreoverflow_mtrl_alpha.png"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ab_transparent_light_holo.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/ab_transparent_light_holo.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_ic_notification_2.png",
@@ -496,12 +496,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_icon_dark_focused.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_launcher.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_launcher.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/ic_launcher.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_text_dark_disabled.9.png",
@@ -552,12 +552,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/circle_white.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_text_dark_normal.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_text_dark_normal.9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_voice_search_api_mtrl_alpha.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_voice_search_api_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_text_dark_normal.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_text_dark_normal.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_university.png",
@@ -604,12 +604,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_textfield_search_activated_mtrl_alpha.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_text_light_normal.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_text_light_normal.9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_text_light_normal.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_text_light_normal.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_yellow_b.png",
@@ -644,16 +644,16 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/btn_join_escape.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000107_06_2.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000107_06_2.png"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_dark_blue_s.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/marker_dark_blue_s.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_plusone_tall_off_client.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.4.0/res/drawable-xhdpi/ic_plusone_tall_off_client.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_dark_blue_s.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/marker_dark_blue_s.png"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000107_06_2.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000107_06_2.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_join_search_cancer.png",
@@ -668,24 +668,24 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/marker_danger_purple.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_dark_green_s.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/marker_dark_green_s.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cast_on_2_light.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_cast_on_2_light.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_dark_green_s.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/marker_dark_green_s.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_icon_light_normal.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_icon_light_normal.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/powered_by_google_light.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/drawable-xhdpi/powered_by_google_light.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_text_dark_pressed.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_text_dark_pressed.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/powered_by_google_light.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/drawable-xhdpi/powered_by_google_light.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/places_ic_clear.png",
@@ -708,32 +708,32 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_media_play.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_text_light_disabled.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_text_light_disabled.9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ab_share_pack_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_text_light_disabled.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_text_light_disabled.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/circle_blue.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/circle_blue.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_focused.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_icon_dark_focused.9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_btn_rating_star_on_mtrl_alpha.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_btn_rating_star_on_mtrl_alpha.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_spinner_mtrl_am_alpha.9.png"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_focused.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_icon_dark_focused.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000141_78_6.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/hb_000141_78_6.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cast_off_light.png",
@@ -756,12 +756,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/ab_background.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cast_on_1_light.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_cast_on_1_light.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_icon_light_pressed.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_icon_light_pressed.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cast_on_1_light.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_cast_on_1_light.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_plusone_medium_off_client.png",
@@ -792,16 +792,16 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000107_13_1.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_purple_s.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/marker_purple_s.png"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_plusone_medium_off_client.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.4.0/res/drawable-xhdpi/ic_plusone_medium_off_client.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_text_light_disabled.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_text_light_disabled.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_plusone_medium_off_client.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-plus/8.4.0/res/drawable-xhdpi/ic_plusone_medium_off_client.png"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_purple_s.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/marker_purple_s.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000071_43_2.png",
@@ -828,12 +828,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/baby_house.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000106_99_0.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000106_99_0.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_clear_mtrl_alpha.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_clear_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000106_99_0.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000106_99_0.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000077_78_1.png",
@@ -844,12 +844,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/circle_blue.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/distance_500m.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/distance_500m.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_icon_light_focused.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_icon_light_focused.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/distance_500m.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/distance_500m.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_0_mono_dark.png",
@@ -864,20 +864,20 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_icon_dark_pressed.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_red_b.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/marker_red_b.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_icon_light_disabled.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_icon_light_disabled.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_selector_disabled_holo_light.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_list_selector_disabled_holo_light.9.png"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_red_b.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/marker_red_b.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000101_14_4.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/hb_000101_14_4.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_selector_disabled_holo_light.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_list_selector_disabled_holo_light.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_dark_green_b.png",
@@ -888,24 +888,24 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_icon_dark_disabled.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_selectall_mtrl_alpha.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000101_14_4.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000101_14_4.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_selector_disabled_holo_light.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_spinner_mtrl_am_alpha.9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_pressed_holo_dark.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_list_pressed_holo_dark.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_spinner_mtrl_am_alpha.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000050_00_0.png",
@@ -916,12 +916,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/ab_stacked_transparent_dark_holo.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_icon_light_focused.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_icon_light_focused.9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_disabled.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_icon_dark_disabled.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_icon_light_focused.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_icon_light_focused.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/circle_purple.png",
@@ -1132,12 +1132,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_icon_dark_normal.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_danger_yellow.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/marker_danger_yellow.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ab_stacked_transparent_dark_holo.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/ab_stacked_transparent_dark_holo.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_danger_yellow.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/marker_danger_yellow.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_white_b.png",
@@ -1180,40 +1180,40 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000101_77_9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_switch_track_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000127_18_4.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000127_18_4.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_switch_track_mtrl_alpha.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_join_speech.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/btn_join_speech.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/powered_by_google_dark.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/drawable-xhdpi/powered_by_google_dark.png"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cast_on_0_light.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_cast_on_0_light.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_text_dark_disabled.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_text_dark_disabled.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cast_on_0_light.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_cast_on_0_light.png"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/powered_by_google_dark.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/drawable-xhdpi/powered_by_google_dark.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_pressed.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_icon_dark_pressed.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_join_recommend.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/btn_join_recommend.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_join_recommend.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/btn_join_recommend.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_join_support.png",
@@ -1356,12 +1356,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/btn_join_escape.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cast_dark.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_cast_dark.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_text_light_focused.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_text_light_focused.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cast_dark.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_cast_dark.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/human_body_small_all.png",
@@ -1372,12 +1372,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/btn_join_request.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_blue_b.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/marker_blue_b.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/stomach.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/stomach.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_blue_b.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/marker_blue_b.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/stomach.png",
@@ -1388,12 +1388,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/marker_danger.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_text_light_pressed.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_text_light_pressed.9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/places_ic_search.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/drawable-xhdpi/places_ic_search.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_google_signin_btn_text_light_pressed.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_text_light_pressed.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/marker_blue_s.png",
@@ -1448,24 +1448,24 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ab_share_pack_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_pressed_holo_light.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ab_share_pack_mtrl_alpha.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_join_speech.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/btn_join_speech.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000108_88_3.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/hb_000108_88_3.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/btn_join_support.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/btn_join_support.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000108_88_3.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/hb_000108_88_3.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000075_56_9.png",
@@ -1476,12 +1476,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_btn_check_to_on_mtrl_015.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000078_79_5.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/hb_000078_79_5.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000075_56_9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000075_56_9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000078_79_5.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/hb_000078_79_5.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/circle_orange.png",
@@ -1496,24 +1496,24 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/next_double.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_copy_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000075_01_4.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000075_01_4.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_1_mono_dark.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_media_route_on_1_mono_dark.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_007664_93_9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_007664_93_9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_focused_holo.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_list_focused_holo.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_007664_93_9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_007664_93_9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000075_07_0.png",
@@ -1532,12 +1532,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/drawable-xhdpi/hb_000123_91_1.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_ic_notification_on.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.4.0/res/drawable-xhdpi/cast_ic_notification_on.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000106_98_9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/drawable-xhdpi/hb_000106_98_9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_ic_notification_on.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-cast/8.4.0/res/drawable-xhdpi/cast_ic_notification_on.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/hb_000056_23_5.png",
@@ -1556,12 +1556,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_list_pressed_holo_light.9.png"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_textfield_search_default_mtrl_alpha.9.png"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_icon_light_disabled.9.png",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_icon_light_disabled.9.png"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/cast_ic_notification_1.png",
