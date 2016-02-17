@@ -1,4 +1,0 @@
-DangerInTown
-==============
-
-Danger Map
