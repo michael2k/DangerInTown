@@ -4,6 +4,10 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/matter_item_in_info.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/layout/matter_item_in_info.xml"
     },
@@ -16,32 +20,52 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/select_dialog_item_material.xml"
     },
     {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/activity_cancerinfo_details.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/activity_cancerinfo_details.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_search_view.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/activity_cancerinfo_details.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/activity_cancerinfo_details.xml"
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/fragment_company_info.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/fragment_company_info.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/activity_join.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/layout/activity_join.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_content_include.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_dialog_title_material.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/item_progress_bar.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/item_progress_bar.xml"
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/item_progress_bar.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/item_progress_bar.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/activity_riskinfo_details.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/activity_riskinfo_details.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/select_dialog_multichoice_material.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/riskinfo_row.xml",
@@ -64,16 +88,36 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_content_include.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_lines.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_simple.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/activity_cancerinfo_details.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/activity_cancerinfo_details.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/splash.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/splash.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/mr_media_route_chooser_dialog.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/layout/mr_media_route_chooser_dialog.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_bar_up_container.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/matter_item_in_info.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/matter_item_in_info.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/fragment_escapeinfo.xml",
@@ -88,12 +132,16 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_big_media.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/fragment_cancerinfo.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/fragment_cancerinfo.xml"
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/place_autocomplete_progress.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_progress.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/fragment_cancerinfo.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/fragment_cancerinfo.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/splash.xml",
@@ -104,16 +152,36 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/layout/activity_company_details.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/notification_template_media.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_media.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/item_progress_bar.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/item_progress_bar.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_list_menu_item_radio.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
@@ -128,8 +196,20 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_list_menu_item_icon.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/fragment_cancerinfo.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/fragment_cancerinfo.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_icon.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_list_menu_item_icon.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_part_chronometer.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/dialog_info.xml",
@@ -176,52 +256,80 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/layout/mr_media_route_controller_material_dialog_b.xml"
     },
     {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/fragment_escapeinfo.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/layout/fragment_escapeinfo.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_menu_item_layout.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/fragment_escapeinfo.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/layout/fragment_escapeinfo.xml"
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_list_menu_item_layout.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_list_menu_item_checkbox.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_powered_by_google.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_item_powered_by_google.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/matter_item_in_info.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/matter_item_in_info.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/activity_matter_datail.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/activity_matter_datail.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_bar_title_item.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/activity_matter_datail.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/activity_matter_datail.xml"
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/riskinfo_row.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/riskinfo_row.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_bar_view_list_nav_layout.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/activity_matter_datail.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/activity_matter_datail.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/fragment_cancerinfo.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/layout/fragment_cancerinfo.xml"
     },
     {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/place_autocomplete_fragment.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_fragment.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/fragment_escapeinfo.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/fragment_escapeinfo.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/notification_media_cancel_action.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_media_cancel_action.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_toolbar.xml"
     },
     {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/activity_matter_datail.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/layout/activity_matter_datail.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_list_menu_item_radio.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/activity_matter_datail.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/layout/activity_matter_datail.xml"
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_prediction.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_item_prediction.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
@@ -240,24 +348,36 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_activity_chooser_view_list_item.xml"
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_mode_bar.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_activity_chooser_view_list_item.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_menu_layout.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_big_media_narrow.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_mode_bar.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/notification_template_big_media.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_simple.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
@@ -272,16 +392,20 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_part_chronometer.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_mode_close_item_material.xml"
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_bar_up_container.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_layout.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_list_menu_item_layout.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_bar_up_container.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_bar_up_container.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
@@ -292,6 +416,10 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_dialog_title_material.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_alert_dialog_material.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_lines.xml"
     },
@@ -300,12 +428,12 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_part_time.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/place_autocomplete_progress.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_progress.xml"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/mr_media_route_controller_material_dialog_b.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/layout/mr_media_route_controller_material_dialog_b.xml"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/place_autocomplete_progress.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_progress.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/select_dialog_multichoice_material.xml",
@@ -316,24 +444,48 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_part_chronometer.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/select_dialog_item_material.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_bar_title_item.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/riskinfo_row.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/riskinfo_row.xml"
-    },
-    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/riskinfo_row.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/riskinfo_row.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_radio.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/activity_join.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/activity_join.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_popup_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_screen_toolbar.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_toolbar.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/place_autocomplete_progress.xml",
@@ -344,6 +496,10 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_expanded_menu_layout.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_menu_item_layout.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_menu_item_layout.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/activity_cancerinfo_details.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/layout/activity_cancerinfo_details.xml"
     },
@@ -352,40 +508,76 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/dialog_info.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/matter_item_in_company.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/layout/matter_item_in_company.xml"
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/mr_media_route_controller_material_dialog_b.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/layout/mr_media_route_controller_material_dialog_b.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/mr_media_route_list_item.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/layout/mr_media_route_list_item.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_mode_bar.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_mode_bar.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/activity_main.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/matter_item_in_company.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/layout/matter_item_in_company.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/support_simple_spinner_dropdown_item.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_powered_by_google.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_item_powered_by_google.xml"
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/layout/activity_main.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_expanded_menu_layout.xml"
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_powered_by_google.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_item_powered_by_google.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/fragment_company_info.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/layout/fragment_company_info.xml"
     },
     {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/dialog_info.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/dialog_info.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_dialog_title_material.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_list_menu_item_checkbox.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/place_autocomplete_fragment.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_fragment.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/activity_company_details.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/activity_company_details.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_powered_by_google.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_item_powered_by_google.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_template_part_time.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/notification_media_cancel_action.xml",
@@ -396,32 +588,56 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/select_dialog_multichoice_material.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_prediction.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_item_prediction.xml"
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_simple_overlay_action_mode.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/activity_riskinfo_details.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/activity_riskinfo_details.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_screen_content_include.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_content_include.xml"
     },
     {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_prediction.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_item_prediction.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/item_progress_bar.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/layout/item_progress_bar.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/activity_main.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_select_dialog_material.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_select_dialog_material.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/place_autocomplete_item_prediction.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_item_prediction.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/notification_media_cancel_action.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_media_cancel_action.xml"
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_search_dropdown_item_icons_2line.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_search_dropdown_item_icons_2line.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_screen_simple.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_simple.xml"
     },
     {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/notification_media_cancel_action.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_media_cancel_action.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/select_dialog_item_material.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/select_dialog_item_material.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/matter_item_in_company.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/layout/matter_item_in_company.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
@@ -444,6 +660,10 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/layout/mr_media_route_list_item.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/notification_media_action.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_media_action.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_action_menu_layout.xml"
     },
@@ -462,5 +682,17 @@
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/mr_media_route_chooser_dialog.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/layout/mr_media_route_chooser_dialog.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/abc_search_view.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_search_view.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/layout/place_autocomplete_fragment.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-location/8.4.0/res/layout/place_autocomplete_fragment.xml"
     }
 ]

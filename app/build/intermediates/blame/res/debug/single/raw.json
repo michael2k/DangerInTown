@@ -6,5 +6,9 @@
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/raw/gtm_analytics",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/8.4.0/res/raw/gtm_analytics"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/raw/gtm_analytics",
+        "source": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-analytics/8.4.0/res/raw/gtm_analytics"
     }
 ]

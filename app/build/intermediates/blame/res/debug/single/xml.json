@@ -8,20 +8,32 @@
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/xml/searchable.xml"
     },
     {
-        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/xml/searchable.xml",
-        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/xml/searchable.xml"
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/xml/pref_data_sync.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/xml/pref_data_sync.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/xml/pref_headers.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/xml/pref_headers.xml"
     },
     {
+        "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/xml/searchable.xml",
+        "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/xml/searchable.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/xml/pref_notification.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/xml/pref_notification.xml"
     },
     {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/xml/searchable.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/xml/searchable.xml"
+    },
+    {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/xml/pref_general.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown0/app/src/main/res/xml/pref_general.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/xml/pref_notification.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/xml/pref_notification.xml"
     },
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown0/app/build/intermediates/res/merged/debug/xml/pref_notification.xml",
@@ -38,5 +50,13 @@
     {
         "merged": "/Volumes/MAC/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/xml/pref_data_sync.xml",
         "source": "/Volumes/MAC/android/studio/DangerInTown/app/src/main/res/xml/pref_data_sync.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/xml/pref_headers.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/xml/pref_headers.xml"
+    },
+    {
+        "merged": "/Users/kms/android/studio/DangerInTown/app/build/intermediates/res/merged/debug/xml/pref_general.xml",
+        "source": "/Users/kms/android/studio/DangerInTown/app/src/main/res/xml/pref_general.xml"
     }
 ]

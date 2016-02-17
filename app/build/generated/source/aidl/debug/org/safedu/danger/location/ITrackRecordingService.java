@@ -1,6 +1,6 @@
 /*
  * This file is auto-generated.  DO NOT MODIFY.
- * Original file: /Volumes/MAC/android/studio/DangerInTown/app/src/main/aidl/org/safedu/danger/location/ITrackRecordingService.aidl
+ * Original file: /Users/kms/android/studio/DangerInTown/app/src/main/aidl/org/safedu/danger/location/ITrackRecordingService.aidl
  */
 package org.safedu.danger.location;
 /**
