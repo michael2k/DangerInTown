@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<searchable xmlns:android="http://schemas.android.com/apk/res/android"
+    android:label="@string/app_name" 
+    android:hint="@string/findCompany"
+    android:searchSuggestAuthority="org.safedu.danger.provider.DangerContentProvider"
+    android:searchSuggestIntentAction="android.intent.action.VIEW"
+    android:searchSuggestIntentData="content://org.safedu.danger.provider.DangerContentProvider/companys"
+    android:searchSuggestSelection=" ?"
+    />

@@ -1,0 +1,42 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+	>
+    
+    <!-- 
+     -->
+    <item android:id="@+id/action_search"
+          android:title="@string/action_search"
+          android:icon="@android:drawable/ic_menu_search"
+          android:actionViewClass="android.widget.SearchView"
+          android:showAsAction="always"
+          />
+    <!-- Settings, should always be in the overflow -->
+    <!-- 
+    <item android:id="@+id/action_settings"
+        android:orderInCategory="100"
+          android:title="@string/action_settings"
+          android:icon="@android:drawable/ic_menu_preferences"
+          android:showAsAction="always"/>
+    <item android:id="@+id/action_details" 
+          android:icon="@android:drawable/ic_menu_info_details"
+        android:title="@string/action_details"
+        android:showAsAction="never"
+         />
+    <item android:id="@+id/action_help" 
+          android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/action_help"
+        android:showAsAction="never"
+         />
+    <item android:id="@+id/action_help2" 
+          android:icon="@android:drawable/ic_menu_help"
+        android:title="@string/action_help"
+        android:showAsAction="never"
+         />
+     -->
+    <item android:id="@+id/action_join" 
+        android:title="@string/action_join"
+        android:icon="@drawable/ab_more"
+        android:showAsAction="always"
+         />
+
+
+</menu>
